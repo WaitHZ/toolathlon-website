@@ -135,28 +135,13 @@ bash scripts/run_parallel_sequential.sh
 
 ## Visualization
 
-To facilitate viewing the reasoning trajectories of LLMs, we provide a replay tool for developers to visualize any trajectory in `vis_traj`.
-
-### Prepare Trajectory
-
-After obtaining the results, you need to perform a data format conversion first. You can use the following command to process the trajectories of all tasks:
+To facilitate viewing the reasoning trajectories of LLMs, we provide a replay tool for developers to visualize any trajectory in `vis_traj`. After obtaining the results, you can simply run the following command:
 
 ```bash
-uv run vis_traj/convert_format.py \
---input_path /your/dump/path/finalpool/
+uv run vis_traj/server.py --port 8000 --res_path /your/dump/path/finalpool/
 ```
 
-The converted data will be stored in `vis_traj/trajs`.
-
-### Start Replay Server
-
-Then, simply run the following command:
-
-```bash
-uv run vis_traj/server.py --port 8000
-```
-
-And you can visit localhost:8000 to view trajectories you have converted.
+And you can visit localhost:8000 to view trajectories.
 
 ## Supporting Multiple Agent Scaffolds  
 In addition to the scaffold we have implemented in Toolathlon based on the [openai-agent-sdk](https://github.com/openai/openai-agents-python), we are also committed to introducing more scaffolds for more comprehensive testing. Currently, we have preliminarily integrated [OpenHands](https://github.com/All-Hands-AI/OpenHands), which can be found in our `openhands-compatibility` branch. In the future, we hope to introduce more scaffolds, and we also welcome community contributions of Toolathlon implementations or testing results under other scaffolds.
