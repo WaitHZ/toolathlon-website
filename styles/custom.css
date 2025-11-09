@@ -1086,7 +1086,8 @@ html[data-theme="dark"] .icon-container svg {
 /* 移动端表格内容自动换行 */
 @media (max-width: 768px) {
   .performance-table .model-name-cell,
-  .performance-table .model-type-cell {
+  .performance-table .model-type-cell,
+  .performance-table .date-cell {
     white-space: normal !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
@@ -1102,7 +1103,8 @@ html[data-theme="dark"] .icon-container svg {
   }
   
   /* 针对模型类型的特殊处理 */
-  .performance-table .model-type-cell {
+  .performance-table .model-type-cell,
+  .performance-table .date-cell {
     font-size: 9px !important;
   }
   
@@ -1363,8 +1365,19 @@ html[data-theme="dark"] .icon-container svg {
   padding-left: 20px;
 }
 
-/* Model Type列的表头也左对齐 */
-.performance-table th:nth-child(2) {
+.performance-table .date-cell {
+  text-align: left;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 16px;
+  min-width: 120px;
+  max-width: 140px;
+  padding-left: 20px;
+}
+
+/* Model Type与Date列表头左对齐 */
+.performance-table thead th:nth-child(2),
+.performance-table thead th:nth-child(3) {
   text-align: left;
   padding-left: 20px;
 }
@@ -1902,6 +1915,12 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     width: 10%;
     min-width: 60px;
   }
+
+  .performance-table thead th:nth-child(2),
+  .performance-table thead th:nth-child(3) {
+    text-align: left;
+    padding-left: 20px;
+  }
   
   .performance-table th:nth-child(4),
   .performance-table td:nth-child(4) {
@@ -1992,8 +2011,23 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     text-overflow: ellipsis;
   }
   
-  /* 移动端Model Type列的表头也左对齐 */
-  .performance-table th:nth-child(2) {
+  .performance-table .date-cell {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    padding: 8px 4px 8px 20px;
+    min-width: 110px;
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* 移动端Model Type与Date列表头左对齐 */
+  .performance-table thead th:nth-child(2),
+  .performance-table thead th:nth-child(3) {
     text-align: left;
     padding-left: 20px;
   }
@@ -2263,7 +2297,10 @@ html[data-theme="dark"] .performance-table .model-name-cell {
 
 [data-theme="dark"] .performance-table .model-type-cell,
 .dark .performance-table .model-type-cell,
-html[data-theme="dark"] .performance-table .model-type-cell {
+html[data-theme="dark"] .performance-table .model-type-cell,
+[data-theme="dark"] .performance-table .date-cell,
+.dark .performance-table .date-cell,
+html[data-theme="dark"] .performance-table .date-cell {
   color: #94a3b8 !important;
 }
 
@@ -3982,6 +4019,12 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
     overflow-wrap: break-word;
   }
   
+  .performance-table thead th:nth-child(2),
+  .performance-table thead th:nth-child(3) {
+    text-align: left;
+    padding-left: 18px;
+  }
+
   .performance-table th:nth-child(3),
   .performance-table td:nth-child(3),
   .performance-table th:nth-child(4),
