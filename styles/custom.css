@@ -1360,9 +1360,9 @@ html[data-theme="dark"] .icon-container svg {
   font-weight: 600;
   color: #6b7280;
   font-size: 16px;
-  min-width: 60px;
-  max-width: 80px;
-  padding-left: 20px;
+  min-width: 50px;
+  max-width: 70px;
+  padding-left: 16px;
 }
 
 .performance-table .date-cell {
@@ -1370,16 +1370,16 @@ html[data-theme="dark"] .icon-container svg {
   font-weight: 600;
   color: #6b7280;
   font-size: 16px;
-  min-width: 120px;
-  max-width: 140px;
-  padding-left: 20px;
+  min-width: 90px;
+  max-width: 120px;
+  padding-left: 16px;
 }
 
 /* Model Type与Date列表头左对齐 */
 .performance-table thead th:nth-child(2),
 .performance-table thead th:nth-child(3) {
   text-align: left;
-  padding-left: 20px;
+  padding-left: 16px;
 }
 
 .performance-table .score-cell {
@@ -2002,9 +2002,9 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     font-size: 11px;
     font-weight: 600;
     color: #6b7280;
-    padding: 8px 4px 8px 20px;
-    min-width: 60px;
-    max-width: 90px;
+    padding: 8px 4px 8px 16px;
+    min-width: 50px;
+    max-width: 80px;
     word-wrap: break-word;
     white-space: nowrap;
     overflow: hidden;
@@ -2016,9 +2016,9 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     font-size: 11px;
     font-weight: 600;
     color: #6b7280;
-    padding: 8px 4px 8px 20px;
-    min-width: 110px;
-    max-width: 150px;
+    padding: 8px 4px 8px 16px;
+    min-width: 90px;
+    max-width: 130px;
     word-wrap: break-word;
     white-space: nowrap;
     overflow: hidden;
@@ -2029,7 +2029,7 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   .performance-table thead th:nth-child(2),
   .performance-table thead th:nth-child(3) {
     text-align: left;
-    padding-left: 20px;
+    padding-left: 16px;
   }
   
   .performance-table .score-cell {
@@ -4022,7 +4022,7 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   .performance-table thead th:nth-child(2),
   .performance-table thead th:nth-child(3) {
     text-align: left;
-    padding-left: 18px;
+    padding-left: 14px;
   }
 
   .performance-table th:nth-child(3),
