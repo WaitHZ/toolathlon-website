@@ -2598,7 +2598,7 @@ html[data-theme="dark"] .stat-label {
   flex-wrap: wrap;
 }
 
-.btn-github, .btn-contribute, .btn-arxiv {
+.btn-github, .btn-contribute, .btn-arxiv, .btn-huggingface {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2632,6 +2632,19 @@ html[data-theme="dark"] .stat-label {
   background: #fef2f2;
   border-color: #991616;
   color: #991616;
+  transform: translateY(-1px);
+}
+
+.btn-huggingface {
+  background: white;
+  color: #ff9d00;
+  border-color: #ff9d00;
+}
+
+.btn-huggingface:hover {
+  background: #fff8f0;
+  border-color: #e68900;
+  color: #e68900;
   transform: translateY(-1px);
 }
 
@@ -3026,6 +3039,22 @@ html[data-theme="dark"] .btn-arxiv:hover {
   color: #FCA5A5 !important;
 }
 
+[data-theme="dark"] .btn-huggingface,
+.dark .btn-huggingface,
+html[data-theme="dark"] .btn-huggingface {
+  background: #1f2937 !important;
+  color: #FFD21E !important;
+  border-color: #1f2937 !important;
+}
+
+[data-theme="dark"] .btn-huggingface:hover,
+.dark .btn-huggingface:hover,
+html[data-theme="dark"] .btn-huggingface:hover {
+  background: #374151 !important;
+  border-color: #374151 !important;
+  color: #FFD21E !important;
+}
+
 [data-theme="dark"] .btn-contribute,
 .dark .btn-contribute,
 html[data-theme="dark"] .btn-contribute {
@@ -3212,6 +3241,18 @@ html[data-theme="dark"] .homepage-footer p {
     background: #374151 !important;
     border-color: #374151 !important;
     color: #FCA5A5 !important;
+  }
+  
+  .btn-huggingface {
+    background: #1f2937 !important;
+    color: #FFD21E !important;
+    border-color: #1f2937 !important;
+  }
+  
+  .btn-huggingface:hover {
+    background: #374151 !important;
+    border-color: #374151 !important;
+    color: #FFD21E !important;
   }
   
   .btn-contribute {
