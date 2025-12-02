@@ -5,7 +5,7 @@ title: "How to use Toolathlon"
 
 ## Quick Start
 > Basically you have four ways of running Toolathlon evaluation:
-> 1. Using our public evaluation service: Check [EVAL_SERVICE_README.md](EVAL_SERVICE_README.md) for more details.
+> 1. Using our public evaluation service: Check [EVAL_SERVICE_README.md](https://github.com/hkust-nlp/Toolathlon/blob/main/EVAL_SERVICE_README.md) for more details.
 > 2. Setup your own Toolathlon evaluation service on your own machine as detailed below.
 > 3. If you are a major user that will use Toolathlon evaluation a lot, you can also contact us (jlini@cse.ust.hk / junxianh@cse.ust.hk), we may be able to provide a dedicated evaluation service for you (for free). 
 > 4. If you have an API endpoint and just want to test your model, you can contact us (jlini@cse.ust.hk / junxianh@cse.ust.hk) and we are happy to help you run evaluation on Toolathlon with your given API endpoint.
@@ -27,7 +27,7 @@ python eval_client.py run \
   --server-port 8080
 ```
 
-Please make sure to check [EVAL_SERVICE_README.md](EVAL_SERVICE_README.md) for more details (e.g. if you want to test your locally deployed models).
+Please make sure to check [EVAL_SERVICE_README.md](https://github.com/hkust-nlp/Toolathlon/blob/main/EVAL_SERVICE_README.md) for more details (e.g. if you want to test your locally deployed models).
 
 ---------------------------------
 
@@ -66,7 +66,7 @@ Then, pull our prepared image:
 bash global_preparation/pull_toolathlon_image.sh
 ```
 
-If you are unable/unwilling to install docker/podman, but still want to try our benchmark, please refer to [README_nodocker.md](README_nodocker.md).
+If you are unable/unwilling to install docker/podman, but still want to try our benchmark, please refer to [README_nodocker.md](https://github.com/hkust-nlp/Toolathlon/blob/main/README_nodocker.md).
 
 ### Configure Global Configs
 Simply set these two env variables, note that `TOOLATHLON_OPENAI_BASE_URL` must be an OpenAI SDK compatible one, as our agent scaffold relies on this:
@@ -100,7 +100,7 @@ To run our benchmark, we strongly suggest you deploy it on a Linux machine with 
 Although you can indeed run our benchmark without sudo, some configurations still need this (you may ask an administrator to help you with this), like configuring *podman* and *inotify* parameters (see "# k8s" part in `global_preparation/install_env_minimal.sh`).
 
 ### Configure App-Aware Tokens, Keys and Credentials
-Please read carefully through [how2register_accounts.md](global_preparation/how2register_accounts.md) and follow the guides. You need to register some accounts and configure some tokens/api keys/secrets in `configs/token_key_session.py`. 
+Please read carefully through [how2register_accounts.md](https://github.com/hkust-nlp/Toolathlon/blob/main/global_preparation/how2register_accounts.md) and follow the guides. You need to register some accounts and configure some tokens/api keys/secrets in `configs/token_key_session.py`. 
 
 ### Misc Configuration
 
