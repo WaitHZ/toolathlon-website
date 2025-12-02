@@ -1,4 +1,37 @@
+---
+title: "How to use Toolathlon"
+---
+
+
 ## Quick Start
+> Basically you have four ways of running Toolathlon evaluation:
+> 1. Using our public evaluation service: Check [EVAL_SERVICE_README.md](EVAL_SERVICE_README.md) for more details.
+> 2. Setup your own Toolathlon evaluation service on your own machine as detailed below.
+> 3. If you are a major user that will use Toolathlon evaluation a lot, you can also contact us (jlini@cse.ust.hk / junxianh@cse.ust.hk), we may be able to provide a dedicated evaluation service for you (for free). 
+> 4. If you have an API endpoint and just want to test your model, you can contact us (jlini@cse.ust.hk / junxianh@cse.ust.hk) and we are happy to help you run evaluation on Toolathlon with your given API endpoint.
+
+### Using Our Public Evaluation Service 
+We provide Toolathlon evaluation as a service on public servers, where we have setup all the required MCP accounts and you don't need to worry about the setup -- you don't even need to install any MCP-related dependencies, evaluation can be ran by just communicating with our public server such as:
+```bash
+python eval_client.py run \
+  --mode public \
+  --base-url your-puclic-endpoint \
+  --api-key sk-your-key \
+  --model-name your-model-name \
+  --workers 10 \
+  --output-file ./results/eval_stats.json \
+  --log-file ./results/client.log \
+  --server-log ./results/server.log \
+  --traj-log ./results/traj_log_all.jsonl \
+  --server-host 47.253.6.47 \
+  --server-port 8080
+```
+
+Please make sure to check [EVAL_SERVICE_README.md](EVAL_SERVICE_README.md) for more details (e.g. if you want to test your locally deployed models).
+
+---------------------------------
+
+Besides using the evaluation service, below we introduce how to setup the Toolathlon evaluation on your own machine.
 
 ### Installation Dependencies
 
@@ -32,6 +65,8 @@ Then, pull our prepared image:
 ```
 bash global_preparation/pull_toolathlon_image.sh
 ```
+
+If you are unable/unwilling to install docker/podman, but still want to try our benchmark, please refer to [README_nodocker.md](README_nodocker.md).
 
 ### Configure Global Configs
 Simply set these two env variables, note that `TOOLATHLON_OPENAI_BASE_URL` must be an OpenAI SDK compatible one, as our agent scaffold relies on this:
