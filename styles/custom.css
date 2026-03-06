@@ -1087,6 +1087,7 @@ html[data-theme="dark"] .icon-container svg {
 @media (max-width: 768px) {
   .performance-table .model-name-cell,
   .performance-table .model-type-cell,
+  .performance-table .text-cell,
   .performance-table .date-cell {
     white-space: normal !important;
     word-wrap: break-word !important;
@@ -1104,6 +1105,7 @@ html[data-theme="dark"] .icon-container svg {
   
   /* 针对模型类型的特殊处理 */
   .performance-table .model-type-cell,
+  .performance-table .text-cell,
   .performance-table .date-cell {
     font-size: 9px !important;
   }
@@ -1250,7 +1252,8 @@ html[data-theme="dark"] .icon-container svg {
     min-width: 30px;
   }
   
-  .performance-table .model-type-cell {
+  .performance-table .model-type-cell,
+  .performance-table .text-cell {
     font-size: 8px !important;
   }
   
@@ -1355,7 +1358,8 @@ html[data-theme="dark"] .icon-container svg {
   max-width: 100px;
 }
 
-.performance-table .model-type-cell {
+.performance-table .model-type-cell,
+.performance-table .text-cell {
   text-align: left;
   font-weight: 600;
   color: #6b7280;
@@ -1375,9 +1379,11 @@ html[data-theme="dark"] .icon-container svg {
   padding-left: 16px;
 }
 
-/* Model Type与Date列表头左对齐 */
+/* 文本列列表头左对齐 */
 .performance-table thead th:nth-child(2),
-.performance-table thead th:nth-child(3) {
+.performance-table thead th:nth-child(3),
+.performance-table thead th:nth-child(4),
+.performance-table thead th:nth-child(5) {
   text-align: left;
   padding-left: 16px;
 }
@@ -1391,10 +1397,10 @@ html[data-theme="dark"] .icon-container svg {
 }
 
 /* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
-.performance-table td:nth-child(9),
-.performance-table td:nth-child(10),
-.performance-table td:nth-child(11),
-.performance-table td:nth-child(12) {
+.performance-table td:nth-child(6),
+.performance-table td:nth-child(7),
+.performance-table td:nth-child(8),
+.performance-table td:nth-child(9) {
   color: #1f2937;
 }
 
@@ -1917,7 +1923,9 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   }
 
   .performance-table thead th:nth-child(2),
-  .performance-table thead th:nth-child(3) {
+  .performance-table thead th:nth-child(3),
+  .performance-table thead th:nth-child(4),
+  .performance-table thead th:nth-child(5) {
     text-align: left;
     padding-left: 20px;
   }
@@ -1958,24 +1966,6 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     min-width: 50px;
   }
   
-  .performance-table th:nth-child(10),
-  .performance-table td:nth-child(10) {
-    width: 8%;
-    min-width: 50px;
-  }
-  
-  .performance-table th:nth-child(11),
-  .performance-table td:nth-child(11) {
-    width: 8%;
-    min-width: 50px;
-  }
-  
-  .performance-table th:nth-child(12),
-  .performance-table td:nth-child(12) {
-    width: 7%;
-    min-width: 40px;
-  }
-  
 .performance-table th {
   background: #f8fafc;
   font-weight: 600;
@@ -1997,7 +1987,8 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     min-width: 60px;
   }
   
-  .performance-table .model-type-cell {
+  .performance-table .model-type-cell,
+  .performance-table .text-cell {
     text-align: left;
     font-size: 11px;
     font-weight: 600;
@@ -2025,9 +2016,11 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     text-overflow: ellipsis;
   }
   
-  /* 移动端Model Type与Date列表头左对齐 */
+  /* 移动端文本列列表头左对齐 */
   .performance-table thead th:nth-child(2),
-  .performance-table thead th:nth-child(3) {
+  .performance-table thead th:nth-child(3),
+  .performance-table thead th:nth-child(4),
+  .performance-table thead th:nth-child(5) {
     text-align: left;
     padding-left: 16px;
   }
@@ -2038,10 +2031,10 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   }
   
   /* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
-  .performance-table td:nth-child(9),
-  .performance-table td:nth-child(10),
-  .performance-table td:nth-child(11),
-  .performance-table td:nth-child(12) {
+  .performance-table td:nth-child(6),
+  .performance-table td:nth-child(7),
+  .performance-table td:nth-child(8),
+  .performance-table td:nth-child(9) {
     color: #1f2937;
   }
   
@@ -2298,6 +2291,9 @@ html[data-theme="dark"] .performance-table .model-name-cell {
 [data-theme="dark"] .performance-table .model-type-cell,
 .dark .performance-table .model-type-cell,
 html[data-theme="dark"] .performance-table .model-type-cell,
+[data-theme="dark"] .performance-table .text-cell,
+.dark .performance-table .text-cell,
+html[data-theme="dark"] .performance-table .text-cell,
 [data-theme="dark"] .performance-table .date-cell,
 .dark .performance-table .date-cell,
 html[data-theme="dark"] .performance-table .date-cell {
@@ -2311,18 +2307,18 @@ html[data-theme="dark"] .performance-table .score-cell {
 }
 
 /* 深色模式下Pass@1, Pass@3, Pass^3, # Turns列使用与Model列一致的颜色 */
+[data-theme="dark"] .performance-table td:nth-child(6),
+[data-theme="dark"] .performance-table td:nth-child(7),
+[data-theme="dark"] .performance-table td:nth-child(8),
 [data-theme="dark"] .performance-table td:nth-child(9),
-[data-theme="dark"] .performance-table td:nth-child(10),
-[data-theme="dark"] .performance-table td:nth-child(11),
-[data-theme="dark"] .performance-table td:nth-child(12),
+.dark .performance-table td:nth-child(6),
+.dark .performance-table td:nth-child(7),
+.dark .performance-table td:nth-child(8),
 .dark .performance-table td:nth-child(9),
-.dark .performance-table td:nth-child(10),
-.dark .performance-table td:nth-child(11),
-.dark .performance-table td:nth-child(12),
-html[data-theme="dark"] .performance-table td:nth-child(9),
-html[data-theme="dark"] .performance-table td:nth-child(10),
-html[data-theme="dark"] .performance-table td:nth-child(11),
-html[data-theme="dark"] .performance-table td:nth-child(12) {
+html[data-theme="dark"] .performance-table td:nth-child(6),
+html[data-theme="dark"] .performance-table td:nth-child(7),
+html[data-theme="dark"] .performance-table td:nth-child(8),
+html[data-theme="dark"] .performance-table td:nth-child(9) {
   color: #f8fafc !important;
 }
 
@@ -3960,7 +3956,10 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   
   [data-theme="dark"] .performance-table .model-type-cell,
   .dark .performance-table .model-type-cell,
-  html[data-theme="dark"] .performance-table .model-type-cell {
+  html[data-theme="dark"] .performance-table .model-type-cell,
+  [data-theme="dark"] .performance-table .text-cell,
+  .dark .performance-table .text-cell,
+  html[data-theme="dark"] .performance-table .text-cell {
     color: #94a3b8 !important;
   }
   
@@ -3970,18 +3969,18 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
     color: #d1d5db !important;
   }
   
+  [data-theme="dark"] .performance-table td:nth-child(6),
+  [data-theme="dark"] .performance-table td:nth-child(7),
+  [data-theme="dark"] .performance-table td:nth-child(8),
   [data-theme="dark"] .performance-table td:nth-child(9),
-  [data-theme="dark"] .performance-table td:nth-child(10),
-  [data-theme="dark"] .performance-table td:nth-child(11),
-  [data-theme="dark"] .performance-table td:nth-child(12),
+  .dark .performance-table td:nth-child(6),
+  .dark .performance-table td:nth-child(7),
+  .dark .performance-table td:nth-child(8),
   .dark .performance-table td:nth-child(9),
-  .dark .performance-table td:nth-child(10),
-  .dark .performance-table td:nth-child(11),
-  .dark .performance-table td:nth-child(12),
-  html[data-theme="dark"] .performance-table td:nth-child(9),
-  html[data-theme="dark"] .performance-table td:nth-child(10),
-  html[data-theme="dark"] .performance-table td:nth-child(11),
-  html[data-theme="dark"] .performance-table td:nth-child(12) {
+  html[data-theme="dark"] .performance-table td:nth-child(6),
+  html[data-theme="dark"] .performance-table td:nth-child(7),
+  html[data-theme="dark"] .performance-table td:nth-child(8),
+  html[data-theme="dark"] .performance-table td:nth-child(9) {
     color: #f8fafc !important;
   }
 
@@ -4061,7 +4060,9 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   }
   
   .performance-table thead th:nth-child(2),
-  .performance-table thead th:nth-child(3) {
+  .performance-table thead th:nth-child(3),
+  .performance-table thead th:nth-child(4),
+  .performance-table thead th:nth-child(5) {
     text-align: left;
     padding-left: 14px;
   }
@@ -4083,19 +4084,9 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   }
   
   .performance-table th:nth-child(9),
-  .performance-table td:nth-child(9),
-  .performance-table th:nth-child(10),
-  .performance-table td:nth-child(10),
-  .performance-table th:nth-child(11),
-  .performance-table td:nth-child(11) {
+  .performance-table td:nth-child(9) {
     width: 8%;
     min-width: 40px;
-  }
-  
-  .performance-table th:nth-child(12),
-  .performance-table td:nth-child(12) {
-    width: 6%;
-    min-width: 30px;
   }
   
   .performance-table .org-icon {
@@ -5115,4 +5106,3 @@ html[data-theme="dark"] .video-container:hover {
     border-radius: 12px;
   }
 }
-
