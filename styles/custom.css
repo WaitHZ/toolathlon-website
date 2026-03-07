@@ -1364,6 +1364,13 @@ html[data-theme="dark"] .icon-container svg {
   text-underline-offset: 2px;
 }
 
+.performance-table .model-name-cell sup {
+  margin-left: 2px;
+  font-size: 0.7em;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
 .performance-table .model-type-cell {
   text-align: left;
   font-weight: 600;
