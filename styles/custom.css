@@ -1358,6 +1358,12 @@ html[data-theme="dark"] .icon-container svg {
   max-width: 100px;
 }
 
+.performance-table .model-name-cell a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .performance-table .model-type-cell,
 .performance-table .text-cell {
   text-align: left;
@@ -1382,8 +1388,7 @@ html[data-theme="dark"] .icon-container svg {
 /* 文本列列表头左对齐 */
 .performance-table thead th:nth-child(2),
 .performance-table thead th:nth-child(3),
-.performance-table thead th:nth-child(4),
-.performance-table thead th:nth-child(5) {
+.performance-table thead th:nth-child(4) {
   text-align: left;
   padding-left: 16px;
 }
@@ -1397,10 +1402,10 @@ html[data-theme="dark"] .icon-container svg {
 }
 
 /* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
+.performance-table td:nth-child(5),
 .performance-table td:nth-child(6),
 .performance-table td:nth-child(7),
-.performance-table td:nth-child(8),
-.performance-table td:nth-child(9) {
+.performance-table td:nth-child(8) {
   color: #1f2937;
 }
 
@@ -1924,8 +1929,7 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
 
   .performance-table thead th:nth-child(2),
   .performance-table thead th:nth-child(3),
-  .performance-table thead th:nth-child(4),
-  .performance-table thead th:nth-child(5) {
+  .performance-table thead th:nth-child(4) {
     text-align: left;
     padding-left: 20px;
   }
@@ -1956,12 +1960,6 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   
   .performance-table th:nth-child(8),
   .performance-table td:nth-child(8) {
-    width: 10%;
-    min-width: 60px;
-  }
-  
-  .performance-table th:nth-child(9),
-  .performance-table td:nth-child(9) {
     width: 8%;
     min-width: 50px;
   }
@@ -2019,8 +2017,7 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   /* 移动端文本列列表头左对齐 */
   .performance-table thead th:nth-child(2),
   .performance-table thead th:nth-child(3),
-  .performance-table thead th:nth-child(4),
-  .performance-table thead th:nth-child(5) {
+  .performance-table thead th:nth-child(4) {
     text-align: left;
     padding-left: 16px;
   }
@@ -2031,10 +2028,10 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   }
   
   /* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
+  .performance-table td:nth-child(5),
   .performance-table td:nth-child(6),
   .performance-table td:nth-child(7),
-  .performance-table td:nth-child(8),
-  .performance-table td:nth-child(9) {
+  .performance-table td:nth-child(8) {
     color: #1f2937;
   }
   
@@ -2307,18 +2304,18 @@ html[data-theme="dark"] .performance-table .score-cell {
 }
 
 /* 深色模式下Pass@1, Pass@3, Pass^3, # Turns列使用与Model列一致的颜色 */
+[data-theme="dark"] .performance-table td:nth-child(5),
 [data-theme="dark"] .performance-table td:nth-child(6),
 [data-theme="dark"] .performance-table td:nth-child(7),
 [data-theme="dark"] .performance-table td:nth-child(8),
-[data-theme="dark"] .performance-table td:nth-child(9),
+.dark .performance-table td:nth-child(5),
 .dark .performance-table td:nth-child(6),
 .dark .performance-table td:nth-child(7),
 .dark .performance-table td:nth-child(8),
-.dark .performance-table td:nth-child(9),
+html[data-theme="dark"] .performance-table td:nth-child(5),
 html[data-theme="dark"] .performance-table td:nth-child(6),
 html[data-theme="dark"] .performance-table td:nth-child(7),
-html[data-theme="dark"] .performance-table td:nth-child(8),
-html[data-theme="dark"] .performance-table td:nth-child(9) {
+html[data-theme="dark"] .performance-table td:nth-child(8) {
   color: #f8fafc !important;
 }
 
@@ -3969,18 +3966,18 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
     color: #d1d5db !important;
   }
   
+  [data-theme="dark"] .performance-table td:nth-child(5),
   [data-theme="dark"] .performance-table td:nth-child(6),
   [data-theme="dark"] .performance-table td:nth-child(7),
   [data-theme="dark"] .performance-table td:nth-child(8),
-  [data-theme="dark"] .performance-table td:nth-child(9),
+  .dark .performance-table td:nth-child(5),
   .dark .performance-table td:nth-child(6),
   .dark .performance-table td:nth-child(7),
   .dark .performance-table td:nth-child(8),
-  .dark .performance-table td:nth-child(9),
+  html[data-theme="dark"] .performance-table td:nth-child(5),
   html[data-theme="dark"] .performance-table td:nth-child(6),
   html[data-theme="dark"] .performance-table td:nth-child(7),
-  html[data-theme="dark"] .performance-table td:nth-child(8),
-  html[data-theme="dark"] .performance-table td:nth-child(9) {
+  html[data-theme="dark"] .performance-table td:nth-child(8) {
     color: #f8fafc !important;
   }
 
@@ -4061,8 +4058,7 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   
   .performance-table thead th:nth-child(2),
   .performance-table thead th:nth-child(3),
-  .performance-table thead th:nth-child(4),
-  .performance-table thead th:nth-child(5) {
+  .performance-table thead th:nth-child(4) {
     text-align: left;
     padding-left: 14px;
   }
@@ -4076,15 +4072,13 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   .performance-table th:nth-child(6),
   .performance-table td:nth-child(6),
   .performance-table th:nth-child(7),
-  .performance-table td:nth-child(7),
-  .performance-table th:nth-child(8),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(7) {
     width: 10%;
     min-width: 50px;
   }
   
-  .performance-table th:nth-child(9),
-  .performance-table td:nth-child(9) {
+  .performance-table th:nth-child(8),
+  .performance-table td:nth-child(8) {
     width: 8%;
     min-width: 40px;
   }
