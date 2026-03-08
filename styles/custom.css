@@ -1372,27 +1372,25 @@ html[data-theme="dark"] .icon-container svg {
 }
 
 .verified-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 12px;
-  height: 12px;
-  margin-left: 4px;
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
   flex-shrink: 0;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0) 42%),
-    linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
-  border: 1px solid rgba(22, 163, 74, 0.22);
-  color: #15803d;
-  font-size: 7px;
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0) 38%),
+    linear-gradient(180deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 1px solid rgba(34, 197, 94, 0.42);
+  color: #16a34a;
+  font-size: 8px;
   font-weight: 700;
   line-height: 1;
-  vertical-align: text-top;
+  vertical-align: middle;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.88),
-    0 1px 2px rgba(15, 23, 42, 0.08);
-  transform: translateY(-0.5px);
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 1px 2px rgba(22, 163, 74, 0.16);
 }
 
 .performance-table .model-type-cell {
@@ -1514,7 +1512,7 @@ html[data-theme="dark"] .org-icon {
 }
 
 .legend-text .verified-badge {
-  margin-right: 5px;
+  margin-right: 6px;
   margin-left: 0;
 }
 
@@ -2491,13 +2489,13 @@ html[data-theme="dark"] .model-name-cell {
 .dark .verified-badge,
 html[data-theme="dark"] .verified-badge {
   background:
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 42%),
-    linear-gradient(180deg, rgba(34, 197, 94, 0.2) 0%, rgba(21, 128, 61, 0.16) 100%);
-  border-color: rgba(134, 239, 172, 0.22);
-  color: #bbf7d0;
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 38%),
+    linear-gradient(180deg, rgba(34, 197, 94, 0.34) 0%, rgba(22, 101, 52, 0.24) 100%);
+  border-color: rgba(134, 239, 172, 0.38);
+  color: #dcfce7;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 1px 2px rgba(2, 6, 23, 0.22);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 1px 2px rgba(2, 6, 23, 0.28);
 }
 
 
