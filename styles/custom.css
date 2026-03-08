@@ -1375,18 +1375,18 @@ html[data-theme="dark"] .icon-container svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
-  margin-left: 6px;
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
   border-radius: 999px;
-  background: #111827;
+  background: #0f172a;
   color: #ffffff;
-  font-size: 9px;
-  font-weight: 700;
+  font-size: 7px;
+  font-weight: 650;
   line-height: 1;
   vertical-align: text-top;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.88);
-  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.72);
+  transform: translateY(-0.5px);
 }
 
 .performance-table .model-type-cell {
@@ -1508,7 +1508,7 @@ html[data-theme="dark"] .org-icon {
 }
 
 .legend-text .verified-badge {
-  margin-right: 6px;
+  margin-right: 5px;
   margin-left: 0;
 }
 
@@ -2486,7 +2486,7 @@ html[data-theme="dark"] .model-name-cell {
 html[data-theme="dark"] .verified-badge {
   background: #e2e8f0;
   color: #0f172a;
-  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.25);
 }
 
 
