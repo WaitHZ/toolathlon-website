@@ -393,7 +393,7 @@
         "logo": {
             "src": "/figs/toolathlon.svg",
             "alt": "Toolathlon"
-        },
+        }
     },
     "footer": {
         "social": {
