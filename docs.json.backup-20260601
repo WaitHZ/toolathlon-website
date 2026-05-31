@@ -19,18 +19,21 @@
         "tabs": [
             {
                 "tab": "Introduction",
+                "icon": "wrench",
                 "pages": [
                     "introduction"
                 ]
             },
             {
                 "tab": "Leaderboard",
+                "icon": "trophy",
                 "pages": [
                     "docs/leaderboard"
                 ]
             },
             {
                 "tab": "Docs",
+                "icon": "book",
                 "groups": [
                     {
                         "group": "Get Started",
@@ -57,6 +60,7 @@
             },
             {
                 "tab": "Tasks",
+                "icon": "list-check",
                 "pages": [
                     {
                         "group": "Tech & Dev",
@@ -360,18 +364,21 @@
             },
             {
                 "tab": "Trajectory",
+                "icon": "timeline",
                 "pages": [
                     "docs/traj"
                 ]
             },
             {
                 "tab": "Contributors",
+                "icon": "users",
                 "pages": [
                     "docs/contri"
                 ]
             },
             {
                 "tab": "Blog",
+                "icon": "blog",
                 "groups": [
                     {
                     "group": "Oct 28, 2025",
@@ -382,6 +389,7 @@
             ]},
             {
                 "tab": "Discord",
+                "icon": "discord",
                 "pages": [
                     "docs/discord"
                 ]
