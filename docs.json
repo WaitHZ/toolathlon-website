@@ -394,10 +394,6 @@
             "src": "/figs/toolathlon.svg",
             "alt": "Toolathlon"
         },
-        "primary": {
-            "type": "github",
-            "href": "https://github.com/hkust-nlp/Toolathlon"
-        }
     },
     "footer": {
         "social": {
