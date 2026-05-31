@@ -12,7 +12,8 @@
         "dark": "#0F172A"
     },
     "appearance": {
-        "default": "system"
+        "default": "light",
+        "strict": true
     },
     "navigation": {
         "search": false,
@@ -394,8 +395,7 @@
             "alt": "Toolathlon"
         },
         "primary": {
-            "type": "button",
-            "label": "Github",
+            "type": "github",
             "href": "https://github.com/hkust-nlp/Toolathlon"
         }
     },
