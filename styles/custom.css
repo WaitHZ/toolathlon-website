@@ -4414,64 +4414,18 @@ html[data-theme="dark"] .overlong-box .error-content {
 
 /* ==================== Logo Size Control ==================== */
 
-/* Logo-specific styling - only affects the navbar logo */
-.navbar-brand img,
-.navbar-brand svg,
-[class*="navbar-brand"] img,
-[class*="navbar-brand"] svg,
-.mintlify-navbar .navbar-brand img,
-.mintlify-navbar .navbar-brand svg,
-nav .navbar-brand img,
-nav .navbar-brand svg,
-header .navbar-brand img,
-header .navbar-brand svg,
-/* More specific selectors for Mintlify */
-[data-testid="navbar"] img,
-[data-testid="navbar"] svg,
-.navbar img,
-.navbar svg,
-header img,
-header svg,
-/* Generic logo selectors */
-img[src*="toolathlon"],
-svg[src*="toolathlon"],
-img[alt*="Toolathlon"],
-svg[alt*="Toolathlon"] {
-  height: 60px !important;
-  width: auto !important;
-  max-width: 350px !important;
-  object-fit: contain !important;
-}
-
-/* Additional logo selectors for Mintlify */
-[data-testid="navbar"] .navbar-brand img,
-[data-testid="navbar"] .navbar-brand svg,
-.navbar .navbar-brand img,
-.navbar .navbar-brand svg {
-  height: 60px !important;
-  width: auto !important;
-  max-width: 350px !important;
-  object-fit: contain !important;
-}
-
-/* Force logo size with very high specificity */
-.navbar-brand,
-.navbar-brand *,
-[class*="navbar"] [class*="brand"],
-[class*="navbar"] [class*="brand"] *,
-header [class*="brand"],
-header [class*="brand"] * {
-  height: 60px !important;
-  max-height: 60px !important;
-  width: auto !important;
-  max-width: 350px !important;
-  object-fit: contain !important;
-  display: block !important;
-}
-
-/* Target the logo specifically by its source */
+/* Scope logo sizing to the Toolathlon image only; avoid matching navbar tab icons. */
+.navbar-brand img[src*="toolathlon"],
+[class*="navbar-brand"] img[src*="toolathlon"],
+.mintlify-navbar .navbar-brand img[src*="toolathlon"],
+nav .navbar-brand img[src*="toolathlon"],
+header .navbar-brand img[src*="toolathlon"],
+[data-testid="navbar"] img[src*="toolathlon"],
 img[src="/figs/toolathlon.svg"],
-svg[src="/figs/toolathlon.svg"] {
+img[src*="/figs/toolathlon.svg"],
+.navbar-brand img[alt*="Toolathlon"],
+[class*="navbar-brand"] img[alt*="Toolathlon"],
+[data-testid="navbar"] img[alt*="Toolathlon"] {
   height: 60px !important;
   width: auto !important;
   max-width: 350px !important;
@@ -4485,8 +4439,7 @@ svg[src="/figs/toolathlon.svg"] {
 [class*="header"] [class*="brand"],
 .mintlify-navbar .navbar-brand,
 nav .navbar-brand,
-header .navbar-brand,
-[data-testid="navbar"] {
+header .navbar-brand {
   display: flex !important;
   align-items: center !important;
   height: 70px !important;
@@ -4504,16 +4457,17 @@ header,
 
 /* Mobile logo size - only affects navbar logo */
 @media (max-width: 768px) {
-  .navbar-brand img,
-  .navbar-brand svg,
-  [class*="navbar-brand"] img,
-  [class*="navbar-brand"] svg,
-  .mintlify-navbar .navbar-brand img,
-  .mintlify-navbar .navbar-brand svg,
-  nav .navbar-brand img,
-  nav .navbar-brand svg,
-  header .navbar-brand img,
-  header .navbar-brand svg {
+  .navbar-brand img[src*="toolathlon"],
+  [class*="navbar-brand"] img[src*="toolathlon"],
+  .mintlify-navbar .navbar-brand img[src*="toolathlon"],
+  nav .navbar-brand img[src*="toolathlon"],
+  header .navbar-brand img[src*="toolathlon"],
+  [data-testid="navbar"] img[src*="toolathlon"],
+  img[src="/figs/toolathlon.svg"],
+  img[src*="/figs/toolathlon.svg"],
+  .navbar-brand img[alt*="Toolathlon"],
+  [class*="navbar-brand"] img[alt*="Toolathlon"],
+  [data-testid="navbar"] img[alt*="Toolathlon"] {
     height: 50px !important;
     max-width: 250px !important;
   }
@@ -4529,16 +4483,17 @@ header,
 
 /* Small mobile logo size - only affects navbar logo */
 @media (max-width: 480px) {
-  .navbar-brand img,
-  .navbar-brand svg,
-  [class*="navbar-brand"] img,
-  [class*="navbar-brand"] svg,
-  .mintlify-navbar .navbar-brand img,
-  .mintlify-navbar .navbar-brand svg,
-  nav .navbar-brand img,
-  nav .navbar-brand svg,
-  header .navbar-brand img,
-  header .navbar-brand svg {
+  .navbar-brand img[src*="toolathlon"],
+  [class*="navbar-brand"] img[src*="toolathlon"],
+  .mintlify-navbar .navbar-brand img[src*="toolathlon"],
+  nav .navbar-brand img[src*="toolathlon"],
+  header .navbar-brand img[src*="toolathlon"],
+  [data-testid="navbar"] img[src*="toolathlon"],
+  img[src="/figs/toolathlon.svg"],
+  img[src*="/figs/toolathlon.svg"],
+  .navbar-brand img[alt*="Toolathlon"],
+  [class*="navbar-brand"] img[alt*="Toolathlon"],
+  [data-testid="navbar"] img[alt*="Toolathlon"] {
     height: 40px !important;
     max-width: 200px !important;
   }
