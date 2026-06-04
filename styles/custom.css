@@ -105,19 +105,7 @@ html[data-theme="dark"] button[aria-label*="搜索"] {
   opacity: 0 !important;
 }
 
-/* 系统深色模式下的搜索隐藏 */
-@media (prefers-color-scheme: dark) {
-  [class*="search"],
-  [id*="search"],
-  input[placeholder*="Search"],
-  input[placeholder*="搜索"],
-  button[aria-label*="Search"],
-  button[aria-label*="搜索"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
-}
+
 
 /* ==================== 文件树样式 ==================== */
 .file-tree {
@@ -144,6 +132,7 @@ html[data-theme="dark"] button[aria-label*="搜索"] {
   text-decoration: underline;
 }
 
+/* 深色样式仅绑定站点主题类，避免系统深色偏好污染浅色模式 */
 /* 深色模式下的文件树样式 */
 [data-theme="dark"] .file-tree,
 .dark .file-tree,
@@ -165,22 +154,7 @@ html[data-theme="dark"] .file-tree a:hover {
   color: #93c5fd !important;
 }
 
-/* 系统深色模式下的文件树样式 */
-@media (prefers-color-scheme: dark) {
-  .file-tree {
-    background: #1e293b !important;
-    border: 1px solid #475569 !important;
-    color: #f8fafc !important;
-  }
-  
-  .file-tree a {
-    color: #60a5fa !important;
-  }
-  
-  .file-tree a:hover {
-    color: #93c5fd !important;
-  }
-}
+
 
 /* 自定义色彩框样式 */
 .thinking-box {
@@ -279,32 +253,7 @@ html[data-theme="dark"] .task-completed-box {
   border-left: 3px solid #f59e0b !important;
 }
 
-/* 系统深色模式作为备用 */
-@media (prefers-color-scheme: dark) {
-  .thinking-box {
-    background: #1e3a8a !important;
-    color: #ffffff !important;
-    border-left: 3px solid #60a5fa !important;
-  }
-  
-  .tool-call-box {
-    background: #374151 !important;
-    color: #ffffff !important;
-    border-left: 3px solid #9ca3af !important;
-  }
-  
-  .result-box {
-    background: #064e3b !important;
-    color: #ffffff !important;
-    border-left: 3px solid #34d399 !important;
-  }
-  
-  .task-completed-box {
-    background: #92400e !important;
-    color: #ffffff !important;
-    border-left: 3px solid #f59e0b !important;
-  }
-}
+
 
 /* 深色模式下的滚动条样式 - 只应用于代码块 */
 
@@ -910,157 +859,9 @@ html[data-theme="dark"] .self-impl-table a:hover {
   color: #93c5fd !important;
 }
 
-/* 系统深色模式作为备用 */
-@media (prefers-color-scheme: dark) {
-  .server-table {
-    background: #0e0e10 !important;
-    color: var(--mintlify-color-text, #ffffff) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-  }
-  
-  .self-impl-table {
-    background: #0e0e10 !important;
-    color: var(--mintlify-color-text, #ffffff) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-  }
-  
-  .server-table thead {
-    background: #0e0e10 !important;
-    color: var(--mintlify-color-text, #ffffff) !important;
-    border-bottom: 2px solid var(--mintlify-color-border, #333333) !important;
-    border-radius: 12px 12px 0 0 !important;
-  }
-  
-  .self-impl-table thead {
-    background: #0e0e10 !important;
-    color: var(--mintlify-color-text, #ffffff) !important;
-    border-bottom: 2px solid var(--mintlify-color-border, #333333) !important;
-    border-radius: 12px 12px 0 0 !important;
-  }
-  
-  .server-table thead tr {
-    background: #0e0e10 !important;
-    border-radius: 12px 12px 0 0 !important;
-  }
-  
-  .self-impl-table thead tr {
-    background: #0e0e10 !important;
-    border-radius: 12px 12px 0 0 !important;
-  }
-  
-  .server-table thead th {
-    background: #0e0e10 !important;
-    color: var(--mintlify-color-text, #ffffff) !important;
-  }
-  
-  .self-impl-table thead th {
-    background: #0e0e10 !important;
-    color: var(--mintlify-color-text, #ffffff) !important;
-  }
-  
-  .server-table thead th:first-child {
-    border-top-left-radius: 12px !important;
-  }
-  
-  .self-impl-table thead th:first-child {
-    border-top-left-radius: 12px !important;
-  }
-  
-  .server-table thead th:last-child {
-    border-top-right-radius: 12px !important;
-  }
-  
-  .self-impl-table thead th:last-child {
-    border-top-right-radius: 12px !important;
-  }
-  
-  .server-table td {
-    border-bottom: 1px solid #374151 !important;
-    color: #e5e7eb !important;
-  }
-  
-  .self-impl-table td {
-    border-bottom: 1px solid #374151 !important;
-    color: #e5e7eb !important;
-  }
-  
-  .server-table tbody tr:hover {
-    background-color: #374151 !important;
-  }
-  
-  .self-impl-table tbody tr:hover {
-    background-color: #374151 !important;
-  }
-  
-  .server-name {
-    color: #f9fafb !important;
-  }
-  
-  .self-impl-table .server-name {
-    color: #f9fafb !important;
-  }
-  
-  .server-description {
-    color: #d1d5db !important;
-  }
-  
-  .self-impl-table .server-description {
-    color: #d1d5db !important;
-  }
-  
-  .server-link {
-    color: #d1d5db !important;
-  }
-  
-  .self-impl-table .server-link {
-    color: #d1d5db !important;
-  }
-  
-  .server-tools {
-    color: #d1d5db !important;
-  }
-  
-  .self-impl-table .server-tools {
-    color: #d1d5db !important;
-  }
-  
-  .server-impl-description {
-    color: #d1d5db !important;
-  }
-  
-  .self-impl-table .server-impl-description {
-    color: #d1d5db !important;
-  }
-  
-  .tool-count {
-    color: #a5b4fc !important;
-    background: #312e81 !important;
-  }
-  
-  .self-impl-table .tool-count {
-    color: #a5b4fc !important;
-    background: #312e81 !important;
-  }
-}
 
-/* 系统深色模式下的服务器表格链接样式 */
-@media (prefers-color-scheme: dark) {
-  .server-table a {
-    color: #60a5fa !important;
-  }
-  
-  .self-impl-table a {
-    color: #60a5fa !important;
-  }
-  
-  .server-table a:hover {
-    color: #93c5fd !important;
-  }
-  
-  .self-impl-table a:hover {
-    color: #93c5fd !important;
-  }
-}
+
+
 
 /* 图标颜色设置 - 浅色模式使用蓝色，深色模式使用主题文本颜色 */
 .icon-container svg {
@@ -1074,12 +875,7 @@ html[data-theme="dark"] .icon-container svg {
   color: var(--mintlify-color-text, #e5e7eb) !important;
 }
 
-/* 系统深色模式下的图标颜色 */
-@media (prefers-color-scheme: dark) {
-  .icon-container svg {
-    color: var(--mintlify-color-text, #e5e7eb) !important;
-  }
-}
+
 
 /* ==================== 移动端表格换行优化 ==================== */
 
@@ -2520,102 +2316,7 @@ html[data-theme="dark"] .stat-label {
   color: #94a3b8 !important;
 }
 
-/* 系统深色模式作为备用 */
-@media (prefers-color-scheme: dark) {
-  .leaderboard-header {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
-    color: #f8fafc !important;
-  }
-  
-  .leaderboard-table {
-    background: #0f172a !important;
-    color: #f8fafc !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-  }
-  
-  .leaderboard-table thead {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
-    color: #f8fafc !important;
-    border-bottom: 2px solid #475569 !important;
-  }
-  
-  .leaderboard-table thead th {
-    color: #f8fafc !important;
-    border-bottom: 2px solid #475569 !important;
-  }
-  
-  .leaderboard-table tbody tr {
-    border-bottom: 1px solid #334155 !important;
-  }
-  
-  .leaderboard-table tbody tr:hover {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-  }
-  
-  .model-name-cell {
-    color: #f8fafc !important;
-  }
-  
-  
-  .release-date-cell {
-    color: #94a3b8 !important;
-  }
-  
-  .stat-card {
-    background: #1e293b !important;
-    color: #f8fafc !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
-  }
-  
-  .stat-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-  }
-  
-  .leaderboard-container .stat-number {
-    color: #3b82f6 !important;
-  }
-  
-  .stat-label {
-    color: #94a3b8 !important;
-  }
-  
-  .sort-controls {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
-    border: 1px solid #475569 !important;
-  }
-  
-  .sort-selector {
-    background: #0f172a !important;
-    border: 1px solid #475569 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-  }
-  
-  .sort-selector label {
-    color: #f8fafc !important;
-  }
-  
-  .sort-selector select {
-    background: #1e293b !important;
-    color: #f8fafc !important;
-    border: 1px solid #475569 !important;
-  }
-  
-  .sort-selector select:focus {
-    border-color: #60a5fa !important;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
-  }
-  
-  .sort-direction-btn {
-    background: #60a5fa !important;
-    color: #0f172a !important;
-  }
-  
-  .sort-direction-btn:hover {
-    background: #3b82f6 !important;
-    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3) !important;
-  }
-}
+
 
 /* ==================== 首页样式 ==================== */
 
@@ -3266,160 +2967,7 @@ html[data-theme="dark"] .homepage-footer p {
   color: #9ca3af;
 }
 
-/* 系统深色模式作为备用 */
-@media (prefers-color-scheme: dark) {
-  .homepage-container {
-    color: #f8fafc;
-  }
-  
-  .hero-title {
-    color: #f8fafc;
-  }
-  
-  .hero-description {
-    color: #d1d5db;
-  }
-  
-  .btn-github {
-    background: #1f2937 !important;
-    color: #ffffff !important;
-    border-color: #1f2937 !important;
-  }
-  
-  .btn-github:hover {
-    background: #374151 !important;
-    border-color: #374151 !important;
-    color: #ffffff !important;
-  }
-  
-  .btn-arxiv {
-    background: #1f2937 !important;
-    color: #FCA5A5 !important;
-    border-color: #1f2937 !important;
-  }
-  
-  .btn-arxiv:hover {
-    background: #374151 !important;
-    border-color: #374151 !important;
-    color: #FCA5A5 !important;
-  }
-  
-  .btn-huggingface {
-    background: #1f2937 !important;
-    color: #FFD21E !important;
-    border-color: #1f2937 !important;
-  }
-  
-  .btn-huggingface:hover {
-    background: #374151 !important;
-    border-color: #374151 !important;
-    color: #FFD21E !important;
-  }
-  
-  .btn-contribute {
-    background: #1f2937 !important;
-    color: #60A5FA !important;
-    border-color: #1f2937 !important;
-  }
-  
-  .btn-contribute:hover {
-    background: #374151 !important;
-    border-color: #374151 !important;
-    color: #60A5FA !important;
-  }
-  
-  .stats-section {
-    border-bottom-color: #374151;
-  }
-  
-  .stats-header h2 {
-    color: #e5e7eb;
-  }
-  
-  .stats-subtitle {
-    color: #9ca3af;
-  }
-  
-  .stat-card {
-    background: #1e293b;
-    border-color: #374151;
-  }
-  
-  .stat-number {
-    color: #f8fafc;
-  }
-  
-  .stat-label {
-    color: #9ca3af;
-  }
-  
-  .stat-description p {
-    color: #9ca3af;
-  }
-  
-  .tasks-header h2 {
-    color: #f8fafc;
-  }
-  
-  .tasks-count {
-    color: #9ca3af;
-  }
-  
-  .task-card {
-    background: #1e293b;
-    border-color: #374151;
-  }
-  
-  .task-card:hover {
-    border-color: #475569;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .task-title {
-    color: #f8fafc;
-  }
-  
-  .task-level {
-    background: #374151;
-    color: #e5e7eb;
-  }
-  
-  .task-description {
-    color: #d1d5db;
-  }
-  
-  .task-meta {
-    border-top-color: #374151;
-    color: #9ca3af;
-  }
-  
-  .task-author {
-    color: #9ca3af;
-  }
-  
-  .task-date {
-    color: #6b7280;
-  }
-  
-  .btn-view-all {
-    background: #1e293b;
-    color: #e5e7eb;
-    border-color: #374151;
-  }
-  
-  .btn-view-all:hover {
-    background: #334155;
-    border-color: #475569;
-  }
-  
-  .homepage-footer {
-    border-top-color: #374151;
-  }
-  
-  .homepage-footer p {
-    color: #9ca3af;
-  }
-}
+
 
 /* ==================== 性能图表样式 ==================== */
 
@@ -3959,30 +3507,7 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   color: #0f172a;
 }
 
-/* 系统深色模式作为备用 */
-@media (prefers-color-scheme: dark) {
-  .model-name {
-    color: #f8fafc;
-  }
-  
-  .model-score {
-    color: #60a5fa;
-  }
-  
-  .bar-wrapper {
-    background: #374151;
-  }
-  
-  .view-leaderboard-link {
-    color: #60a5fa;
-    border-color: #60a5fa;
-  }
-  
-  .view-leaderboard-link:hover {
-    background: #60a5fa;
-    color: #0f172a;
-  }
-}
+
 
 
 /* 深色模式下的移动端样式 */
@@ -4979,72 +4504,7 @@ html[data-theme="dark"] .acknowledgements-section p {
   color: #d1d5db;
 }
 
-/* System dark mode as fallback */
-@media (prefers-color-scheme: dark) {
-  .contributors-container {
-    color: #f8fafc;
-  }
-  
-  .contributors-header h1 {
-    color: #f8fafc;
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #22d3ee 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .contributors-header p {
-    color: #d1d5db;
-  }
-  
-  .contributor-card {
-    background: #1e293b;
-    border-color: #374151;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .contributor-card:hover {
-    border-color: #60a5fa;
-    box-shadow: 0 8px 24px rgba(96, 165, 250, 0.2);
-  }
-  
-  
-  .contributor-card.advisor {
-    background: linear-gradient(135deg, #581c87 0%, #7c2d12 100%);
-    border-color: #8b5cf6;
-  }
-  
-  .contributor-card.advisor:hover {
-    border-color: #8b5cf6;
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
-  }
-  
-  .contributor-info h3 {
-    color: #f8fafc;
-  }
-  
-  .contributor-role {
-    color: #9ca3af;
-  }
-  
-  
-  .contributor-card.advisor .contributor-role {
-    color: #a78bfa;
-  }
-  
-  .acknowledgements-section {
-    background: #1e293b;
-    border-color: #374151;
-  }
-  
-  .acknowledgements-section h2 {
-    color: #f8fafc;
-  }
-  
-  .acknowledgements-section p {
-    color: #d1d5db;
-  }
-}
+
 
 /* ==================== 视频展示区域样式 ==================== */
 .video-showcase-section {
