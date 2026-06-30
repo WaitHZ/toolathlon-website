@@ -381,12 +381,19 @@
                 "icon": "blog",
                 "groups": [
                     {
-                    "group": "Oct 28, 2025",
-                    "pages": [
-                        "docs/blog/toolathlon"
-                    ]
-                }
-            ]},
+                        "group": "Jun 30, 2026",
+                        "pages": [
+                            "docs/blog/toolathlon-verified"
+                        ]
+                    },
+                    {
+                        "group": "Oct 28, 2025",
+                        "pages": [
+                            "docs/blog/toolathlon"
+                        ]
+                    }
+                ]
+            },
             {
                 "tab": "Discord",
                 "icon": "discord",

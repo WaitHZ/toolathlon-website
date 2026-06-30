@@ -1,0 +1,319 @@
+---
+title: "Introducing Toolathlon-Verified"
+description: "How we repaired and revalidated Toolathlon for more trustworthy agent evaluation."
+mode: wide
+---
+
+<Tabs>
+
+<Tab title="English">
+
+In one Toolathlon task, an agent was asked to build a personal website in Notion. The agent-facing instructions listed four required sections. The evaluator, however, checked for five—including an **Exhibitions** section that the task itself never requested. An agent could follow the written task faithfully and still fail.
+
+That is not an agent-capability failure. It is a measurement failure.
+
+Today, we are releasing **Toolathlon-Verified**, a major repair and validation release of Toolathlon. It preserves the original 108-task scope while revising the task definitions, initial states, ground truth, evaluators, and execution infrastructure that turn those tasks into a trustworthy benchmark.
+
+<Info>
+
+**A benchmark failure should point to agent capability—not ambiguous instructions, stale data, brittle formatting checks, leaked state, or an external service that has not propagated yet.**
+
+</Info>
+
+## The scale of the update
+
+Toolathlon-Verified is not a new, smaller subset. Both versions contain the same 108 tasks, with no task added, removed, or renamed. Instead, artifacts changed across more than three quarters of the benchmark.
+
+| Area | Verified change scope |
+| --- | ---: |
+| Task packages with net changes | 83 / 108 |
+| Tasks with changes under `evaluation/` | 76 |
+| Tasks with changes under `preprocess/` | 28 |
+| Tasks with changes under `groundtruth_workspace/` | 19 |
+| Tasks with changes under `initial_workspace/` | 14 |
+| Tasks with net changes to agent-facing task instructions | 14 |
+
+These categories overlap. They describe where the final benchmark snapshot differs, not separate groups of tasks.
+
+The development-and-review range from `500e3d86` to the Verified snapshot `d57361c0` contains **339 commits**: 309 non-merge commits and 30 merge commits. We treat that number as evidence of the engineering and review effort—not as a claim that there were “339 bugs.” The history also includes infrastructure work, model and agent support, documentation, experiments, reviews, and revisions to earlier candidate fixes.
+
+## A task is a contract, not just a prompt
+
+A long-horizon task is defined by more than its instruction text. The agent must receive a coherent contract across five layers:
+
+1. what the task asks for;
+2. what state the environment starts in;
+3. what tools can actually express;
+4. what the ground truth records; and
+5. what the evaluator accepts.
+
+Toolathlon-Verified aligns these layers. The changes were often small in code but substantial in meaning:
+
+- **Cross-region pricing:** the iPad education-price task compared prices in Mainland China, the United States, Hong Kong, and Singapore without defining a common currency. The revised task explicitly converts each total to HKD and defines the expected numeric output.
+- **Invoice completeness:** the travel-reimbursement task now defines a complete invoice as one containing an invoice number, tax amount, and description. A missing field or `N/A` is treated as incomplete, and preprocessing preserves missing tax values as `N/A` rather than rendering them as zero.
+- **Legal revision detection:** the revised-terms task now defines a substantive legal change, excludes mere renumbering or relocation, and aligns the prompt, ground truth, and evaluator around the same evidence requirements.
+- **Time-sensitive requirements:** tasks such as language-school research no longer hard-code a quickly expiring application year. They specify the applicant context and how to use current-year information with a controlled fallback.
+
+These are not prompt copyedits. They convert ambiguous, contradictory, or time-sensitive requests into executable contracts that agents can understand and evaluators can audit.
+
+## Correcting errors in both directions
+
+Benchmark errors can reject valid work, but they can also reward incomplete or incorrect work. Toolathlon-Verified addresses both directions.
+
+### When correct work was rejected
+
+In `live-transactions`, the evaluator called a logging helper with positional arguments. A vestigial parameter shifted the launch time into the log-name parameter, so the check queried the wrong logging target and could reject an otherwise correct run. The fix switched to explicit keyword arguments and added a bounded retry for logging visibility.
+
+Other false negatives came from incidental representation details: a trailing newline in a LaTeX file, equivalent timestamps represented in UTC rather than local time, harmless ordering differences, schema aliases, or a remote service returning a newly written object a few seconds late.
+
+### When incorrect work could pass
+
+In `language-school`, a comparison helper returned `(is_different, error_message)`, but the caller tested the tuple directly. Non-empty tuples are truthy in Python, so scalar mismatches could silently evade the failure path. The same task also contained an incorrect CMU IELTS ground-truth value, which was corrected from 7.5 to 7.
+
+In `apply-phd-email`, preprocessing cleared the sender mailbox but not the receiver mailbox read by the evaluator. A correct ZIP attachment left over from an earlier run could therefore make a later, incorrect submission pass. Toolathlon-Verified clears the state that grading actually observes.
+
+The goal was not to make graders uniformly more permissive. Candidate changes were accepted, rejected, or partially adopted according to the task contract. Proposals that would have widened the accepted answer space beyond the intended task were rejected or tightened.
+
+## Reproducible state and trusted grading
+
+Stateful applications make agent evaluation more realistic, but they also create more ways for runs to interfere with one another. Toolathlon-Verified strengthens isolation at both task and grading time:
+
+- five previously unseeded preprocessing scripts now use fixed random seeds;
+- Kubernetes clusters are namespaced per instance, and Canvas cleanup is limited to task-owned courses;
+- affected tasks clear the historical email, application, or service state that could interfere with the current run;
+- evaluator, preprocessing, and ground-truth artifacts are withheld from the agent; and
+- scoring restores those artifacts from private, hash-checked copies and removes agent-created name collisions first.
+
+The default phased containerized and decoupled runners both apply this protection. The evaluator uses trusted configuration and host-observed execution state rather than trusting fields that an agent could write into its own trajectory.
+
+<ol className="verified-pipeline" aria-label="Toolathlon-Verified validation pipeline" role="list">
+  <li><span className="verified-pipeline-index" aria-hidden="true">1</span><span>Task contract</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">2</span><span>Deterministic setup</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">3</span><span>Isolated Agent run</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">4</span><span>Trusted grading</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">5</span><span>Failure analysis</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">6</span><span>Rerun and publish</span></li>
+</ol>
+
+## External-service failures are not agent failures
+
+Toolathlon tasks use real services, so a successful write and an immediately visible read are not always the same event. Toolathlon-Verified separates two failure layers:
+
+- **Transport reliability:** bounded timeouts and retries handle transient connection failures, rate limits, and server errors for services such as Canvas, Notion, WooCommerce, Poste, and Google APIs. Deterministic client errors still fail immediately.
+- **Evaluation visibility:** 43 task evaluators now use shared or equivalent bounded whole-check retries for cases where a service accepted a write but has not exposed it to the grader yet.
+
+The release also adds readiness probes for Canvas, Poste, WooCommerce, and Kubernetes, propagates preprocessing failures instead of silently continuing, preloads Kubernetes task images, and namespaces Kubernetes clusters per instance.
+
+Several failures required service-specific fixes. The PDF tool could deadlock after repeated searches because a non-reentrant lock was acquired recursively. The arXiv wrapper could retain a sticky failure state after a transient error. Canvas initialization could appear ready before Rails and the database were actually ready. Notion’s rotating OAuth refresh token could be lost or raced across short-lived containers. Each issue could look like weak agent behavior from the outside; none measured agent capability.
+
+## A more comparable execution interface
+
+We also added a decoupled execution mode. Preprocessing, MCP services, state, and evaluation remain controlled by the task container, while an agent scaffold can run on the host through a single MCP gateway. This makes it possible to compare different scaffolds without rebuilding the task environment around each one.
+
+At the model boundary, Toolathlon normalizes model-visible tool names and handles provider differences in reasoning and tool-call payloads. The intent is not to erase meaningful scaffold differences, but to prevent avoidable protocol quirks from becoming benchmark failures.
+
+## How we verified the fixes
+
+Toolathlon-Verified was not produced by applying a blanket tolerance rule. Candidate fixes were reviewed against the full task contract—prompt, initial state, available tools, ground truth, and evaluator. Review records include accepted, rejected, and partially accepted changes. In one reconciliation pass, 14 disputed task changes were resolved individually: nine candidate changes were adopted, while five existing implementations were retained or further strengthened.
+
+Key failures were traced through real agent submissions, reproduced on the evaluation service, and rerun after repair. Targeted regression tests were added where appropriate across task evaluators, preprocessing, runners, tool adapters, and grading isolation.
+
+Finally, we evaluated each of the six reported models across three benchmark runs. The released trajectories expose model messages and tool calls for inspection, while the leaderboard reports final grading outcomes. Together they provide auditable evidence for the benchmark; we do not claim that every published trajectory was manually reviewed line by line.
+
+## A new Verified baseline
+
+The chart below reports mean Pass@1 across the three runs for each model. Error bars show the across-run standard deviation—not a confidence interval. All six rows use the Default agent configuration and are dated June 30, 2026.
+
+<Frame caption="Pass@1 mean over three runs; error bars show standard deviation. Results were independently evaluated by the Toolathlon team.">
+  <img
+    src="/figs/toolathlon-verified-leaderboard.png"
+    alt="Toolathlon-Verified Pass@1 ranking: Claude Opus 4.8 (max) 76.2 plus or minus 3.4, GPT-5.5 (xhigh) 73.5 plus or minus 1.2, Gemini 3.5 Flash (high) 67.3 plus or minus 1.2, GLM 5.2 (max) 59.9 plus or minus 1.9, kimi-k2.7-code 58.0 plus or minus 4.3, and Deepseek-v4-pro (max) 55.9 plus or minus 1.2. Error bars show standard deviation across three runs."
+    className="verified-results-chart"
+  />
+</Frame>
+
+The [live leaderboard](/docs/leaderboard) also reports Pass@3, Pass³, average turns, model type, agent configuration, and evaluation date. A green check marks rows independently evaluated by the Toolathlon team.
+
+<Warning>
+
+**Toolathlon-Verified begins a separate official score series; its results are not directly comparable with the original release.** Prompts, expected outputs, evaluators, initial states, and the execution stack changed. Differences from earlier scores should not be interpreted as like-for-like model gains or regressions.
+
+</Warning>
+
+## Limitations and what comes next
+
+“Verified” does not mean frozen forever. Toolathlon deliberately evaluates agents against real applications, APIs, data sources, and authentication systems. Those systems will continue to change. New models may also reveal valid solution paths that existing evaluators do not yet capture.
+
+The practical lesson is that an agent benchmark must be maintained as a measurement system, not published once as a static collection of tasks. We will continue to investigate reproducible failures, distinguish benchmark defects from agent errors, and update the Verified series when the evidence warrants it.
+
+## Acknowledgements
+
+Toolathlon-Verified is primarily maintained and developed by [@jxhe](https://github.com/jxhe) and [@lockon-n](https://github.com/lockon-n). We thank [@bugmaker00](https://github.com/bugmaker00) for the valuable feedback provided throughout the verification and repair process.
+
+## Resources
+
+- [Live leaderboard](https://toolathlon.xyz/docs/leaderboard)
+- [Toolathlon-Verified trajectories](https://huggingface.co/datasets/hkust-nlp/Toolathlon-Verified_Trajectories/tree/main)
+- [Toolathlon-Verified snapshot (`d57361c0`)](https://github.com/hkust-nlp/Toolathlon/commit/d57361c0f1582cf9a0675c0753315bb6b004bd0e)
+- [Full base-to-Verified comparison](https://github.com/hkust-nlp/Toolathlon/compare/500e3d866f7522c5ecf92d388cf5977eb02e1560...d57361c0f1582cf9a0675c0753315bb6b004bd0e)
+- [Toolathlon paper](https://arxiv.org/abs/2510.25726)
+- [Discord](https://discord.gg/Da3AaW4rVs)
+
+</Tab>
+
+<Tab title="简体中文">
+
+在 Toolathlon 的一个任务中，Agent 需要更新 Notion 个人主页。面向 Agent 的任务说明列出了四个必需板块，但评测器（evaluator）实际检查了五个，其中包括题面没有要求的 **Exhibitions** 板块。即使 Agent 完全按照题面完成任务，也仍然可能失败。
+
+这不是 Agent 能力不足，而是测量系统本身失效。
+
+今天，我们正式发布 **Toolathlon-Verified**。这是 Toolathlon 的一次重大修复与验证版本：它保留原有的 108 个任务，同时系统性修订了将这些任务转化为可信评测所需的题面、初始状态、标准答案（ground truth）、评测器和运行基础设施。
+
+<Info>
+
+**一次评测失败应当反映 Agent 的能力，而不是含糊的指令、过期的数据、脆弱的格式检查、泄漏或污染的状态，以及尚未完成数据同步的外部服务。**
+
+</Info>
+
+## 这次更新有多大
+
+Toolathlon-Verified 不是从原版中筛选出的更小子集。两个版本都包含同一组 108 个任务，没有新增、删除或重命名任务；变化发生在其中超过四分之三的任务实现中。
+
+| 统计项 | 涉及任务数 |
+| --- | ---: |
+| 存在净修改的任务包 | 83 / 108 |
+| `evaluation/` 发生修改的任务 | 76 |
+| `preprocess/` 发生修改的任务 | 28 |
+| `groundtruth_workspace/` 发生修改的任务 | 19 |
+| `initial_workspace/` 发生修改的任务 | 14 |
+| 面向 Agent 的任务说明存在净修改的任务 | 14 |
+
+以上类别彼此重叠，用于描述最终 Verified 快照与原版之间的差异，并不代表几组互不相交的任务。
+
+从 `500e3d86` 到 Verified 快照 `d57361c0` 的开发与审查区间共有 **339 个提交**，其中包括 309 个非合并提交和 30 个合并提交。这个数字代表开发与复核工作的规模，而不是“修复了 339 个 bug”。提交历史还包含基础设施、模型与 Agent 支持、文档、实验、审查，以及对候选修复的反复调整。
+
+## 一个任务是一份完整契约，而不只是一段题面
+
+长流程任务并不只由任务说明定义。Agent 实际面对的是五层相互关联的契约：
+
+1. 题目要求完成什么；
+2. 环境从什么状态开始；
+3. 可用工具能够表达哪些操作；
+4. ground truth 记录了什么；
+5. evaluator 最终接受什么。
+
+Toolathlon-Verified 重新对齐了这五层。许多修改在代码上并不庞大，但会实质改变任务是否可解、结果是否可判定：
+
+- **跨地区价格比较：** iPad 教育价格任务需要比较中国大陆、中国香港、新加坡和美国的价格，但原题面没有规定统一币种。新版本明确要求将各地区总价换算为港币（HKD），并定义数值输出格式。
+- **发票完整性：** 差旅报销任务现在明确规定，完整发票必须包含发票编号、税额和费用说明；字段缺失或为 `N/A` 时均视为不完整，预处理（preprocess）也遵循同一规则。
+- **法律条款修订：** `detect-revised-terms` 任务明确了何为实质性法律变化，排除仅重编号或迁移的条款，并让题面、GT 和评测器使用相同的证据标准。
+- **时间敏感要求：** 研究美国计算机硕士项目语言要求的 `language-school` 任务不再硬编码很快会过期的申请年份，而是明确申请人背景，优先使用当年信息，并在当年信息不可用时再使用上一年度信息。
+
+这些不是简单的题面润色，而是将含糊、矛盾或容易过期的要求转化为 Agent 可以执行、evaluator 可以审计的任务契约。
+
+## 同时纠正误杀与漏判
+
+Benchmark 既可能拒绝正确结果，也可能让不完整或错误的结果通过。Toolathlon-Verified 同时修复这两个方向。
+
+### 正确结果为何会被判错
+
+在 `live-transactions` 中，评测器使用位置参数调用日志查询函数。一个遗留参数使后续实参整体错位，启动时间字符串被当作日志名称写入过滤条件，导致评测器始终检索不到目标记录。修复后调用改为显式关键字参数，并为日志可见性加入有明确上限的重试。
+
+其他 false negative 还来自与任务语义无关的表示差异，例如 LaTeX 文件末尾多出的正常换行、UTC 与本地时区表达的同一时间、无关的行顺序、schema 类型别名，或者外部服务在写入成功数秒后才允许读取新对象。
+
+### 错误结果为何可能通过
+
+在 `language-school` 中，一个比较函数返回 `(is_different, error_message)`，但调用方直接判断这个元组。Python 中非空元组始终为真，因此调用方取反后的失败分支永远不会执行，标量字段错误也可能通过。与此同时，该任务的 CMU IELTS 标准答案也有错误，最终从 7.5 修正为 7。
+
+在 `apply-phd-email` 中，preprocess 清理了发送方邮箱，却没有清理 evaluator 实际读取的接收方邮箱。前一次运行遗留的正确 ZIP 附件，可能让本轮发送错误附件的结果通过。Verified 版本开始清理评分真正观察的状态。
+
+我们的目标并不是让 grader 统一变得更宽松。候选修改会根据完整任务契约被接受、拒绝或部分采用；如果某项修改会让 evaluator 接受超出原任务语义的结果，它会被拒绝或进一步收紧。
+
+## 可复现的状态与可信评分
+
+有状态应用让评测更接近真实世界，也带来了更多跨运行干扰的可能。Toolathlon-Verified 同时加强了任务准备和评分阶段的隔离：
+
+- 为五个使用随机生成数据的预处理脚本固定随机种子；
+- 按当前任务或实例重置相关邮箱、Canvas、WooCommerce 与 Kubernetes 状态；
+- 在受影响任务中清理可能干扰本轮评分的历史状态；
+- 预处理完成后、Agent 启动前，暂存并移走 evaluator、preprocess 与 ground truth；
+- 评分前先删除 Agent 创建的同名冲突，再从私有位置恢复并校验原始副本。
+
+Containerized 与 decoupled 两条执行路径都使用同样的保护。Evaluator 使用可信配置和宿主机观察到的执行状态，而不是信任 Agent 可以写入自身 trajectory 的字段。
+
+<ol className="verified-pipeline" aria-label="Toolathlon-Verified 验证流程" role="list">
+  <li><span className="verified-pipeline-index" aria-hidden="true">1</span><span>任务契约</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">2</span><span>确定性初始化</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">3</span><span>隔离运行 Agent</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">4</span><span>可信评分</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">5</span><span>失败归因</span></li>
+  <li><span className="verified-pipeline-index" aria-hidden="true">6</span><span>重跑并发布</span></li>
+</ol>
+
+## 外部服务失败不等于 Agent 失败
+
+Toolathlon 使用真实服务，因此“写入请求成功”和“评分器立即能够读取”并不总是同一个时刻。Verified 版本将问题拆分为两个层次：
+
+- **传输可靠性：** Canvas、Notion、WooCommerce、Poste 和 Google API 等服务使用有明确上限的超时与重试，处理瞬时连接错误、限流和服务端错误；确定性的客户端错误仍然立即失败。
+- **评分可见性：** 当前有 43 个任务评测器使用共享或等价的整体验证重试机制，用于处理服务已经接受写入、但新状态暂时还未对评分逻辑可见的情况。
+
+新版本还为 Canvas、Poste、WooCommerce 和 Kubernetes 加入实际就绪检查，让预处理失败显式传递，预加载 Kubernetes 任务所需镜像，并隔离并行实例使用的资源名称。
+
+有些问题需要针对服务本身修复：PDF 工具会因为持有非可重入锁时再次获取同一把锁而在连续搜索后死锁；arXiv wrapper 会在瞬时错误后保留失败状态；Canvas 可能在 Rails 与数据库真正就绪前就被视为 ready；Notion 会旋转的 OAuth refresh token 可能在短生命周期容器之间丢失或发生竞争。这些故障都可能从外部表现为 Agent 失败，但都不属于 Agent 能力问题。
+
+## 更一致的执行接口
+
+我们还增加了 Agent loop 与任务环境解耦的执行模式。预处理、MCP 服务、应用状态和评测器继续由任务容器控制，Agent scaffold 则可以通过单一 MCP 网关在宿主机运行。这样便可以在不为每个 scaffold 重建任务环境的情况下进行比较。
+
+在模型接口层，Toolathlon 统一了模型可见的工具名称，并适配不同 provider 的 reasoning 与 tool-call payload。目标不是抹平真实的 scaffold 差异，而是避免无意义的协议差异制造 benchmark failure。
+
+## 我们如何验证这些修复
+
+Toolathlon-Verified 并不是通过统一增加容差得到的。候选修改会根据题面、初始状态、可用工具、ground truth 和 evaluator 组成的完整任务契约进行审查，审查记录中同时包含接受、拒绝和部分接受的决定。在一次分歧对齐中，14 个任务的候选修改被逐项裁决：9 个修改被采用，另外 5 个保留或进一步加强了当前实现。
+
+关键问题通过真实 Agent 提交结果进行追踪，在 evaluation service 上复现，并在修复后重新运行。我们也在适合的位置为任务评测器、预处理、runner、工具适配器和评分隔离加入了针对性回归测试。
+
+最后，公布的六个模型结果均来自三次 benchmark 运行。公开 trajectories 让读者可以检查模型操作、工具调用与返回，以及最终评分结果；它们提供了可复核证据，但我们不声称每一条公开 trajectory 都经过了逐条人工检查。
+
+## 新的 Verified 基线
+
+下图展示六个模型三次运行的平均 Pass@1，误差线表示运行间标准差，而不是置信区间。所有结果均使用 Default Agent 配置，日期为 2026 年 6 月 30 日。
+
+<Frame caption="三次运行的平均 Pass@1；误差线表示标准差。所有结果均由 Toolathlon 团队独立评估。">
+  <img
+    src="/figs/toolathlon-verified-leaderboard.png"
+    alt="Toolathlon-Verified Pass@1 排名：Claude Opus 4.8（max）为 76.2 加减 3.4，GPT-5.5（xhigh）为 73.5 加减 1.2，Gemini 3.5 Flash（high）为 67.3 加减 1.2，GLM 5.2（max）为 59.9 加减 1.9，kimi-k2.7-code 为 58.0 加减 4.3，Deepseek-v4-pro（max）为 55.9 加减 1.2。误差线表示三次运行间的标准差。"
+    className="verified-results-chart"
+  />
+</Frame>
+
+[完整榜单](/docs/leaderboard) 还包含 Pass@3、Pass³、平均轮数、模型类型、Agent 配置和评测日期。绿色勾号表示该行结果由 Toolathlon 团队独立评估。
+
+<Warning>
+
+**Toolathlon 原版与 Toolathlon-Verified 的结果不可直接比较。** 题面、预期输出、evaluator、初始状态和运行栈均发生了变化，因此分数差异不能被解释为严格同条件下的模型进步或退步。
+
+</Warning>
+
+## 局限与后续工作
+
+“Verified”并不意味着这个版本将永远冻结。Toolathlon 有意让 Agent 操作真实应用、API、数据源和认证系统，而这些系统还会继续变化。新的模型也可能发现现有 evaluator 尚未覆盖的合理解法。
+
+更重要的经验是：Agent benchmark 必须被当作持续维护的测量系统，而不是一次发布后便不再变化的静态任务集合。我们会继续调查可复现的失败，区分 benchmark 缺陷与 Agent 错误，并在证据充分时更新 Verified 系列。
+
+## 致谢
+
+Toolathlon-Verified 主要由 [@jxhe](https://github.com/jxhe) 和 [@lockon-n](https://github.com/lockon-n) 维护与开发。特别感谢 [@bugmaker00](https://github.com/bugmaker00) 在验证与修复过程中提供的宝贵意见。
+
+## 相关资源
+
+- [实时榜单](https://toolathlon.xyz/docs/leaderboard)
+- [Toolathlon-Verified Trajectories](https://huggingface.co/datasets/hkust-nlp/Toolathlon-Verified_Trajectories/tree/main)
+- [Toolathlon-Verified 快照（`d57361c0`）](https://github.com/hkust-nlp/Toolathlon/commit/d57361c0f1582cf9a0675c0753315bb6b004bd0e)
+- [选定基线至 Verified 的完整对比](https://github.com/hkust-nlp/Toolathlon/compare/500e3d866f7522c5ecf92d388cf5977eb02e1560...d57361c0f1582cf9a0675c0753315bb6b004bd0e)
+- [Toolathlon 论文](https://arxiv.org/abs/2510.25726)
+- [Discord](https://discord.gg/Da3AaW4rVs)
+
+</Tab>
+
+</Tabs>

@@ -4587,3 +4587,119 @@ html[data-theme="dark"] .video-container:hover {
     border-radius: 12px;
   }
 }
+
+/* ==================== Toolathlon-Verified blog ==================== */
+ol.verified-pipeline {
+  --verified-pipeline-surface: #f8fafc;
+  --verified-pipeline-border: #bfdbfe;
+  --verified-pipeline-text: #0f172a;
+  --verified-pipeline-accent: #2563eb;
+  --verified-pipeline-index-text: #ffffff;
+  --verified-pipeline-arrow: #3b82f6;
+
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0 2rem !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+ol.verified-pipeline > li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 7.5rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 !important;
+  padding: 1rem 0.5rem !important;
+  border: 1px solid var(--verified-pipeline-border);
+  border-radius: 12px;
+  background: var(--verified-pipeline-surface);
+  color: var(--verified-pipeline-text);
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+ol.verified-pipeline > li::before {
+  display: none !important;
+  content: none !important;
+}
+
+ol.verified-pipeline > li:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: -1.45rem;
+  width: 0.9rem;
+  color: var(--verified-pipeline-arrow);
+  content: "\2192";
+  font-size: 1.25rem;
+  line-height: 1;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.verified-pipeline-index {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  place-items: center;
+  border-radius: 9999px;
+  background: var(--verified-pipeline-accent);
+  color: var(--verified-pipeline-index-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+img.verified-results-chart {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  background: #fcfcfd;
+}
+
+[data-theme="dark"] ol.verified-pipeline,
+.dark ol.verified-pipeline,
+html[data-theme="dark"] ol.verified-pipeline {
+  --verified-pipeline-surface: #111827;
+  --verified-pipeline-border: #334155;
+  --verified-pipeline-text: #e5e7eb;
+  --verified-pipeline-accent: #60a5fa;
+  --verified-pipeline-index-text: #0f172a;
+  --verified-pipeline-arrow: #93c5fd;
+}
+
+@media (max-width: 1040px) {
+  ol.verified-pipeline {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  ol.verified-pipeline > li {
+    min-height: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.875rem 1rem !important;
+    text-align: left;
+  }
+
+  ol.verified-pipeline > li:not(:last-child)::after {
+    top: calc(100% + 0.35rem);
+    right: auto;
+    left: 50%;
+    width: auto;
+    content: "\2193";
+    transform: translateX(-50%);
+  }
+}
