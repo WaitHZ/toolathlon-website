@@ -3,6 +3,12 @@ title: "Verl Dataset"
 description: "Download the most downloaded DeepScaleR dataset from Hugging Face, convert it to Parquet format per `format.json`, and save it as `verl_deepscaler.parquet` for replicating DeepSeek-R1’s 'aha moment' in the Verl framework."
 ---
 
+> **Toolathlon-Verified** · Website task ID `146` · Canonical task `verl-dataset`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/verl-dataset)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
+<img alt="" aria-hidden="true" src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">huggingface</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">huggingface</span>
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -30,46 +36,37 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">python_execute</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">python_execute</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: eb30a7556982fe4e86f52d4d394011252f9a00a5449849f6d46e9407babb6463 */}
 I'm trying to use the Verl framework to replicate DeepSeek-R1's "aha moment" on a language model I've trained. To do this, I need help downloading the most downloaded DeepScaleR dataset from Hugging Face and converting it to parquet format for my subsequent use. I'll name it verl_deepscaler.parquet. Please refer to the workspace's format.json for format requirements.
 
 ## Initial State
@@ -77,14 +74,16 @@ I'm trying to use the Verl framework to replicate DeepSeek-R1's "aha moment" on 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/verl-dataset/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/verl-dataset/initial_workspace">workspace</a>/
 └── format.json
 </div>
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_verl-dataset)
 - ✅ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_verl-dataset)
-

@@ -3,6 +3,12 @@ title: "Machine Operating"
 description: "Generate and upload an anomaly report for out-of-range sensor readings during a specified time window."
 ---
 
+> **Toolathlon-Verified** · Website task ID `150` · Canonical task `machine-operating`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/machine-operating)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">excel</span>
+<img alt="" aria-hidden="true" src="/icons/google_cloud.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">google-cloud</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_cloud.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">google-cloud</span>
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">excel</span>
 </div>
 </div>
 </div>
@@ -30,39 +36,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 5612f03a8a8d9cc241b9b3e19db4b043a6ca187f6482da738e99487d78ee68b6 */}
 A production line in the factory streams real-time data through IoT sensors into the live_sensor table of the machine_operating dataset in BigQuery. The normal operating parameter ranges (minimum/maximum values) for each machine’s sensors are defined in a configuration file named machine_operating_parameters.xlsx. Please query the live_sensor table in the machine_operating dataset in BigQuery for sensor data between 11:30 and 12:30 on August 19, 2025, and, using the parameter ranges from the Excel file, identify all readings that fall outside their normal ranges (you may choose any efficient method for comparison). Compile the final anomaly report with the fields `timestamp`, `machine_id`, `sensor_type`, `reading`, (the format of these data should be exactly the same as in the BigQuery table) and `normal_range` (min - max)  into a file named "anomaly_report.csv". Save the file in the workspace, and upload this file to the existing cloud storage bucket whose name starts with the prefix "iot_anomaly_reports" in your cloud space.
 
 ## Initial State
@@ -70,18 +70,20 @@ A production line in the factory streams real-time data through IoT sensors into
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/machine-operating/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/machine-operating/initial_workspace">workspace</a>/
 └── machine_operating_parameters.xlsx
 </div>
 
-### BigQuery
+### Runtime Setup
 
-You can view the raw real-time sensor data [here](https://github.com/hkust-nlp/mcpbench_dev/blob/finalpool_dev/tasks/finalpool/machine-operating/preprocess/live_sensor_data.csv).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/machine-operating/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_machine-operating)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_machine-operating)
-

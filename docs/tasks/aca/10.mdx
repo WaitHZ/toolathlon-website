@@ -1,7 +1,13 @@
 ---
 title: "Find Alita Paper"
-description: "Find a paper on agentic reasoning whose title has 'Alita' and download it."
+description: "Find the latest arXiv version, published by June 2025, of the agentic-reasoning paper with “Alita” in its title; download it as alita_{arxiv_id}.pdf and return its title, arXiv abstract URL, and code URL."
 ---
+
+> **Toolathlon-Verified** · Website task ID `10` · Canonical task `find-alita-paper`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/find-alita-paper)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/scholar.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">scholarly</span>
+<img alt="" aria-hidden="true" src="/icons/arxiv.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">arxiv_local</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/arxiv.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">arxiv_local</span>
+<img alt="" aria-hidden="true" src="/icons/scholar.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">scholarly</span>
 </div>
 </div>
 </div>
@@ -30,49 +36,45 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-I'm looking for a paper on arxiv related to agentic reasoning. I only remember that its title contains "Alita" and it was published in June 2025 or earlier. Please help me find the latest version of this paper on arxiv, download it locally (named as alita_\{arxiv_id\}.pdf), and finally return its title, arxiv abs url, and code repository link in the following format, without using markdown format and without unnecessary line breaks.
+{/* toolathlon-task-sha256: e5d93da5788494862d9a9b1a3c5ad1f9ac23e1f2eb75b0d87f822177b3f7d024 */}
+I'm looking for a paper on arxiv related to agentic reasoning. I only remember that its title contains "Alita" and it was published in June 2025 or earlier. Please help me find the latest version of this paper on arxiv, download it locally (named as alita_&#123;arxiv_id&#125;.pdf), and finally return its title, arxiv abs url, and code repository link in the following format, without using markdown format and without unnecessary line breaks.
 
-title: \{title\}
-arxiv_abs_url: \{arxiv_abs_url\}
-code_url: \{code_url\}
+title: &#123;title&#125;
+arxiv_abs_url: &#123;arxiv_abs_url&#125;
+code_url: &#123;code_url&#125;
 
- 
+## Initial State
 
-## Model Trajectory
+This task does not include a versioned local workspace or a public preprocessing fixture.
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_find-alita-paper)
 - ✅ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_find-alita-paper)

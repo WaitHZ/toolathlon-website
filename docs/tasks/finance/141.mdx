@@ -1,7 +1,13 @@
 ---
 title: "A/B Testing"
-description: "Determine A/B test winner by mean per-scenario conversion rate."
+description: "Analyze the homepage A/B test in BigQuery, complete record.csv, determine the winner by mean per-scenario conversion rate, and either create the promotion bucket for B or write the required no-change log for A or a tie."
 ---
+
+> **Toolathlon-Verified** · Website task ID `141` · Canonical task `ab-testing`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/ab-testing)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,12 +17,12 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/google_cloud.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">google-cloud</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_cloud.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">google-cloud</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 </div>
 </div>
@@ -26,42 +32,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 2ff2b8a48313ab50c32782ea9560161bac9afc515e921eac9bd4bd3cb7864ac2 */}
 The A/B test for our new homepage has concluded, and the raw clickstream data has been stored in the `ab_testing` dataset in BigQuery. Analyze the data and fill the `record.csv`, determine which version ('A' or 'B') has the highest overall conversion rate, i.e., the overall conversion rate is defined as the arithmetic mean of the per-scenario conversion rates. If version B outperforms, immediately create a new Cloud Storage bucket whose name is prefixed with `promo-assets-for-b` for the full promotion, and you do not need to write any log entry in this process. If version A wins or the results are a tie, no bucket creation is required, but a log entry with the message `{'status': 'AB_Test_Concluded', 'winner': 'A', 'action': 'No_Change'}` must be written to the existing log bucket whose name is prefixed with `abtesting_logging`. During the entire process, there is no need to consider any log entries in the log bucket that existed before the task was executed.
 
 ## Initial State
@@ -69,18 +66,20 @@ The A/B test for our new homepage has concluded, and the raw clickstream data ha
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/ab-testing/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/ab-testing/initial_workspace">workspace</a>/
 └── record.csv
 </div>
 
-### BigQuery
+### Runtime Setup
 
-You can view the raw data of the `ab_testing` dataset [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/ab-testing/files).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/ab-testing/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_ab-testing)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_ab-testing)
-

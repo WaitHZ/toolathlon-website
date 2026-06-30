@@ -1,7 +1,13 @@
 ---
-title: "K8S Safety Audit"
-description: "Perform a Kubernetes cluster security audit and append the results to the \"Week3\" worksheet in the \"Kubernetes Security Audit\" Google Sheet, matching the column order and formatting of prior weeks."
+title: "Kubernetes Security Audit"
+description: "Perform a Kubernetes cluster security audit and append the results to the Week3 worksheet in the Kubernetes Security Audit Google Sheet, matching the column order and formatting of Week1 and Week2."
 ---
+
+> **Toolathlon-Verified** · Website task ID `241` · Canonical task `k8s-safety-audit`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-safety-audit)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">k8s</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">google_sheet</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">google_sheet</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 </div>
 </div>
@@ -30,42 +36,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 2f60f4d82184c6d5ba1f1a6ea99706678507257587a0a8d7fdc167591594fa8d */}
 Perform a security audit on the Kubernetes cluster and append the results to the **`Kubernetes Security Audit`** Google Sheet under the **Week3** worksheet. The data must follow the same column order and formatting style used in **Week1** and **Week2**. You can find detailed requirements in `guidelines.md` in the workspace.
 
 ## Initial State
@@ -73,20 +70,20 @@ Perform a security audit on the Kubernetes cluster and append the results to the
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/excel-data-transformation/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-safety-audit/initial_workspace">workspace</a>/
 └── guidelines.md
 </div>
 
-### Google Sheets
+### Runtime Setup
 
-<div className="file-tree">
-├── <a href="https://docs.google.com/spreadsheets/d/1IPfh0QqoSmXM1YRh4a3RAFnokMHqejPWpVX_Ijd50YE/edit?gid=763952514#gid=763952514">Kubernetes Security Audit</a>
-</div>
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-safety-audit/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-safety-audit)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-safety-audit)
-

@@ -3,6 +3,12 @@ title: "Canvas List Test"
 description: "Complete and update the two given CSV files with the pending assignments and quizzes, sorted by deadline and course code."
 ---
 
+> **Toolathlon-Verified** · Website task ID `190` · Canonical task `canvas-list-test`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/canvas-list-test)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,11 +17,11 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/canvas.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/canvas.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">canvas</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/memory.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/memory.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">memory</span>
 </div>
 </div>
@@ -26,39 +32,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 32314474b96e6483530a42978a29225c7127629d5d389ae8513c84e743ee0d4b */}
 My personal information is all stored in memory. Based on the course information on Canvas, as well as my assignment and quiz submission status. Find all my unsubmitted course assignments and quizzes that have to be completed, organize the information according to the required fields in the workspace's CSV header, keeping the format consistent with these examples, and complete these CSV files. In filling the files, please fill the quizzes/assignments in chronological order by their deadlines (DDL), and for quizzes/assignmen with the same DDL, sort them in the dictionary order of the class code. You should directly edit in the given 2 CSV files without changing their file names. For course codes and names, please remove the -x suffix.
 
 ## Initial State
@@ -66,21 +66,23 @@ My personal information is all stored in memory. Based on the course information
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/canvas-list-test/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/canvas-list-test/initial_workspace">workspace</a>/
 ├── memory/
+│   └── memory.json
 ├── assignment_info.csv
-└── exam_schedule.xlsx
+└── quiz_info.csv
 </div>
 
-### Canvas
+### Runtime Setup
 
-You can view the course information [here](https://github.com/hkust-nlp/mcpbench_dev/blob/finalpool_dev/tasks/finalpool/canvas-list-test/files/course_config.json).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/canvas-list-test/preprocess).
 
 
- 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-list-test)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-list-test)
-
-

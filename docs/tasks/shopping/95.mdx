@@ -1,7 +1,13 @@
 ---
-title: "Ipad EDU Price"
-description: "Compare official Apple education prices for iPad Pro (256GB, 11-inch) + Apple Pencil Pro across Mainland China, Hong Kong, Singapore, and the U.S."
+title: "iPad Education Price Comparison"
+description: "Find the cheapest combined official Apple education price for an 11-inch 256GB iPad Pro and Apple Pencil Pro across Mainland China, Hong Kong, Singapore, and the U.S. after converting each regional total to HKD."
 ---
+
+> **Toolathlon-Verified** · Website task ID `95` · Canonical task `ipad-edu-price`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/ipad-edu-price)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/yahoo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/yahoo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">yahoo-finance</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -30,58 +36,56 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">python_execute</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-You are an Apple education discount analysis assistant, and I am a university student in Hong Kong. I want to buy an iPad Pro (256GB, 11-inch) and an Apple Pencil Pro. Please tell me where I can buy the iPad cheapest, considering only the official Apple education discount policies in Mainland China, Hong Kong, Singapore, and the United States, and not any other discount policies. You only need to summarize the final price of the iPad Pro and the Apple Pencil. Please strictly follow the format below to return the analysis result, and put it in the result.json file in the workspace.
+{/* toolathlon-task-sha256: f2ea36b79936badd5c78961ca13c4705dcc38e12c980a6eb1c3f808186b15d34 */}
+You are an Apple education discount analysis assistant, and I am a university student in Hong Kong. I want to buy an iPad Pro (256GB, 11-inch) and an Apple Pencil Pro. Please tell me where I can buy the iPad cheapest, considering only the official Apple education discount policies in Mainland China, Hong Kong, Singapore, and the United States, and not any other discount policies. You only need to summarize the final price of the iPad Pro and the Apple Pencil. Convert each region's combined price to Hong Kong dollars (HKD) before comparing them, and report `cheapest_total_price` as a numeric HKD amount without a currency symbol or label. Please strictly follow the format below to return the analysis result, and put it in the result.json file in the workspace.
+
 ```
 {
     "cheapest_region": "region",
     "cheapest_total_price": price
-}
+  }
 ```
 
- 
-## Model Trajectory
+## Initial State
+
+This task does not include a versioned local workspace or a public preprocessing fixture.
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_ipad-edu-price)
 - ✅ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_ipad-edu-price)
-
-

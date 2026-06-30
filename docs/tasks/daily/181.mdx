@@ -3,6 +3,12 @@ title: "Dietary Health"
 description: "Analyze whether your current diet meets fitness nutrition guidelines based on your body data and ingredient nutrition table, outputting a structured report in analysis.md according to the specified format."
 ---
 
+> **Toolathlon-Verified** · Website task ID `181` · Canonical task `dietary-health`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/dietary-health)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">excel</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">terminal</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/cook.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/cook.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">howtocook</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">excel</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">terminal</span>
 </div>
 </div>
 </div>
@@ -34,42 +40,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: eaba12e6aec33fd76186d7cc6f10bf9e871d2f54f4d11f8496fcee69d32fbc0f */}
 I am a male university student, and my detailed body information is in `body.md`. I plan to create a fitness plan for the next 3 months, and I am currently at the initial stage of fat loss. Please help me analyze the dietary list of my rest day (located in `cuisine.md`, with all dishes eaten in one portion, use info from howtocook) to determine whether it meets the nutritional requirements of carbohydrates and protein. The nutritional composition of various raw ingredients is provided in `Nutrition.xlsx`, and the fitness dietary guidelines are in `health_guide.md`. Please follow exactly the instructions in format.md to give your nutritional analysis of the foods and record it in a newly created `analysis.md` file.
 
 ## Initial State
@@ -77,7 +74,7 @@ I am a male university student, and my detailed body information is in `body.md`
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/dietary-health/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/dietary-health/initial_workspace">workspace</a>/
 ├── body.md
 ├── cuisine.md
 ├── format.md
@@ -85,10 +82,12 @@ I am a male university student, and my detailed body information is in `body.md`
 └── Nutrition.xlsx
 </div>
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_dietary-health)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_dietary-health)
-

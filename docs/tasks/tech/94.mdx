@@ -1,7 +1,13 @@
 ---
-title: "Wandb Shortest Length"
-description: "Identify the experiment yielding shortest responses from W&B logs, then extract entropy_loss, clip_ratio, and response_length_mean."
+title: "W&B Shortest-Response Experiment"
+description: "Identify the W&B experiment with the shortest responses and record entropy_loss, clip_ratio, and response_length_mean every 100 steps from step 0 in shortest_length_experiment.csv."
 ---
+
+> **Toolathlon-Verified** · Website task ID `94` · Canonical task `wandb-shortest-length`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/wandb-shortest-length)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/wandb.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/wandb.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">wandb</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">excel</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">terminal</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">excel</span>
 </div>
 </div>
 </div>
@@ -34,35 +40,29 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 7e5de0e7faf205626398aee54141d5875c838f23462636c05fed9832ee93d8a4 */}
 Analyze the wandb project https://wandb.ai/mluo/deepscaler-1.5b?nw=nwusermluo, using the experiment logs to analyze which experiment results should be chosen if we want a model that provides the shortest answers to questions. Please record the entropy_loss, clip_ratio, and response_length_mean for this experiment from step 0, at intervals of every 100 steps, into the workspace file shortest_length_experiment.csv.
 
 ## Initial State
@@ -70,20 +70,16 @@ Analyze the wandb project https://wandb.ai/mluo/deepscaler-1.5b?nw=nwusermluo, u
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/wandb-shortest-length/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/wandb-shortest-length/initial_workspace">workspace</a>/
 └── shortest_length_experiment.csv
 </div>
 
-### Wandb Projects
 
-<div className="file-tree">
-├── <a href="https://wandb.ai/mluo/deepscaler-1.5b?nw=nwusermluo">deepscaler-1.5b</a>/
-</div>
+## Legacy Trajectories
 
- 
-
-## Model Trajectory
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_wandb-shortest-length)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_wandb-shortest-length)
-

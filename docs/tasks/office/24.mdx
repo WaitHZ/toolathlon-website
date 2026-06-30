@@ -3,6 +3,12 @@ title: "Invoice Org"
 description: "Extract invoice details (amount, date, vendor), convert all to RMB using historical exchange rates."
 ---
 
+> **Toolathlon-Verified** · Website task ID `24` · Canonical task `invoice-org`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/invoice-org)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">excel</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/pdf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/pdf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">pdf-tools</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/yahoo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/yahoo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">yahoo-finance</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">excel</span>
 </div>
 </div>
 </div>
@@ -34,65 +40,59 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 65b9c24389d910c4b2a3500207597299facc19b184fed0cb0b8732c26f6c1500 */}
 Please help me read the files in my personal workspace, find all of my invoices, and extract the relevant information. From each invoice, extract the amount, date, and vendor. Then fill the `invoice_summary.csv` in my personal workspace.
 
 Additionally, please look up the exchange rates for the dates on the invoices and calculate the total reimbursement amount in Chinese Yuan (RMB). If there is any tax, it should be included in the total. Finally, output the grand total in the format `{"total": xx}` to a file named `total_invoice.json` in my personal workspace.
-
-
 
 ## Initial State
 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/invoice-org/initial_workspace">workspace</a>/
-├── Invoice-66F9945C-385121.pdf
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/invoice-org/initial_workspace">workspace</a>/
 ├── flight_invoice.pdf
 ├── flight_invoice1.pdf
 ├── flight_invoice3.pdf
+├── Invoice-66F9945C-385121.pdf
 ├── invoice_240913093236943397.pdf
 ├── invoice_3478885.pdf
 ├── invoice_summary.csv
 └── tmpojlmr2l4_receipt.pdf
 </div>
 
+### Runtime Setup
 
- 
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/invoice-org/preprocess).
 
-## Model Trajectory
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_invoice-org)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_invoice-org)
-

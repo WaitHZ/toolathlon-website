@@ -1,7 +1,13 @@
 ---
 title: "Trip Itinerary Generator"
-description: "Generate a two-day Paris itinerary starting July 28, 2025 from Notre Dame, grouping east/south (Day 1) and west/central (Day 2) attractions from 'my_wishlist.txt', output as 'Paris_Itinerary.json' in specified format."
+description: "Create a two-day Paris walking itinerary for next Monday and Tuesday, visiting only Rive Droite wishlist attractions on day one and the remainder on day two, and save it to Paris_Itinerary.json."
 ---
+
+> **Toolathlon-Verified** · Website task ID `159` · Canonical task `trip-itinerary-generator`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/trip-itinerary-generator)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,15 +17,15 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_map.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_map.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">google_map</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
 </div>
 </div>
@@ -30,38 +36,29 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: d4aabc82a9227beef5fc78d8e08f790e9f27225e16eea2d6329babf01b2b2f4a */}
 I plan to go on vacation to Paris soon. Please help me create a two-day Paris travel itinerary for next Monday and Tuesday based on the list of attractions in **'my_wishlist.txt'**. I will start from Notre Dame Cathedral. On the first day, I **only** want to visit attractions in the Rive Droite, and on the second day, I want to see the rest. For the entire trip, I would like to walk everywhere. Please choose the shortest and fastest possible walking route between attractions. Please help me plan the itinerary with a reasonable route for both days, and save it as **'Paris_Itinerary.json'**, strictly following the format in **'format.json'**. For the last destination of each day, `"distance_to_next"` should be recorded as `null`. `"opening_hours"` should be filled in with the opening hours for that day. The filled destination names should be 100% identical to the ones in my wishlist.
 
 ## Initial State
@@ -69,15 +66,17 @@ I plan to go on vacation to Paris soon. Please help me create a two-day Paris tr
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/trip-itinerary-generator/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/trip-itinerary-generator/initial_workspace">workspace</a>/
 ├── format.json
 └── my_wishlist.txt
 </div>
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_trip-itinerary-generator)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_trip-itinerary-generator)
-

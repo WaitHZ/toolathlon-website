@@ -3,6 +3,12 @@ title: "Inventory Sync"
 description: "Sync latest unupdated product inventories from each city’s SQLite warehouse database to WooCommerce online store."
 ---
 
+> **Toolathlon-Verified** · Website task ID `304` · Canonical task `inventory-sync`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/inventory-sync)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,12 +17,12 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/woo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">woocommerce</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/woo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">woocommerce</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 </div>
 </div>
@@ -26,63 +32,60 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
-I am a WooCommerce store owner, and my shop has warehouses in the following cities: New York, Boston, Dallas, LA, San Francisco, Houston. Please help me: Check each warehouse SQLite database (located in the warehouse directory in the workspace) for the latest product inventory list (identified by Product ID) that has been uploaded but not yet updated in the online WooCommerce store. Use the WooCommerce MCP server to synchronize the inventory updates to the WooCommerce online store according to the city-to-region mapping. 
+{/* toolathlon-task-sha256: 53293b7d5d1a394c2beb29007d8f4363c0b71b8a03ded88d3b2835364a46165e */}
+I am a WooCommerce store owner, and my shop has warehouses in the following cities: New York, Boston, Dallas, LA, San Francisco, Houston. Please help me: Check each warehouse SQLite database (located in the warehouse directory in the workspace) for the latest product inventory list (identified by Product ID) that has been uploaded but not yet updated in the online WooCommerce store. Use the WooCommerce MCP server to synchronize the inventory updates to the WooCommerce online store according to the city-to-region mapping.
 
 ## Initial State
 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/filter-low-selling-products/initial_workspace">workspace</a>/warehouse/
-├── warehouse_boston.db
-├── warehouse_dallas.db
-├── warehouse_houston.db
-├── warehouse_los_angeles.db
-├── warehouse_new_york.db
-└── warehouse_san_francisco.db
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/inventory-sync/initial_workspace">workspace</a>/
+└── warehouse/
+    ├── warehouse_boston.db
+    ├── warehouse_dallas.db
+    ├── warehouse_houston.db
+    ├── warehouse_los_angeles.db
+    ├── warehouse_new_york.db
+    └── warehouse_san_francisco.db
 </div>
 
-### WooCommerce
+### Runtime Setup
 
-The data is reinitialized on each test; you can review the original data construction process [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/inventory-sync/preprocess).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/inventory-sync/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_inventory-sync)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_inventory-sync)
-

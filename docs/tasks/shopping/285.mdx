@@ -3,6 +3,12 @@ title: "Update Material Inventory"
 description: "Monitor new WooCommerce paid orders, deduct raw materials via BOM from Google Sheets inventory, recalculate max producible quantities, and sync updated stock levels back to WooCommerce."
 ---
 
+> **Toolathlon-Verified** · Website task ID `285` · Canonical task `update-material-inventory`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/update-material-inventory)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,12 +17,12 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/woo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">woocommerce</span>
+<img alt="" aria-hidden="true" src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">google_sheet</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">google_sheet</span>
+<img alt="" aria-hidden="true" src="/icons/woo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">woocommerce</span>
 </div>
 </div>
 </div>
@@ -26,39 +32,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: b992e77b30485c72b006c319f33876258336ef8a4850372aa5e9ad79683574ff */}
 Please help me monitor new paid orders in WooCommerce, retrieve the SKU and quantity of each finished product in the order, then, based on the Bill of Materials (BOM) recorded in Google Sheets, calculate the amount of raw materials that need to be consumed. Deduct the corresponding quantities from the raw material inventory table in Google Sheets, write the updated raw material inventory back to Google Sheets, and then, based on the updated raw material balances, recalculate the maximum producible quantities for all finished products. Finally, sync these maximum producible quantities to WooCommerce as the available stock for the products.
 
 ## Initial State
@@ -66,18 +66,20 @@ Please help me monitor new paid orders in WooCommerce, retrieve the SKU and quan
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/update-material-inventory/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/update-material-inventory/initial_workspace">workspace</a>/
 └── config.json
 </div>
 
-### Google Sheet and WooCommerce
+### Runtime Setup
 
-You can review the data construction process during testing [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/update-material-inventory/preprocess).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/update-material-inventory/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_update-material-inventory)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_update-material-inventory)
-

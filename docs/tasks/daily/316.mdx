@@ -1,7 +1,13 @@
 ---
-title: "NHL B2B Analysis"
-description: "Analyze the NHL 2024–2025 schedule to count each team’s back-to-back games by home/away configuration."
+title: "NHL Back-to-Back Analysis"
+description: "Analyze the 2024–2025 NHL schedule and tabulate each team’s back-to-back sets by HA, AH, HH, AA, and total in a spreadsheet named NHL-B2B-Analysis."
 ---
+
+> **Toolathlon-Verified** · Website task ID `316` · Canonical task `nhl-b2b-analysis`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/nhl-b2b-analysis)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">terminal</span>
+<img alt="" aria-hidden="true" src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">google_sheet</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">google_sheet</span>
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">terminal</span>
 </div>
 </div>
 </div>
@@ -30,20 +36,20 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="filter-list" size={20} color="#4286f6" />
@@ -54,21 +60,23 @@ Local Tools
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 65bcfefe4147b8cca26d162344cd2d593c8a6734ca225f2292e7e7694f36e382 */}
 Conduct a detailed analysis of the NHL 2024–2025 schedule (in spreadsheet `NHL 2425 Schedule`) and calculate how many back-to-back sets each team will face this season. Please also break down, for each team, the number of occurrences in each of the four home/away configurations: Home–Away (HA), Away–Home (AH), Home–Home (HH), and Away–Away (AA). Organize the results into a newspreadsheet named `NHL-B2B-Analysis`. The table headers should exactly be: `Team,HA,AH,HH,AA,Total`.
 
- 
-## Model Trajectory
+## Initial State
+
+### Runtime Setup
+
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/nhl-b2b-analysis/preprocess).
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_nhl-b2b-analysis)
-- ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_nhl-b2b-analysis)
-
-
+- ✅ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_nhl-b2b-analysis)

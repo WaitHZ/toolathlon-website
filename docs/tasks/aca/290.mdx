@@ -1,7 +1,13 @@
 ---
 title: "VLM History Completer"
-description: "Copy the VLM history spreadsheet to vlm-history-completer as VLM-History, then research and populate the \"Architecture\" and \"Sources\" columns for each model."
+description: "Research the models in the “Text and Image” worksheet of “Directory of Generative AI” and fill its Architecture and Sources columns according to Architecture.txt and Order.txt, entering “unavailable” when needed."
 ---
+
+> **Toolathlon-Verified** · Website task ID `290` · Canonical task `vlm-history-completer`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/vlm-history-completer)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,24 +17,24 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">playwright_with_chunk</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/arxiv.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">arxiv_local</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">huggingface</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">google_sheet</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">playwright_with_chunk</span>
+<img alt="" aria-hidden="true" src="/icons/arxiv.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">arxiv_local</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">huggingface</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -38,42 +44,33 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 2382c4acad4f6bd31f72d28aa1f536b16b2f36bb706e92c347958475c7c3d61b */}
 Please help me organize and complete the development history of Vision Language Models (VLMs) in the `Text and Image` worksheet of `Directory of Generative AI` spreadsheet. It misses the "Architecture" and "Sources" columns.
 So I need you to research the models listed, and then populate the following columns in the same worksheet:
 - **Architecture column:** Fill in a description of each model's technical architecture. You can refer to the `Architecture.txt` file in the workspace for the specific types of descriptions required.
@@ -85,21 +82,21 @@ So I need you to research the models listed, and then populate the following col
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/vlm-history-completer/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/vlm-history-completer/initial_workspace">workspace</a>/
 ├── Architecture.txt
 └── Order.txt
 </div>
 
-### Google Sheets
+### Runtime Setup
 
-<div className="file-tree">
-├── <a href="https://docs.google.com/spreadsheets/d/1gc6yse74XCwBx028HV_cvdxwXkmXejVjkO-Mz2uwE0k/edit?gid=528700476#gid=528700476">Directory of Generative AI</a>
-</div>
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/vlm-history-completer/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_vlm-history-completer)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_vlm-history-completer)
-

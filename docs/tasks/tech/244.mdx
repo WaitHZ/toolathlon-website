@@ -1,7 +1,13 @@
 ---
-title: "K8S Redis Helm Upgrade"
-description: "Upgrade the Bitnami Redis Helm chart to exact version 22.0.0 in the shared-services namespace."
+title: "Kubernetes Redis Helm Upgrade"
+description: "Upgrade the Bitnami Redis chart in shared-services to exactly version 22.0.0, preserve config/redis-values.yaml, and verify that its pods run correctly."
 ---
+
+> **Toolathlon-Verified** · Website task ID `244` · Canonical task `k8s-redis-helm-upgrade`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-redis-helm-upgrade)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,15 +17,15 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">k8s</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">terminal</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 </div>
@@ -30,36 +36,29 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
-
+{/* toolathlon-task-sha256: f603bf22b2e2815ae5ca4c793b8f6071b31a1481651c2a482b200511e80fd58b */}
 Upgrade the 'redis' chart from the 'bitnami' Helm repository in the shared-services namespace to version 22.0.0 exactly, and ensure that all configurations in `config/redis-values.yaml` remain effective after the upgrade. The pods should running properly after the upgrade. If necessary, you can find the cluster configuration file in the workspace.
 
 ## Initial State
@@ -67,14 +66,20 @@ Upgrade the 'redis' chart from the 'bitnami' Helm repository in the shared-servi
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/k8s-redis-helm-upgrade/initial_workspace">workspace</a>/config/
-└── redis-values.yaml
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-redis-helm-upgrade/initial_workspace">workspace</a>/
+└── config/
+    └── redis-values.yaml
 </div>
 
- 
+### Runtime Setup
 
- 
-## Model Trajectory
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-redis-helm-upgrade/preprocess).
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-redis-helm-upgrade)
-

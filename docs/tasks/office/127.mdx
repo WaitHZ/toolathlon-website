@@ -1,7 +1,13 @@
 ---
 title: "Interview Report"
-description: "Analyze candidate resumes and evaluations against job requirements in “Requirement.txt”, then output only the top candidate’s name."
+description: "Create a separately formatted Word evaluation report for each candidate from their résumé and interviewer feedback, following Format.md, and write only the best candidate’s name to recommend.txt."
 ---
+
+> **Toolathlon-Verified** · Website task ID `127` · Canonical task `interview-report`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/interview-report)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,12 +17,12 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/word.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">word</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/word.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">word</span>
 </div>
 </div>
 </div>
@@ -26,39 +32,30 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-As an HR, I've just finished a day of interviews and have several candidates' resumes (in Candidates_resumes.docx) and interviewer evaluations (in Interviewer_evaluation.docx). You need to help me create a structured and uniformly formatted Word-based evaluation report for each candidate. 
+{/* toolathlon-task-sha256: 9a2c96f7dc6f7f0080769718a471ede779591d16ceac8984943bb9750e4a4d72 */}
+As an HR, I've just finished a day of interviews and have several candidates' resumes (in Candidates_resumes.docx) and interviewer evaluations (in Interviewer_evaluation.docx). You need to help me create a structured and uniformly formatted Word-based evaluation report for each candidate.
 First, please read all the candidates' resumes and the interviewer evaluations, then create a separate Word document for each candidate following the formatting guidelines provided in Format.md.
 Finally, create a new document named recommend.txt, which should only contain the name of the best candidate.
 
@@ -67,20 +64,23 @@ Finally, create a new document named recommend.txt, which should only contain th
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/interview-report/initial_workspace">workspace</a>/
-├── Interview_Assessment_Report_John_Smith.docx
-├── Interview_Assessment_Report_Sarah_Johnson.docx
-├── Interview_Assessment_Report_Michael_Chen.docx
-├── Interview_Assessment_Report_Emma_Davis.docx
-├── ...
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/interview-report/initial_workspace">workspace</a>/
+├── Candidates_resumes.docx
+├── Format.md
+├── Interviewer_evaluation.docx
 └── Requirement.txt
 </div>
 
+### Runtime Setup
 
- 
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/interview-report/preprocess).
 
-## Model Trajectory
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_interview-report)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_interview-report)
-

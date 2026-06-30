@@ -1,7 +1,13 @@
 ---
-title: "Search CA School"
-description: "Find and list top AI grad schools near LA, ranked and sorted by distance."
+title: "Find Top AI Graduate Schools Near Los Angeles"
+description: "Create AI_univ_LA_500miles_Top30_2024.json listing every U.S. CSRankings top-30 AI school for 2024, excluding Information Retrieval, within 500 miles of the Natural History Museum of Los Angeles County, sorted by driving distance and then rank."
 ---
+
+> **Toolathlon-Verified** · Website task ID `49` · Canonical task `search-ca-school`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/search-ca-school)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/google_map.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_map.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">google_map</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -34,67 +40,62 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-Please help me prepare a graduate application report for a student currently living in Los Angeles, California, who wishes to attend a nearby university to be able to return home regularly. Please help me find detailed information about all schools within 500 miles of the Natural History Museum of Los Angeles County that are ranked in the top 30 in the CS Ranking AI field (excluding Information Retrieval) in 2024.
-For each program that meets the distance requirements, please collect: 1) Complete university name, city, and ranking; 2) Shortest driving distance from the Natural History Museum of Los Angeles County (in miles, integers only); Please save the information as 'AI_univ_LA_500miles_Top30_2024.json' in the following format, sorting universities by distance from nearest to farthest, with higher-ranked universities listed first when distances are equal:
+{/* toolathlon-task-sha256: a8aba94ee963f78a3bc1be6b20cf546ee953d522586175e17a439f07a691e948 */}
+Please help me prepare a graduate application report for a student currently living in Los Angeles, California, who wishes to attend a nearby university to be able to return home regularly. Please help me find detailed information about all schools within 500 miles of the Natural History Museum of Los Angeles County that are ranked in the top 30 in USA in the CS Ranking AI field (excluding Information Retrieval) for the year range 2024 to 2024.
+For each program that meets the distance requirements, please collect: 1) Complete university name (name should be identical to the one shown on CS Ranking), city, and ranking; 2) Shortest driving distance from the Natural History Museum of Los Angeles County (in miles, integers only); Please save the information as 'AI_univ_LA_500miles_Top30_2024.json' in the following format, sorting universities by distance from nearest to farthest, with higher-ranked universities listed first when distances are equal:
 
 [
-    \{
-        "university":"\{name\}",
-        "city":"\{city\}",
-        "cs_ranking_rank":\{rank\},
-        "car_drive_miles":\{miles\}
-    \},
-    \{
-        "university":"\{name\}",
-        "city":"\{city\}",
-        "cs_ranking_rank":\{rank\},
-        "car_drive_miles":\{miles\}
-    \},
+    &#123;
+        "university":"&#123;name&#125;",
+        "city":"&#123;city&#125;",
+        "cs_ranking_rank":&#123;rank&#125;,
+        "car_drive_miles":&#123;miles&#125;
+    &#125;,
+    &#123;
+        "university":"&#123;name&#125;",
+        "city":"&#123;city&#125;",
+        "cs_ranking_rank":&#123;rank&#125;,
+        "car_drive_miles":&#123;miles&#125;
+    &#125;,
     ...
 ]
 
- 
+## Initial State
 
-## Model Trajectory
+This task does not include a versioned local workspace or a public preprocessing fixture.
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_search-ca-school)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_search-ca-school)
-

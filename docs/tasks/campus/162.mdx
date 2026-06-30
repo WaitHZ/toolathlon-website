@@ -1,7 +1,13 @@
 ---
-title: "Language School"
-description: "Summarize official TOEFL/IELTS, fees, and deadlines for QS CS Top 10 US grad programs into “cs_top10_us_2025.xlsx”."
+title: "Top U.S. CS Master’s Language Requirements"
+description: "Compile the latest available TOEFL/IELTS requirements, application fees, and deadlines for international applicants to U.S. universities in the QS global computer science top 10 into cs_top10_us.xlsx."
 ---
+
+> **Toolathlon-Verified** · Website task ID `162` · Canonical task `language-school`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/language-school)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,24 +17,24 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">excel</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">terminal</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">excel</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">terminal</span>
 </div>
 </div>
 </div>
@@ -38,54 +44,59 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-You are preparing a graduate application report for a student who wants to apply for a top computer science master program in the United States in 2025 and start in 2026. Please help me find the detailed language requirements for all the American universities ranked in the **worldwide top ten** in the 2025 QS World University Rankings in the field of computer science. For each eligible university, please collect the following information: 1) University name, city and QS computer science ranking; (Please fulfill the names based on the QS ranking. Do not use other abbreviations or designations) 2) TOEFL requirements (whether it is accepted, i.e., Yes/No, and the minimum score required); 3) IELTS requirements (whether it is accepted, i.e., Yes/No, and the minimum score required). 4) Graduate application fee (in US dollars). 5) Application deadline date in ISO format. You should list the universities in order of ranking from highest to lowest. Please save the information as "cs_top10_us_2025.xlsx" file, strictly following the headers in `format.xlsx` without any change. We do not consider joint program across majors, or early application requirements/fees.
+{/* toolathlon-task-sha256: 7a13e6063700aec1efc9d70a0621c50ec3cf60be87c0af45b5aaa6d775bcf927 */}
+You are preparing a graduate application report for an international student (not a U.S. citizen or current permanent resident) who wants to apply for a top computer science master program in the United States.
+Please help me find the detailed language requirements for all the American universities ranked in the **worldwide top ten** in the QS World University Rankings in the field of computer science.
+For each eligible university, please collect the following information:
+1) University name, city and QS computer science ranking; (Please fulfill the names based on the QS ranking. Do not use other abbreviations or designations)
+2) TOEFL requirements (whether it is accepted, i.e., Yes/No, and the minimum score required);
+3) IELTS requirements (whether it is accepted, i.e., Yes/No, and the minimum score required).
+4) Graduate application fee (in US dollars).
+5) Application deadline date in ISO format. You should list the universities in order of ranking from highest to lowest.
+Please save the information as "cs_top10_us.xlsx" file, strictly following the headers in `format.xlsx` without any change. We do not consider joint program across majors, or early application requirements/fees.
+Please always find the most recent information from the current year. If it is unavailable, please use the information from the previous year.
 
 ## Initial State
 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/language-school/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/language-school/initial_workspace">workspace</a>/
 └── format.xlsx
 </div>
 
- 
-## Model Trajectory
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_language-school)
+- ➖ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_language-school) — evaluation status unavailable

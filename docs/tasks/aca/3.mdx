@@ -1,7 +1,13 @@
 ---
 title: "Email Paper Homepage"
-description: "Remotely update your personal homepage repository by checking all repos, updating paper statuses from 'preprint/under review' based on email acceptances, and linking released code repositories from GitHub."
+description: "Update preprint or under-review acceptance details from email, then update code-release status for every accepted or published paper, adding corresponding released GitHub repositories to the personal homepage."
 ---
+
+> **Toolathlon-Verified** · Website task ID `3` · Canonical task `email-paper-homepage`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/email-paper-homepage)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,11 +17,11 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">emails</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/github.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/github.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">github</span>
 </div>
 </div>
@@ -26,76 +32,41 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: ba97787a53dfb475720e732dd74d73e2e384cb7bfc5b837c160b48826bf9c5e3 */}
 Update my personal homepage according to the following rules:
 - For papers currently marked as "preprint" or "under review" on my homepage, update their acceptance information according to my emails.
-- Update the status of code open-sourcing for these accepted papers only. If there is a released repository on my GitHub for the corresponding paper, update it on my homepage.
+- For all accepted or published papers on my homepage, update the status of code open-sourcing. If there is a released repository on my GitHub for the corresponding paper, update it on my homepage.
 
 ## Initial State
 
-### Mails
+### Runtime Setup
 
-There are dozens of emails in the inbox. Here, we show one email as example:
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/email-paper-homepage/preprocess).
 
-<Accordion title="[COLM 2025] Camera-Ready Submission Portal Now Open">
-Dear Author,
 
-Congratulations on your accepted paper at the **Conference on Language Modeling (COLM 2025)**!
+## Legacy Trajectories
 
-> **Camera-Ready Submission is Now Open**  
-> **Deadline:** 2025/9/22 (11:59 PM AOE)
-
-Please prepare your camera-ready version according to the following guidelines:
-
-- **Page limit:** 9 pages (including figures and tables) + unlimited pages for references and appendix
-- **Format:** Use the official COLM 2025 LaTeX style files
-- **Copyright:** Complete the ACM copyright form in the submission system
-- **Registration:** At least one author must register by 2025/9/20
-
-> **Note:** COLM uses a different submission system than COML. Please ensure you're submitting to the correct conference.
-
-Submit your camera-ready paper here:  
-[https://colm-conf.org/camera-ready/ 2025](https://colm-conf.org/camera-ready/ 2025)
-
-Looking forward to seeing you in Barcelona this September!
-
-Best regards,  
-**Prof. Maria González**  
-COLM 2025 Publications Chair  
-publications@colm-conf.org
-</Accordion>
-
- 
-## Model Trajectory
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_email-paper-homepage)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_email-paper-homepage)
-
-

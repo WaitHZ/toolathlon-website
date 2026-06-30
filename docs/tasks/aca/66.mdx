@@ -1,7 +1,13 @@
 ---
 title: "HK Top Conf"
-description: "Count and compare deep learning paper outputs from HKU, CUHK, and HKUST at top AI conferences."
+description: "Count ICML 2024, NeurIPS 2024, and ICLR 2025 papers whose first author is affiliated with HKU, CUHK, or HKUST; break totals down by poster, spotlight, and oral, and save the sorted Markdown table to result.md."
 ---
+
+> **Toolathlon-Verified** · Website task ID `66` · Canonical task `hk-top-conf`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/hk-top-conf)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">terminal</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">terminal</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -34,24 +40,24 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">web_search</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">web_search</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="filter-list" size={20} color="#4286f6" />
@@ -62,29 +68,25 @@ Local Tools
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: fa080ce918ef148cb5ce42c276cf5d7e3c8075b9552bb1ad256b1414f14b8561 */}
 I'm a third-year undergraduate student majoring in Computer Science, and I plan to pursue a Ph.D. in Deep Learning in Hong Kong after graduation. My target universities are the University of Hong Kong (HKU), the Chinese University of Hong Kong (CUHK), and the Hong Kong University of Science and Technology (HKUST). However, I'm unsure which of these universities has the strongest research capabilities in the field of Deep Learning.
 
 I need your help to count the number of papers from these three universities where the first author's affiliation is one of these institutions, specifically from the main conferences of ICML 2024, NeurIPS 2024, and ICLR 2025. For each university, please also provide a breakdown of poster, spotlight, and oral presentations.
 
 Finally, please provide the results in a markdown table (with columns: University, Poster, Spotlight, Oral, Total in order), sorted in descending order by the Total number of papers of each university. Please save this table as `result.md`(The document should only contain the corresponding table, and the table should not contain redundant or unnecessary rows or columns).
 
- 
+## Initial State
 
-## Model Trajectory
+This task does not include a versioned local workspace or a public preprocessing fixture.
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_hk-top-conf)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_hk-top-conf)
-

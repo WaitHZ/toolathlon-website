@@ -1,7 +1,13 @@
 ---
-title: "Apply PhD Email"
-description: "Locate and act on submission instructions from Kaiming’s email titled “submit_material,” using workspace files and stored personal info."
+title: "Submit PhD Application Materials"
+description: "Find Kaiming’s email, gather the requested workspace materials and personal details from memory, and email the submission with the exact subject “PhD Application Materials Submission (Student ID: {studentid})”."
 ---
+
+> **Toolathlon-Verified** · Website task ID `39` · Canonical task `apply-phd-email`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/apply-phd-email)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,24 +17,24 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/memory.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/memory.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">memory</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">emails</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">terminal</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/pdf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/pdf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">pdf-tools</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
 </div>
 </div>
 </div>
@@ -38,118 +44,50 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-Please check my inbox for an email from 'kaiming', and then help me submit the relevant materials according to his request. All materials are in the workspace, and the email subject should exactly be `PhD Application Materials Submission (Student ID: \{studentid\})`. My personal information is in the memory.
+{/* toolathlon-task-sha256: df115de87931b256cf9d5771d15f05984eaee7753af33e1b3444af3a27ef54e8 */}
+Please check my inbox for an email from 'kaiming', and then help me submit the relevant materials according to his request. All materials are in the workspace, and the email subject should exactly be `PhD Application Materials Submission (Student ID: {studentid})`. My personal information is in the memory.
 
 ## Initial State
 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/excel-data-transformation/initial_workspace">workspace</a>/
-├── memory/
-&nbsp;&nbsp;&nbsp;&nbsp;└── memory.json
-└── Application_Materials_flat/
-&nbsp;&nbsp;&nbsp;&nbsp;├── Academic_Excellence_Award_2023.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── CV.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Enrollment_Certificate.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── ID_Card.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Outstanding_Student_Award_2021.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Photo.jpg
-&nbsp;&nbsp;&nbsp;&nbsp;├── Portfolio.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Project_Report.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Recommendation_Letter_1.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Recommendation_Letter_2.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;├── Research_Competition_First_Place_2022.pdf
-&nbsp;&nbsp;&nbsp;&nbsp;└── Transcript.pdf
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/apply-phd-email/initial_workspace">workspace</a>/
+└── files.tar.gz
 </div>
 
-### Mail
+### Runtime Setup
 
-The inbox contains many unrelated emails in addition to the relevant ones; the relevant email is shown below.
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/apply-phd-email/preprocess).
 
-<Accordion title="Re: PhD Application - Application Materials Submission Guidelines">
 
-*Dear [Applicant Name], Thank you for your email and your interest in our PhD program. We appreciate your enthusiasm for joining our research team.*
+## Legacy Trajectories
 
-*We currently have a few openings for PhD students, and we welcome your application. If you are interested, please compile your materials as follows and send them to our admissions team at myersj@mcp.com:*
-
-*Application Materials Submission Guidelines*
-
-*Folder Structure:*
-
-*Please organize your files in the following structure (use your name and student ID to replace the placeholder, Use a single string without spaces for your name in the folder name, for example, 'BillGates'.):*
-
-```text
-Application_Materials_[YourName]_[YourStudentID]/
-├── 01_Personal_Information/
-    ├── ID_Card.pdf
-    ├── Photo.jpg
-    └── Resume.pdf
-├── 02_Academic_Materials/
-    ├── Awards_Certificates/
-        └── All_Awards_Certificates.pdf
-    ├── Enrollment_Certificate.pdf
-    └── Transcript.pdf
-├── 03_Recommendation_Letters/
-    ├── Recommendation_Letter_ProfessorName-1.pdf
-    └── Recommendation_Letter_ProfessorName-2.pdf
-└── 04_Supplementary_Materials/
-    ├── Portfolio.pdf
-    └── Project_Report.pdf
-```
-
-*Naming Convention:*
-
-*Use English file names (no special characters or spaces).*
-
-*Ensure all documents are in PDF format (except for the photo, which can be JPG). Sort all award documents by date and merge them into a single PDF file, with one award per page. Finally, compress the entire folder into a ZIP file and send it as an attachment.*
-
-*Once we receive your application, we will review it and notify you of the next steps. If you have any questions, feel free to reply to this email.*
-
-*We look forward to receiving your application!*
-
-*Best regards,*
-*kaiming*
-
-</Accordion>
-
- 
-
-## Model Trajectory
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_apply-phd-email)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_apply-phd-email)
-

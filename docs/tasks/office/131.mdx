@@ -1,7 +1,13 @@
 ---
 title: "Privacy Desensitization"
-description: "Scan, detect, and desensitize sensitive data (phones, SSNs, emails, credit cards, IPs) in specified files."
+description: "Scan every workspace document for the five specified sensitive-data types and replace only those values with /hidden/ in correctly named copies under desensitized_documents/."
 ---
+
+> **Toolathlon-Verified** · Website task ID `131` · Canonical task `privacy-desensitization`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/privacy-desensitization)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,12 +17,12 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">terminal</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">terminal</span>
 </div>
 </div>
 </div>
@@ -26,50 +32,41 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">python_execute</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">python_execute</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-I need to perform privacy data desensitization on my documents. The files may contain sensitive information that needs protection. Please help me scan all documents in my workspace and identify and desensitize privacy information. Create desensitized copies and save them in `desensitized_documents/`. Each file's desensitized copy should be named as `original_filename_desensitized.extension`. All sensitive information should be uniformly replaced with `/hidden/` at its original location, without altering any surrounding content or other contents. 
+{/* toolathlon-task-sha256: 456a273683c9a1a5f051d15c60e2f45c2098c77de3fc2e482da43e3bc3b4cb9b */}
+I need to perform privacy data desensitization on my documents. The files may contain sensitive information that needs protection. Please help me scan all documents in my workspace and identify and desensitize privacy information. Create desensitized copies and save them in `desensitized_documents/`. Each file's desensitized copy should be named as `original_filename_desensitized.extension`. All sensitive information should be uniformly replaced with `/hidden/` at its original location, without altering any surrounding content or other contents.
 
 Specifically, you only need to process the following sensitive information types, even if they are pseudo, mimic or duplicated:
 - Phone/Fax numbers
 - Social Security Numbers
-- Email addresses  
+- Email addresses\
 - Credit card numbers
-- IP addresses
+- IP addresses, including directly attached ports
 
 Do not modify any information that is not included in the list above. Do not add any unrequested file to `desensitized_documents/`.
 
@@ -78,16 +75,20 @@ Do not modify any information that is not included in the list above. Do not add
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/privacy-desensitization/initial_workspace">workspace</a>/
-├── appointment_schedule.md
-├── ...
-└── vendor_contracts.txt
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/privacy-desensitization/initial_workspace">workspace</a>/
+└── files.tar.gz
 </div>
 
- 
+### Runtime Setup
 
-## Model Trajectory
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/privacy-desensitization/preprocess).
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_privacy-desensitization)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_privacy-desensitization)
-

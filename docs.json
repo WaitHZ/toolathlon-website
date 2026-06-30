@@ -403,6 +403,548 @@
             }
         ]
     },
+    "redirects": [
+        {
+            "source": "/docs/tasks/aca/10_",
+            "destination": "/docs/tasks/aca/10",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/49_",
+            "destination": "/docs/tasks/campus/49",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/161_",
+            "destination": "/docs/tasks/campus/161",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/165_",
+            "destination": "/docs/tasks/campus/165",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/39_",
+            "destination": "/docs/tasks/campus/39",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/66_",
+            "destination": "/docs/tasks/aca/66",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/173_",
+            "destination": "/docs/tasks/tech/173",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/108_",
+            "destination": "/docs/tasks/office/108",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/109_",
+            "destination": "/docs/tasks/office/109",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/182_",
+            "destination": "/docs/tasks/daily/182",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/116_",
+            "destination": "/docs/tasks/office/116",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/183_",
+            "destination": "/docs/tasks/campus/183",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/158_",
+            "destination": "/docs/tasks/aca/158",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/9_",
+            "destination": "/docs/tasks/aca/9",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/169_",
+            "destination": "/docs/tasks/daily/169",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/181_",
+            "destination": "/docs/tasks/daily/181",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/162_",
+            "destination": "/docs/tasks/campus/162",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/131_",
+            "destination": "/docs/tasks/office/131",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/19_",
+            "destination": "/docs/tasks/tech/19",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/159_",
+            "destination": "/docs/tasks/daily/159",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/163_",
+            "destination": "/docs/tasks/office/163",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/32_",
+            "destination": "/docs/tasks/aca/32",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/2_",
+            "destination": "/docs/tasks/aca/2",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/16_",
+            "destination": "/docs/tasks/daily/16",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/156_",
+            "destination": "/docs/tasks/daily/156",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/126_",
+            "destination": "/docs/tasks/finance/126",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/23_",
+            "destination": "/docs/tasks/office/23",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/223_",
+            "destination": "/docs/tasks/finance/223",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/17_",
+            "destination": "/docs/tasks/tech/17",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/290_",
+            "destination": "/docs/tasks/aca/290",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/88_",
+            "destination": "/docs/tasks/aca/88",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/313_",
+            "destination": "/docs/tasks/daily/313",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/24_",
+            "destination": "/docs/tasks/office/24",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/47_",
+            "destination": "/docs/tasks/tech/47",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/155_",
+            "destination": "/docs/tasks/daily/155",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/275_",
+            "destination": "/docs/tasks/finance/275",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/345_",
+            "destination": "/docs/tasks/finance/345",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/142_",
+            "destination": "/docs/tasks/office/142",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/5_",
+            "destination": "/docs/tasks/aca/5",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/152_",
+            "destination": "/docs/tasks/aca/152",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/38_",
+            "destination": "/docs/tasks/campus/38",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/95_",
+            "destination": "/docs/tasks/shopping/95",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/146_",
+            "destination": "/docs/tasks/tech/146",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/286_",
+            "destination": "/docs/tasks/tech/286",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/267_",
+            "destination": "/docs/tasks/finance/267",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/3_",
+            "destination": "/docs/tasks/aca/3",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/241_",
+            "destination": "/docs/tasks/tech/241",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/242_",
+            "destination": "/docs/tasks/tech/242",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/248_",
+            "destination": "/docs/tasks/tech/248",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/284_",
+            "destination": "/docs/tasks/finance/284",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/149_",
+            "destination": "/docs/tasks/campus/149",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/141_",
+            "destination": "/docs/tasks/finance/141",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/372_",
+            "destination": "/docs/tasks/aca/372",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/371_",
+            "destination": "/docs/tasks/daily/371",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/196_",
+            "destination": "/docs/tasks/campus/196",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/78_",
+            "destination": "/docs/tasks/daily/78",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/127_",
+            "destination": "/docs/tasks/office/127",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/189_",
+            "destination": "/docs/tasks/campus/189",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/143_",
+            "destination": "/docs/tasks/finance/143",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/34_",
+            "destination": "/docs/tasks/campus/34",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/30_",
+            "destination": "/docs/tasks/aca/30",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/280_",
+            "destination": "/docs/tasks/tech/280",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/188_",
+            "destination": "/docs/tasks/campus/188",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/150_",
+            "destination": "/docs/tasks/office/150",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/147_",
+            "destination": "/docs/tasks/office/147",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/197_",
+            "destination": "/docs/tasks/campus/197",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/190_",
+            "destination": "/docs/tasks/campus/190",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/316_",
+            "destination": "/docs/tasks/daily/316",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/352_",
+            "destination": "/docs/tasks/finance/352",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/301_",
+            "destination": "/docs/tasks/shopping/301",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/304_",
+            "destination": "/docs/tasks/shopping/304",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/93_",
+            "destination": "/docs/tasks/tech/93",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/94_",
+            "destination": "/docs/tasks/tech/94",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/133_",
+            "destination": "/docs/tasks/daily/133",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/42_",
+            "destination": "/docs/tasks/tech/42",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/113_",
+            "destination": "/docs/tasks/shopping/113",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/125_",
+            "destination": "/docs/tasks/campus/125",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/4_",
+            "destination": "/docs/tasks/aca/4",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/160_",
+            "destination": "/docs/tasks/tech/160",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/237_",
+            "destination": "/docs/tasks/office/237",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/244_",
+            "destination": "/docs/tasks/tech/244",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/245_",
+            "destination": "/docs/tasks/tech/245",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/18_",
+            "destination": "/docs/tasks/tech/18",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/306_",
+            "destination": "/docs/tasks/campus/306",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/37_",
+            "destination": "/docs/tasks/campus/37",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/319_",
+            "destination": "/docs/tasks/daily/319",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/finance/179_",
+            "destination": "/docs/tasks/finance/179",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/295_",
+            "destination": "/docs/tasks/tech/295",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/327_",
+            "destination": "/docs/tasks/office/327",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/campus/404_",
+            "destination": "/docs/tasks/campus/404",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/235_",
+            "destination": "/docs/tasks/office/235",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/279_",
+            "destination": "/docs/tasks/shopping/279",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/285_",
+            "destination": "/docs/tasks/shopping/285",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/tech/294_",
+            "destination": "/docs/tasks/tech/294",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/144_",
+            "destination": "/docs/tasks/office/144",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/292_",
+            "destination": "/docs/tasks/office/292",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/331_",
+            "destination": "/docs/tasks/office/331",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/351_",
+            "destination": "/docs/tasks/daily/351",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/office/368_",
+            "destination": "/docs/tasks/office/368",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/266_",
+            "destination": "/docs/tasks/shopping/266",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/299_",
+            "destination": "/docs/tasks/shopping/299",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/305_",
+            "destination": "/docs/tasks/shopping/305",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/303_",
+            "destination": "/docs/tasks/shopping/303",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/shopping/300_",
+            "destination": "/docs/tasks/shopping/300",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/210_",
+            "destination": "/docs/tasks/daily/210",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/209_",
+            "destination": "/docs/tasks/daily/209",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/daily/201_",
+            "destination": "/docs/tasks/daily/201",
+            "permanent": true
+        },
+        {
+            "source": "/docs/tasks/aca/229_",
+            "destination": "/docs/tasks/aca/229",
+            "permanent": true
+        }
+    ],
     "navbar": {
         "logo": {
             "src": "/figs/toolathlon.svg",

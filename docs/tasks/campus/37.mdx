@@ -1,7 +1,13 @@
 ---
-title: "Canvas Submit Late Work"
-description: "Submit your unsubmitted assignments via Playwright and email the TA with your leave document for Assignment 2."
+title: "Submit Missing Canvas Assignments"
+description: "Use the grade summary to identify missing Canvas submissions, submit only matching completed assignments from the workspace, then email the TA with the approved leave document for Assignment 2."
 ---
+
+> **Toolathlon-Verified** · Website task ID `37` · Canonical task `canvas-submit-late-work`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/canvas-submit-late-work)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/canvas.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/canvas.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">canvas</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/memory.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/memory.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">memory</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">emails</span>
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">filesystem</span>
+<img alt="" aria-hidden="true" src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">emails</span>
 </div>
 </div>
 </div>
@@ -34,11 +40,7 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
 </div>
 <div className="local-tool-item">
@@ -49,20 +51,18 @@ Local Tools
 <Icon icon="filter-list" size={20} color="#4286f6" />
 <span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
+</div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: b7c83fff81ec3d3b97d7f6e4f4b3a158def3f5affe8335ca4bd99862f37148e4 */}
 My name is Zachary Edwards, and I’m a forgetful person. I often complete my assignments but forget to submit them. All of my assignments are saved somewhere in my workspace, but I can’t remember their filenames. Please search for the matching files based on the assignment content. Do not create assignment content on your own. Only submit the assignments I have already written. If you can't find them, do not submit anything.
 
 My personal information can be found in memory.
@@ -78,29 +78,25 @@ Locate the leave document.
 Send an email to the TA to remind them about my approved leave for Assignment 2.
 Attach the leave document in the email.
 
-
 ## Initial State
 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/canvas-submit-late-work/initial_workspace">workspace</a>/
-├── homeworks/
-├── memory/
-├── Cinema_Culture_Grade_Summary.xlsx
-├── Leave Application.pdf
-├── Photo.jpg
-└── Research_Competition_First_Place_2022.pdf
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/canvas-submit-late-work/initial_workspace">workspace</a>/
+└── files.tar.gz
 </div>
 
-### Canvas
+### Runtime Setup
 
-You can view the course information [here](https://github.com/hkust-nlp/mcpbench_dev/blob/finalpool_dev/tasks/finalpool/canvas-submit-late-work/files/course_config.json).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/canvas-submit-late-work/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-submit-late-work)
 - ✅ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-submit-late-work)
-

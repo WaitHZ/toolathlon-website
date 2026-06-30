@@ -3,6 +3,12 @@ title: "Landing Task Reminder"
 description: "Auto-generate training emails for new and overdue employees, CC supervisors, and update Snowflake."
 ---
 
+> **Toolathlon-Verified** · Website task ID `368` · Canonical task `landing-task-reminder`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/landing-task-reminder)
+
+## Required Tools
+
 <Card>
 <div className="tools-container">
 <div className="mcp-servers-container">
@@ -11,19 +17,19 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">emails</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/snowflake.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/snowflake.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">snowflake</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/pdf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/pdf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">pdf-tools</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 </div>
@@ -34,16 +40,16 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="filter-list" size={20} color="#4286f6" />
@@ -54,16 +60,9 @@ Local Tools
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 7d3091ca812b8587ea93e9bf9c4f11bd7d734ef86a5728c82dcf88a6aa8d676c */}
 Today we have 3 new employees joining us, and each employee's information is stored in the Snowflake database.
 
 Based on the employee's group assignment and related document in workspace, automatically generate training task lists, send emails to the employee's email address, and update the task content and planned completion dates to the database.
@@ -86,14 +85,23 @@ And remember to CC their direct supervisor.
 
 ## Initial State
 
-### Snowflake
+### Local Workspace
 
-You can view the database build process [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/landing-task-reminder/preprocess).
+<div className="file-tree">
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/landing-task-reminder/initial_workspace">workspace</a>/
+└── landing_tips.pdf
+</div>
 
- 
+### Runtime Setup
 
-## Model Trajectory
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/landing-task-reminder/preprocess).
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_landing-task-reminder)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_landing-task-reminder)
-

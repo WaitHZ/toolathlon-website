@@ -1,0 +1,2273 @@
+{
+  "schema_version": 1,
+  "benchmark": {
+    "label": "Toolathlon-Verified",
+    "repository": "https://github.com/hkust-nlp/Toolathlon",
+    "commit": "d57361c0f1582cf9a0675c0753315bb6b004bd0e"
+  },
+  "tasks": [
+    {
+      "slug": "find-alita-paper",
+      "id": 10,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Literature Review",
+      "title": "Find Alita Paper",
+      "description": "Find the latest arXiv version, published by June 2025, of the agentic-reasoning paper with “Alita” in its title; download it as alita_{arxiv_id}.pdf and return its title, arXiv abstract URL, and code URL.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_find-alita-paper",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_find-alita-paper",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "search-ca-school",
+      "id": 49,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "School Application",
+      "title": "Find Top AI Graduate Schools Near Los Angeles",
+      "description": "Create AI_univ_LA_500miles_Top30_2024.json listing every U.S. CSRankings top-30 AI school for 2024, excluding Information Retrieval, within 500 miles of the Natural History Museum of Los Angeles County, sorted by driving distance and then rank.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_search-ca-school",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_search-ca-school",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "courses-ta-hws",
+      "id": 161,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Teaching",
+      "title": "Organize OS Assignment 3 Submissions",
+      "description": "Rename Operating Systems Fundamentals Assignment 3 submissions using the college–student ID mapping, organize them by C, Rust, and Python under os_hw3, and delete all remaining original code files.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_courses-ta-hws",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_courses-ta-hws",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "university-course-selection",
+      "id": 165,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "University Course Selection Plans",
+      "description": "Create separate Excel plans for every valid combination of Natural Language Processing, Software Architecture, and Monday open-book Ideological and Political Theory B and General Education Core courses, retaining English headers and Chinese values.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_university-course-selection",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_university-course-selection",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "apply-phd-email",
+      "id": 39,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "School Application",
+      "title": "Submit PhD Application Materials",
+      "description": "Find Kaiming’s email, gather the requested workspace materials and personal details from memory, and email the submission with the exact subject “PhD Application Materials Submission (Student ID: {studentid})”.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_apply-phd-email",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_apply-phd-email",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "hk-top-conf",
+      "id": 66,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Literature Review",
+      "title": "HK Top Conf",
+      "description": "Count ICML 2024, NeurIPS 2024, and ICLR 2025 papers whose first author is affiliated with HKU, CUHK, or HKUST; break totals down by poster, spotlight, and oral, and save the sorted Markdown table to result.md.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_hk-top-conf",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_hk-top-conf",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "git-milestone",
+      "id": 173,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "OSS Engagement",
+      "title": "GitHub Milestone Repositories",
+      "description": "Collect metadata for GitHub repository IDs 1, 1,000, 1,000,000, and 1,000,000,000 in github_info.json, omitting inaccessible repositories.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_git-milestone",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_git-milestone",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "excel-data-transformation",
+      "id": 108,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Wrangling",
+      "title": "Excel Data Transformation",
+      "description": "Restructure appliance sales data from wide to long format and save as Processed.xlsx.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_excel-data-transformation",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_excel-data-transformation",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "excel-market-research",
+      "id": 109,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Wrangling",
+      "title": "Excel Market Research",
+      "description": "Calculate 2015–2024 year-over-year growth rates for each non-total segment using the mapping in the Methodology sheet and save them in Methodology order to segment_growth_rates.xlsx.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_excel-market-research",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_excel-market-research",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "cooking-guidance",
+      "id": 182,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Health Guidance",
+      "title": "Cooking Guidance",
+      "description": "Recommend 3 dishes based on available ingredients, output to cuisine.json, and generate a missing-ingredients shopping list in shopping.csv.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_cooking-guidance",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_cooking-guidance",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "sales-accounting",
+      "id": 116,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Financial Admin",
+      "title": "Sales Accounting",
+      "description": "Add only the remembered transactions from last week and the week before last to the account book, excluding all transactions from the current week.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_sales-accounting",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_sales-accounting",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "student-interview",
+      "id": 183,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "School Application",
+      "title": "First-Author Student Interview Scheduling",
+      "description": "Identify students with independent first-author publications, schedule interviews of at least 90 minutes from 8 AM–5 PM HKT tomorrow or the following day, add them to Google Calendar, and report each time slot.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_student-interview",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_student-interview",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "academic-pdf-report",
+      "id": 158,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Literature Review",
+      "title": "Academic Paper Metadata Spreadsheet",
+      "description": "Fill the workspace spreadsheet with each paper’s first author’s full name, complete paper-listed affiliation or affiliations, and Google Scholar profile URL.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_academic-pdf-report",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_academic-pdf-report",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "profile-update-online",
+      "id": 9,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Profile Management",
+      "title": "Profile Update Online",
+      "description": "Update personal profile with the metadata and details from the two newly uploaded papers.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_profile-update-online",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_profile-update-online",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "subway-planning",
+      "id": 169,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Transportation",
+      "title": "Subway Planning",
+      "description": "Plan an MRT-only route from the Singapore Mobility Gallery to Changi Airport MRT station with the shortest walking distance, then save every station in order to routine.txt.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_subway-planning",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_subway-planning",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "dietary-health",
+      "id": 181,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Health Guidance",
+      "title": "Dietary Health",
+      "description": "Analyze whether your current diet meets fitness nutrition guidelines based on your body data and ingredient nutrition table, outputting a structured report in analysis.md according to the specified format.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_dietary-health",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_dietary-health",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "language-school",
+      "id": 162,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "School Application",
+      "title": "Top U.S. CS Master’s Language Requirements",
+      "description": "Compile the latest available TOEFL/IELTS requirements, application fees, and deadlines for international applicants to U.S. universities in the QS global computer science top 10 into cs_top10_us.xlsx.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_language-school",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_language-school",
+          "passed": null
+        }
+      ]
+    },
+    {
+      "slug": "privacy-desensitization",
+      "id": 131,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Wrangling",
+      "title": "Privacy Desensitization",
+      "description": "Scan every workspace document for the five specified sensitive-data types and replace only those values with /hidden/ in correctly named copies under desensitized_documents/.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_privacy-desensitization",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_privacy-desensitization",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "huggingface-upload",
+      "id": 19,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "OSS Engagement",
+      "title": "Hugging Face Model Upload",
+      "description": "Upload the checkpoint with the highest eval_accuracy to MyAwesomeModel-TestRepo and update its README with three-decimal results for all 15 benchmarks without changing other content.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_huggingface-upload",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_huggingface-upload",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "trip-itinerary-generator",
+      "id": 159,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Travel Helper",
+      "title": "Trip Itinerary Generator",
+      "description": "Create a two-day Paris walking itinerary for next Monday and Tuesday, visiting only Rive Droite wishlist attractions on day one and the remainder on day two, and save it to Paris_Itinerary.json.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_trip-itinerary-generator",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_trip-itinerary-generator",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "reimbursement-form-filler",
+      "id": 163,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Financial Admin",
+      "title": "Reimbursement Form Filler",
+      "description": "Extract taxi receipt data (filename, month, amount) from ‘bills/’ PDFs for the last 3 months and populate ‘Bill_Format.xlsx’ → rename to ‘department_expenses.xlsx’ per ‘requirement.txt’.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_reimbursement-form-filler",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_reimbursement-form-filler",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "imagenet",
+      "id": 32,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Manuscript Editing",
+      "title": "ImageNet",
+      "description": "Summarize the ImageNet 256 experimental results from my image generation papers into a LaTeX table.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_imagenet",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_imagenet",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "set-conf-cr-ddl",
+      "id": 2,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Scholarly Activities",
+      "title": "Set Conf CR DDL",
+      "description": "Check my emails from the past day for any mention of the COML conference main-track camera-ready deadline, and if found, schedule a calendar reminder for three hours before that deadline.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_set-conf-cr-ddl",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_set-conf-cr-ddl",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "train-ticket-plan",
+      "id": 16,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Transportation",
+      "title": "Train Ticket Plan",
+      "description": "Find one compatible round-trip combination of direct high-speed or EMU trains for travelers from Beijing South and Shanghai Hongqiao, using shared Qufu stations and keeping their arrival and departure times within 30 minutes.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_train-ticket-plan",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_train-ticket-plan",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "upenn-campus-route",
+      "id": 156,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Travel Helper",
+      "title": "UPenn Campus Route",
+      "description": "Plan the shortest walking route from the UPenn Bookstore through every attraction listed in recommendation.md, listing each attraction separately and saving the result to upenn_route_plan.json.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_upenn-campus-route",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_upenn-campus-route",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "stock-build-position",
+      "id": 126,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Stock Trading",
+      "title": "Stock Build Position",
+      "description": "Allocate $1M USD across US, Hong Kong, and A-shares in a 4:3:3 ratio, purchasing whole shares using today’s opening prices and exchange rates, and populate the position table accordingly.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_stock-build-position",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_stock-build-position",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "detect-revised-terms",
+      "id": 23,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Wrangling",
+      "title": "Detect Revised Terms",
+      "description": "Identify quoted or reproduced clauses in judgment documents whose substance differs from new_law.pdf, exclude mere renumbering or relocation, and write the exact old-to-new correspondences to revised_terms.csv.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_detect-revised-terms",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_detect-revised-terms",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "quantitative-financial-analysis",
+      "id": 223,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Quantitative Strategy",
+      "title": "Quantitative Financial Analysis",
+      "description": "Create 2025_Market_Data with unadjusted daily Apple, Tesla, NVIDIA, and Meta data for June and July 2025, then post its URL and the required comment to the Quant Research Notion page.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_quantitative-financial-analysis",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_quantitative-financial-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "merge-hf-datasets",
+      "id": 17,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Data Curation",
+      "title": "Merge Hugging Face Datasets",
+      "description": "Reformat the first 500 entries from each of the three specified Hugging Face datasets according to unified_format.md and merge them into unified_tool_call.jsonl.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_merge-hf-datasets",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_merge-hf-datasets",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "vlm-history-completer",
+      "id": 290,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Literature Review",
+      "title": "VLM History Completer",
+      "description": "Research the models in the “Text and Image” worksheet of “Directory of Generative AI” and fill its Architecture and Sources columns according to Architecture.txt and Order.txt, entering “unavailable” when needed.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_vlm-history-completer",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_vlm-history-completer",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "meeting-assign",
+      "id": 88,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Scholarly Activities",
+      "title": "Meeting Assign",
+      "description": "Summarize each person’s availability from the provided page, recommend a two-hour weekly meeting slot, and email the formatted schedule and participant names to jjones@mcp.com.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_meeting-assign",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_meeting-assign",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "travel-exchange",
+      "id": 313,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Travel Helper",
+      "title": "Travel Exchange",
+      "description": "Aggregate personal expense files for seven travelers, convert all costs to CNY using actual June 5, 2025 exchange rates.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_travel-exchange",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_travel-exchange",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "invoice-org",
+      "id": 24,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Financial Admin",
+      "title": "Invoice Org",
+      "description": "Extract invoice details (amount, date, vendor), convert all to RMB using historical exchange rates.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_invoice-org",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_invoice-org",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "git-repo",
+      "id": 47,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "OSS Engagement",
+      "title": "GitHub Repository Search",
+      "description": "Find the most-starred unofficial GitHub implementation of the paper in paper.pdf and update the existing result.json with its information.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_git-repo",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_git-repo",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "trip-adviser",
+      "id": 155,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Travel Helper",
+      "title": "Trip Adviser",
+      "description": "Plan a route from Tokyo Station’s Nihonbashi Exit to Kamakura Station with a nearby Starbucks stop before departure, then to Kamakura Museum of History and Culture.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_trip-adviser",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_trip-adviser",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "yahoo-analysis",
+      "id": 275,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Quantitative Strategy",
+      "title": "Yahoo Analysis",
+      "description": "Evaluate historical analyst rating accuracy for NVDA and AAPL by measuring stock price performance.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_yahoo-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_yahoo-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "nvidia-stock-analysis",
+      "id": 345,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Stock Trading",
+      "title": "NVIDIA Stock Analysis",
+      "description": "Populate results_template.xlsx with the NVIDIA ownership and market-trend data specified in data.txt, apply the requirements in tips.txt, and rename the completed file results.xlsx.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_nvidia-stock-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_nvidia-stock-analysis",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "game-statistics",
+      "id": 142,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Wrangling",
+      "title": "Game Statistics",
+      "description": "Process end-of-day player scores by generating a top-100 leaderboard in a date-named table and updating daily stats for all players into the historical master table for long-term analysis.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_game-statistics",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_game-statistics",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "add-bibtex",
+      "id": 5,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Manuscript Editing",
+      "title": "Add BibTeX",
+      "description": "Add the five specified articles to ref.bib, matching its existing BibTeX style and using OpenReview conference entries when available.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_add-bibtex",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_add-bibtex",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "paper-checker",
+      "id": 152,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Manuscript Editing",
+      "title": "Paper Checker",
+      "description": "Audit and fix all citation and cross-reference commands across LaTeX files.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_paper-checker",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_paper-checker",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "course-assistant",
+      "id": 38,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "NLP Course Submission Follow-Up",
+      "description": "Use the course spreadsheet and presentation emails to identify NLP students with missing submissions, then email each with the subject “nlp-course-emergency” and include their name and student ID in the message body.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_course-assistant",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_course-assistant",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "ipad-edu-price",
+      "id": 95,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Online Purchase",
+      "title": "iPad Education Price Comparison",
+      "description": "Find the cheapest combined official Apple education price for an 11-inch 256GB iPad Pro and Apple Pencil Pro across Mainland China, Hong Kong, Singapore, and the U.S. after converting each regional total to HKD.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_ipad-edu-price",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_ipad-edu-price",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "verl-dataset",
+      "id": 146,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Data Curation",
+      "title": "Verl Dataset",
+      "description": "Download the most downloaded DeepScaleR dataset from Hugging Face, convert it to Parquet format per `format.json`, and save it as `verl_deepscaler.parquet` for replicating DeepSeek-R1’s 'aha moment' in the Verl framework.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_verl-dataset",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_verl-dataset",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "sync-todo-to-readme",
+      "id": 286,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Project Sync",
+      "title": "Sync TODOs to README",
+      "description": "Using the existing LUFFY README TODO list as the baseline, apply only main-to-dev TODO additions, removals, and line updates in the required order, then update the remote README.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_sync-todo-to-readme",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_sync-todo-to-readme",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "investment-decision-analysis",
+      "id": 267,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Quantitative Strategy",
+      "title": "Investment Decision Analysis",
+      "description": "Create three separate Google Sheets spreadsheets in the designated folder using Yahoo Finance data, following naming, content, and formatting rules.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_investment-decision-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_investment-decision-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "email-paper-homepage",
+      "id": 3,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Profile Management",
+      "title": "Email Paper Homepage",
+      "description": "Update preprint or under-review acceptance details from email, then update code-release status for every accepted or published paper, adding corresponding released GitHub repositories to the personal homepage.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_email-paper-homepage",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_email-paper-homepage",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "k8s-safety-audit",
+      "id": 241,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "DevOps Sweep",
+      "title": "Kubernetes Security Audit",
+      "description": "Perform a Kubernetes cluster security audit and append the results to the Week3 worksheet in the Kubernetes Security Audit Google Sheet, matching the column order and formatting of Week1 and Week2.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-safety-audit",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-safety-audit",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "k8s-mysql",
+      "id": 242,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "DevOps Sweep",
+      "title": "Kubernetes MySQL Debugging",
+      "description": "Debug the f1 database in the data namespace, complete the workspace task.md, and keep its port forward running on local port 30124.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-mysql",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-mysql",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "k8s-deployment-cleanup",
+      "id": 248,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Deployment",
+      "title": "Kubernetes Deployment Cleanup",
+      "description": "Stop deployments in dev- namespaces whose application versions are over 30 days old, then email the cluster administrator an oldest-to-newest list with each version’s age.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-deployment-cleanup",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-deployment-cleanup",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "nvidia-market",
+      "id": 284,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Stock Trading",
+      "title": "NVIDIA Market",
+      "description": "Analyze NVIDIA's institutional ownership trends across 8 quarters, adjust for stock split, populate results_template.xlsx with common holdings only.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_nvidia-market",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_nvidia-market",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "academic-warning",
+      "id": 149,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Teaching",
+      "title": "Academic Warning",
+      "description": "Compare latest quiz scores with historical BigQuery averages, write students with drops over 25% to bad_student.csv, and add critical name-and-ID warnings for drops over 45% to the existing exam_log-prefixed bucket.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_academic-warning",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_academic-warning",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "ab-testing",
+      "id": 141,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Marketing Analytics",
+      "title": "A/B Testing",
+      "description": "Analyze the homepage A/B test in BigQuery, complete record.csv, determine the winner by mean per-scenario conversion rate, and either create the promotion bucket for B or write the required no-change log for A or a tie.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_ab-testing",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_ab-testing",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "notion-personal-website",
+      "id": 372,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Profile Management",
+      "title": "Notion Personal Website",
+      "description": "Update the Notion page “Colley Whisson” with every detail from colley_whisson.docx across About Me, Paintings, Workshop, Prizes, and Exhibitions.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_notion-personal-website",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_notion-personal-website",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "notion-movies",
+      "id": 371,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Social Media",
+      "title": "Notion Movies",
+      "description": "Update the “Ultimate Movie Tracker” Notion page by completing existing movie fields, adding “Star Wars: Episode III” with full metadata and “Watched” status, and embedding its official YouTube trailer link.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_notion-movies",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_notion-movies",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "canvas-art-quiz",
+      "id": 196,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Teaching",
+      "title": "Canvas Art Quiz",
+      "description": "Create a Canvas quiz titled “Classic Art History Questions” with four multiple-choice questions and auto-generated correct answers, one point each.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-art-quiz",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-art-quiz",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "arrange-workspace",
+      "id": 78,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Personal Affair",
+      "title": "Arrange Workspace",
+      "description": "Organize the files in user's workspace.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_arrange-workspace",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_arrange-workspace",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "interview-report",
+      "id": 127,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Talent Management",
+      "title": "Interview Report",
+      "description": "Create a separately formatted Word evaluation report for each candidate from their résumé and interviewer feedback, following Format.md, and write only the best candidate’s name to recommend.txt.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_interview-report",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_interview-report",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "canvas-new-students-notification",
+      "id": 189,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Academic Affairs",
+      "title": "Enroll and Notify New Students in Canvas",
+      "description": "Identify students not yet enrolled in Introduction to AI-8, enroll them, and privately tell only those students that their first-assignment grade will match their second while reminding them to complete it diligently.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-new-students-notification",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-new-students-notification",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "price-comparison",
+      "id": 143,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Marketing Analytics",
+      "title": "Price Comparison",
+      "description": "Compare product prices against competitor FutureGadget by extracting PDF data, merging with internal pricing, calculating differences, and storing structured results.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_price-comparison",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_price-comparison",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "course-schedule",
+      "id": 34,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "Course Schedule",
+      "description": "Select daytime courses prioritizing Prof. Yulian’s sections, match required exams from master table, exclude exemptions, and output sorted exam schedule.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_course-schedule",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_course-schedule",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "cvpr-research",
+      "id": 30,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Literature Review",
+      "title": "CVPR Research",
+      "description": "Use personal_info.md to identify the three research-aligned people with the most CVPR 2025 papers and save their names, one per line, to top3_match_researchers.txt.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_cvpr-research",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_cvpr-research",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "llm-training-dataset",
+      "id": 280,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Data Curation",
+      "title": "LLM Pre-Training Dataset Catalog",
+      "description": "Catalog LLaMA and GPT-Neo pre-training datasets in the ptdata sheet, list shared datasets separately for each model, and sort all rows by size descending.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_llm-training-dataset",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_llm-training-dataset",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "canvas-art-manager",
+      "id": 188,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Academic Affairs",
+      "title": "Canvas Course Administration",
+      "description": "Create and publish the registrar’s assigned Canvas courses from the emailed master schedule, assign instructors, post class-time announcements and syllabi, and enable resource sharing for repeated offerings.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-art-manager",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-art-manager",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "machine-operating",
+      "id": 150,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Auditing",
+      "title": "Machine Operating",
+      "description": "Generate and upload an anomaly report for out-of-range sensor readings during a specified time window.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_machine-operating",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_machine-operating",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "live-transactions",
+      "id": 147,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Auditing",
+      "title": "Live Transactions",
+      "description": "Archive a suspicious transaction’s full data as a JSON file named by its ID and log a critical fraud alert for investigation.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_live-transactions",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_live-transactions",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "canvas-arrange-exam",
+      "id": 197,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "Canvas Arrange Exam",
+      "description": "Update exam_schedule.xlsx with your remaining final exams, cleaning course codes/names and marking unreleased info as TBD.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-arrange-exam",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-arrange-exam",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "canvas-list-test",
+      "id": 190,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "Canvas List Test",
+      "description": "Complete and update the two given CSV files with the pending assignments and quizzes, sorted by deadline and course code.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-list-test",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-list-test",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "nhl-b2b-analysis",
+      "id": 316,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Sports Analysis",
+      "title": "NHL Back-to-Back Analysis",
+      "description": "Analyze the 2024–2025 NHL schedule and tabulate each team’s back-to-back sets by HA, AH, HH, AA, and total in a spreadsheet named NHL-B2B-Analysis.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_nhl-b2b-analysis",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_nhl-b2b-analysis",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "gdp-cr5-analysis",
+      "id": 352,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Quantitative Strategy",
+      "title": "GDP CR5 Analysis",
+      "description": "Calculate and rank the seven World Bank regions by GDP CR5 using the GDP2022 Google Sheet, then save the required country, GDP-total, and ratio fields in a new GDP CR5 Analysis spreadsheet.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_gdp-cr5-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_gdp-cr5-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "filter-low-selling-products",
+      "id": 301,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Product Assortment",
+      "title": "Filter Low-Selling Products",
+      "description": "Move products stocked for over 90 days and sold fewer than 10 units in the past 30 days to Outlet/Clearance, then email subscribers the list sorted by stock-in time and discount ratio.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_filter-low-selling-products",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_filter-low-selling-products",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "inventory-sync",
+      "id": 304,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Inventory Control",
+      "title": "Inventory Sync",
+      "description": "Sync latest unupdated product inventories from each city’s SQLite warehouse database to WooCommerce online store.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_inventory-sync",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_inventory-sync",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "wandb-best-score",
+      "id": 93,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Experiment Analysis",
+      "title": "W&B Best Validation Score",
+      "description": "Find the W&B experiment and step with the best validation performance and save its name, step, and score to best_experiment.csv.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_wandb-best-score",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_wandb-best-score",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "wandb-shortest-length",
+      "id": 94,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Experiment Analysis",
+      "title": "W&B Shortest-Response Experiment",
+      "description": "Identify the W&B experiment with the shortest responses and record entropy_loss, clip_ratio, and response_length_mean every 100 steps from step 0 in shortest_length_experiment.csv.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_wandb-shortest-length",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_wandb-shortest-length",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "fillout-online-forms",
+      "id": 133,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Personal Affair",
+      "title": "Fill Out Online Forms",
+      "description": "Submit Freshmen Welcome Party responses for the user and Alex using information from memory, mark both as attending all day, and default anything unspecified to a negative response.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_fillout-online-forms",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_fillout-online-forms",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "git-bug-hunt",
+      "id": 42,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "OSS Engagement",
+      "title": "Git Bug Hunt",
+      "description": "Email the author of the commit that introduced 'remove_caching_layer' to urgently investigate the performance issue, using the provided template.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_git-bug-hunt",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_git-bug-hunt",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "shopping-helper",
+      "id": 113,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Online Purchase",
+      "title": "Amazon Sofa Shopping Helper",
+      "description": "Find three black leather sofas on Amazon—including faux, PU, or vegan leather—priced under $400, and record their details in recommend.json.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_shopping-helper",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_shopping-helper",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "ppt-analysis",
+      "id": 125,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "Create Compiler Lecture Notes",
+      "description": "Create NOTE.md summarizing functional and imperative symbol tables and their insertion differences, reproducing and explaining all original code from Compile.pptx, and explaining the assignments in HW.PDF.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_ppt-analysis",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_ppt-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "personal-website-construct",
+      "id": 4,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Profile Management",
+      "title": "Personal Website Construct",
+      "description": "Fork and customize the academicpages template as `LJT-Homepage` using only memory-provided personal and academic details.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_personal-website-construct",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_personal-website-construct",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "logical-datasets-collection",
+      "id": 160,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Data Curation",
+      "title": "Logical Datasets Collection",
+      "description": "Generate a LaTeX table named datasets.tex listing five logical reasoning datasets with columns for task count, trainable flag, and adjustable difficulty flag.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_logical-datasets-collection",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_logical-datasets-collection",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "notion-hr",
+      "id": 237,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Talent Management",
+      "title": "Notion HR",
+      "description": "Update candidate records in Notion strictly per resume content, and email applicants whose applied positions are closed using the provided template.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_notion-hr",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_notion-hr",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "k8s-redis-helm-upgrade",
+      "id": 244,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "DevOps Sweep",
+      "title": "Kubernetes Redis Helm Upgrade",
+      "description": "Upgrade the Bitnami Redis chart in shared-services to exactly version 22.0.0, preserve config/redis-values.yaml, and verify that its pods run correctly.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-redis-helm-upgrade",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "k8s-pr-preview-testing",
+      "id": 245,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Deployment",
+      "title": "Kubernetes PR Preview Testing",
+      "description": "Deploy Toolathlon-Archive/SimpleShopping’s feature/pr-123 branch using preview.yaml, keep it available at localhost:30123, run its tests, and save the completed report as filled-test-results-report.md.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-pr-preview-testing",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-pr-preview-testing",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "dataset-license-issue",
+      "id": 18,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "OSS Engagement",
+      "title": "Resolve Dataset License Issue",
+      "description": "Choose each Annoy-DataSync dataset’s most permissive eligible source license, reply to and close the issue in the required format, and append the license to both Hugging Face READMEs.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_dataset-license-issue",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_dataset-license-issue",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "canvas-homework-grader-python",
+      "id": 306,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Teaching",
+      "title": "Canvas Homework Grader Python",
+      "description": "Grade Homework2 by downloading latest Python submissions from email, running them to check for errors, and assigning 10 (pass) or 0 (fail) in Canvas based on correctness.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-homework-grader-python",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-homework-grader-python",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "canvas-submit-late-work",
+      "id": 37,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "Submit Missing Canvas Assignments",
+      "description": "Use the grade summary to identify missing Canvas submissions, submit only matching completed assignments from the workspace, then email the TA with the approved leave document for Assignment 2.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-submit-late-work",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-submit-late-work",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "music-analysis",
+      "id": 319,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Social Media",
+      "title": "Music Analysis",
+      "description": "Analyze Billboard 1940s pop charts to compute each song’s longest consecutive chart run.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_music-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_music-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "oil-price",
+      "id": 179,
+      "category": "finance",
+      "group": "Finance & Market",
+      "subgroup": "Marketing Analytics",
+      "title": "Oil Price",
+      "description": "Fetch last 12 months of WTI/Brent prices from Yahoo Finance, analyze spread dynamics, calculate z-score-based trading signals, backtest the strategy, and return a summary report.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_oil-price",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_oil-price",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "task-tracker",
+      "id": 295,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Project Sync",
+      "title": "Task Tracker",
+      "description": "Find recent task-adding branches in BenchTasksCollv3, mark tasks as implemented or implementing, update Notion, and add implemented tasks to a new finalpool branch.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_task-tracker",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_task-tracker",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "notion-find-job",
+      "id": 327,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Talent Management",
+      "title": "Notion Find Job",
+      "description": "For jobs in Checking status that meet the specified salary, on-site, UCLA-distance, and role criteria, send the templated application email and set each matching Job Tracker entry to Applied.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_notion-find-job",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_notion-find-job",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "canvas-do-quiz",
+      "id": 404,
+      "category": "campus",
+      "group": "Campus & Study",
+      "subgroup": "Course",
+      "title": "Complete All Unfinished Canvas Quizzes",
+      "description": "Use the personal information in memory to identify, correctly answer, and submit every unfinished Canvas course quiz, handling Canvas errors as needed.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_canvas-do-quiz",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_canvas-do-quiz",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "payable-invoice-checker",
+      "id": 235,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Financial Admin",
+      "title": "Payable Invoice Checker",
+      "description": "Automatically update PURCHASE_INVOICE tables with receipts from workspace, email purchasing managers unpaid filenames.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_payable-invoice-checker",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_payable-invoice-checker",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "woocommerce-update-cover",
+      "id": 279,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "DTC Management",
+      "title": "WooCommerce Product Image Update",
+      "description": "Use WooCommerce order data to set each product’s best-selling variation image as its main product image.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_woocommerce-update-cover",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_woocommerce-update-cover",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "update-material-inventory",
+      "id": 285,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Inventory Control",
+      "title": "Update Material Inventory",
+      "description": "Monitor new WooCommerce paid orders, deduct raw materials via BOM from Google Sheets inventory, recalculate max producible quantities, and sync updated stock levels back to WooCommerce.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_update-material-inventory",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_update-material-inventory",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "experiments-recordings",
+      "id": 294,
+      "category": "tech",
+      "group": "Tech & Dev",
+      "subgroup": "Experiment Analysis",
+      "title": "Experiment Recordings",
+      "description": "Update the mcp_experiments_recordings Notion table with the best per-benchmark W&B scores and steps, combining same-named runs and averaging only available metrics.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_experiments-recordings",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_experiments-recordings",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "flagged-transactions",
+      "id": 144,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Auditing",
+      "title": "Flagged Transactions",
+      "description": "Detect anomalies in 2025 transactions for high-net-worth clients by flagging amounts > mean + 3σ per client.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_flagged-transactions",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_flagged-transactions",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "sla-timeout-monitor",
+      "id": 292,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Data Auditing",
+      "title": "SLA Timeout Monitor",
+      "description": "Identify overdue tickets by comparing against SLA response times, then send reminder emails to responsible managers and apology emails to affected users.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_sla-timeout-monitor",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_sla-timeout-monitor",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "travel-expense-reimbursement",
+      "id": 331,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Financial Admin",
+      "title": "Travel Expense Reimbursement",
+      "description": "Review claims for complete and matching invoices, notify employees and managers about invalid or over-cap claims, record claims that pass the invoice checks in Snowflake, and flag over-cap claims as abnormal.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_travel-expense-reimbursement",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_travel-expense-reimbursement",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "inter-final-performance-analysis",
+      "id": 351,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Sports Analysis",
+      "title": "Inter Milan Champions League Final Performance Analysis",
+      "description": "Fill the three sheets in inter_ucl_finals_23_25 with official UEFA data for Inter Milan’s 2023 and 2025 Champions League finals, calculate the 2025-minus-2023 differences, and save the read-only link to sheet_url.txt.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_inter-final-performance-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_inter-final-performance-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "landing-task-reminder",
+      "id": 368,
+      "category": "office",
+      "group": "Office & Business",
+      "subgroup": "Talent Management",
+      "title": "Landing Task Reminder",
+      "description": "Auto-generate training emails for new and overdue employees, CC supervisors, and update Snowflake.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_landing-task-reminder",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_landing-task-reminder",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "woocommerce-customer-survey",
+      "id": 266,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "DTC Management",
+      "title": "WooCommerce Customer Survey",
+      "description": "Check completed WooCommerce orders, create and email customers a Google Forms feedback survey that follows form_requirement.md, and save the form’s Google Drive link to drive_url.txt.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_woocommerce-customer-survey",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_woocommerce-customer-survey",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "woocommerce-new-welcome",
+      "id": 299,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "DTC Management",
+      "title": "WooCommerce New-Customer Welcome",
+      "description": "Sync customers who completed their first WooCommerce order in the past seven days to BigQuery and email each one a welcome message using welcome_email_template.md.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_woocommerce-new-welcome",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_woocommerce-new-welcome",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "woocommerce-new-product",
+      "id": 305,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "DTC Management",
+      "title": "WooCommerce New-Product Alerts",
+      "description": "Send reservation emails for products releasing within 30 days to customers with new_product_alerts enabled, and send discount reminders to every customer.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_woocommerce-new-product",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_woocommerce-new-product",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "woocommerce-product-recall",
+      "id": 303,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Product Assortment",
+      "title": "WooCommerce Product Recall",
+      "description": "Take products of a specified model off sale without deleting them, email affected past customers a recall notice with a strictly template-matching Google Form, and save the form details to recall_report.json.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_woocommerce-product-recall",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_woocommerce-product-recall",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "slug": "woocommerce-stock-alert",
+      "id": 300,
+      "category": "shopping",
+      "group": "Shopping & E-commerce",
+      "subgroup": "Inventory Control",
+      "title": "WooCommerce Stock Alert",
+      "description": "Record every WooCommerce product whose stock_quantity is below stock_threshold in the Google Sheets stock_sheet purchase list and email the purchasing manager using the provided template.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_woocommerce-stock-alert",
+          "passed": true
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_woocommerce-stock-alert",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "identify-all-songs",
+      "id": 210,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Social Media",
+      "title": "Identify All Songs",
+      "description": "Identify every song in the specified Jin Lyrics YouTube video from its lyrics and save the song names to songs.md using the format in format.md.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_identify-all-songs",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_identify-all-songs",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "youtube-repo",
+      "id": 209,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Social Media",
+      "title": "YouTube Repo",
+      "description": "Review a YouTube playlist for machine-learning technical videos and record each featured technology, its original GitHub repository URL, and its main functions in ml_tech.md.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_youtube-repo",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_youtube-repo",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "mrbeast-analysis",
+      "id": 201,
+      "category": "daily",
+      "group": "Daily & Entertainment",
+      "subgroup": "Social Media",
+      "title": "MrBeast Analysis",
+      "description": "Analyze MrBeast videos longer than two minutes from the beginning of 2024 through July 1, 2025, classify them into the four specified content categories, and record the chronological details and upload statistics in result.xlsx.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_mrbeast-analysis",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_mrbeast-analysis",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "slug": "latex-prompt-box",
+      "id": 229,
+      "category": "aca",
+      "group": "Research & Academic",
+      "subgroup": "Manuscript Editing",
+      "title": "LaTeX Prompt Boxes",
+      "description": "Add Simple Prompt and Complex Prompt boxes to the appendix TODO using the codebase prompts and M-STAR’s exact style, allowing only necessary package or color fixes elsewhere and preserving filenames.",
+      "legacy_trajectories": [
+        {
+          "model": "Claude-4.5-Sonnet",
+          "url": "https://toolathlon-traj.xyz/claude-4.5-sonnet_latex-prompt-box",
+          "passed": false
+        },
+        {
+          "model": "Deepseek-v3.2-Exp",
+          "url": "https://toolathlon-traj.xyz/deepseek-v3.2-exp_latex-prompt-box",
+          "passed": false
+        }
+      ]
+    }
+  ]
+}

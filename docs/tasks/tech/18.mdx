@@ -1,7 +1,13 @@
 ---
-title: "Dataset License Issue"
-description: "Determine the most permissive license from direct data/model sources for each dataset, reply and close the issue."
+title: "Resolve Dataset License Issue"
+description: "Choose each Annoy-DataSync dataset’s most permissive eligible source license, reply to and close the issue in the required format, and append the license to both Hugging Face READMEs."
 ---
+
+> **Toolathlon-Verified** · Website task ID `18` · Canonical task `dataset-license-issue`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/dataset-license-issue)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
+<img alt="" aria-hidden="true" src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">huggingface</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/github.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/github.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">github</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">terminal</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">huggingface</span>
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -34,64 +40,58 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">python_execute</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">python_execute</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: eb3e7202bc6577276ac9afd1688dbdf9d561495a6174ca68273a0091f1f61d83 */}
 Someone just filed an issue in my Annoy-DataSync project asking about the license information for our released datasets. Could you please help me figure out which license we should use? My requirement is to directly reuse the license from the dataset's direct data sources or the models used for synthesis. If there are multiple sources, I'll use the one with the most permissive permissions for derivative/secondary use. Once you've determined the license, please reply and close this issue, strictly following the following format (do not modify, add, remove, or alter anything other than placeholders):
 
-"Thanks for your interest! The licenses for the two datasets are: Annoy-PyEdu-Rs-Raw = \{license\}, Annoy-PyEdu-Rs = \{license\}"
+"Thanks for your interest! The licenses for the two datasets are: Annoy-PyEdu-Rs-Raw = &#123;license&#125;, Annoy-PyEdu-Rs = &#123;license&#125;"
 
 Also, please update the corresponding huggingface dataset pages by adding the following line at the end of the existing readme. No other content is required:
-"\n\n**License**\n\nThe license for this dataset is \{license\}."
+"\n\n**License**\n\nThe license for this dataset is &#123;license&#125;."
 
 If you need the huggingface token, you can find it under `.hf_token`.
 
 ## Initial State
 
-### Github Repo
+### Runtime Setup
 
-<div className="file-tree">
-├── <a href="https://github.com/Toolathlon-Archive/Annoy-DataSync">Toolathlon-Archive/Annoy-DataSync</a>
-</div>
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/dataset-license-issue/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_dataset-license-issue)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_dataset-license-issue)
-

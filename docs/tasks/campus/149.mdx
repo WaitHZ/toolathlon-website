@@ -1,7 +1,13 @@
 ---
 title: "Academic Warning"
-description: "Flag students with >25% score drops in bad_student.csv; log >45% drops to exam_log for auto-alerting counselors."
+description: "Compare latest quiz scores with historical BigQuery averages, write students with drops over 25% to bad_student.csv, and add critical name-and-ID warnings for drops over 45% to the existing exam_log-prefixed bucket."
 ---
+
+> **Toolathlon-Verified** · Website task ID `149` · Canonical task `academic-warning`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/academic-warning)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_cloud.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">google-cloud</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">excel</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/google_cloud.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">google-cloud</span>
 </div>
 </div>
 </div>
@@ -30,38 +36,29 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: bdacd86a70bfae30b5e108f6c8538482bcb4b65b02c8217a8772a29631c35149 */}
 The academic affairs system requires an automated academic warning mechanism. The latest unit test scores are recorded in the `latest_quiz_scores.csv` file. Please read this file and combine it with all the student scores stored in multiple test score tables (such as 2501, 2502, 2503, 2504, 2505, 2506, and 2507) in the `academic_warning` dataset of BigQuery to identify those students whose test scores have dropped by more than 25% compared to their average scores in the past. Write the list to the  `bad_student.csv`. For those students whose test scores have dropped by more than 45%, please immediately write a critical level warning log to the existing log bucket whose name is prefixed with `exam_log` for each of them with his/her name and student ID so that the system can automatically notify their counselor. During the entire process, there is no need to consider any log entries in the log bucket that existed before the task was executed.
 
 ## Initial State
@@ -69,20 +66,20 @@ The academic affairs system requires an automated academic warning mechanism. Th
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/academic-warning/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/academic-warning/initial_workspace">workspace</a>/
 └── latest_quiz_scores.csv
 </div>
 
-### BigQuery
+### Runtime Setup
 
-You can view previous quiz scores [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/academic-warning/files).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/academic-warning/preprocess).
 
 
+## Legacy Trajectories
 
- 
-## Model Trajectory
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_academic-warning)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_academic-warning)
-
-

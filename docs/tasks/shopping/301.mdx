@@ -1,7 +1,13 @@
 ---
-title: "Filter Low Selling Products"
-description: "Identify slow-moving products, move them to “Outlet/Clearance”, and email subscribers a sorted list."
+title: "Filter Low-Selling Products"
+description: "Move products stocked for over 90 days and sold fewer than 10 units in the past 30 days to Outlet/Clearance, then email subscribers the list sorted by stock-in time and discount ratio."
 ---
+
+> **Toolathlon-Verified** · Website task ID `301` · Canonical task `filter-low-selling-products`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/filter-low-selling-products)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">emails</span>
+<img alt="" aria-hidden="true" src="/icons/woo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">woocommerce</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/woo.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">woocommerce</span>
+<img alt="" aria-hidden="true" src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">emails</span>
 </div>
 </div>
 </div>
@@ -30,15 +36,15 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
 </div>
 <div className="local-tool-item">
@@ -46,23 +52,17 @@ Local Tools
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 7e40711505beaf27920c0773e47f24e837af7267e4c0ef5e304c9be08ba4a743 */}
 Please help me check which products are in my shop, filter out those that have been in stock for more than 90 days and have sold fewer than 10 units in the past 30 days. Move them to a product category named "Outlet/Clearance" ("/" is part of the name). Also, send an email to each of the subscribed customers.
 
 You can find the email template under the workspace (please sort the products by stock-in time from earliest to latest; if the stock-in time is the same, then sort by discount ratio from small to large). The subscriber information is in subscriber.json.
@@ -72,20 +72,22 @@ You can find the email template under the workspace (please sort the products by
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/filter-low-selling-products/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/filter-low-selling-products/initial_workspace">workspace</a>/
 ├── blog_template.md
 ├── email_template.txt
 └── subscriber.json
 </div>
 
-### WooCommerce
+### Runtime Setup
 
-The data is reinitialized on each test; you can review the original data construction process [here](https://github.com/hkust-nlp/mcpbench_dev/blob/finalpool_dev/tasks/finalpool/filter-low-selling-products/preprocess).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/filter-low-selling-products/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_filter-low-selling-products)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_filter-low-selling-products)
-

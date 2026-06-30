@@ -1,7 +1,13 @@
 ---
-title: "Shopping Helper"
-description: "Find and recommend 3 genuine black leather sofas within $200–400 on Amazon."
+title: "Amazon Sofa Shopping Helper"
+description: "Find three black leather sofas on Amazon—including faux, PU, or vegan leather—priced under $400, and record their details in recommend.json."
 ---
+
+> **Toolathlon-Verified** · Website task ID `113` · Canonical task `shopping-helper`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/shopping-helper)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,11 +17,11 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
 </div>
 </div>
@@ -26,35 +32,29 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">history</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
-</div>
-<div className="local-tool-item">
-<Icon icon="bars-progress" size={20} color="#4286f6" />
-<span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="filter-list" size={20} color="#4286f6" />
 <span className="local-tool-name">handle_overlong_tool_outputs</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="bars-progress" size={20} color="#4286f6" />
+<span className="local-tool-name">manage_context</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: 9c22c5f6df6291686a55307c0c3f9cb7fe7856baf9b0ab483471c0caa3deafd5 */}
 I'm looking to buy furniture for my new house and want to buy a sofa on amazon. My budget is less than 400 USD, and I want a leather (either faux, pu or vegan is ok) sofa in black. Please help me find products and recommend 3 suitable products and fill the details in `recommend.json`. An example is shown in `example.json`.
 
 ## Initial State
@@ -62,15 +62,17 @@ I'm looking to buy furniture for my new house and want to buy a sofa on amazon. 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/shopping-helper/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/shopping-helper/initial_workspace">workspace</a>/
 ├── example.json
 └── recommend.json
 </div>
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_shopping-helper)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_shopping-helper)
-

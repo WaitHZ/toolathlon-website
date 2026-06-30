@@ -1,7 +1,13 @@
 ---
-title: "K8S PR Preview Testing"
-description: "Deploy the feature/pr-123 branch of SimpleShopping to Kubernetes."
+title: "Kubernetes PR Preview Testing"
+description: "Deploy Toolathlon-Archive/SimpleShopping’s feature/pr-123 branch using preview.yaml, keep it available at localhost:30123, run its tests, and save the completed report as filled-test-results-report.md."
 ---
+
+> **Toolathlon-Verified** · Website task ID `245` · Canonical task `k8s-pr-preview-testing`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-pr-preview-testing)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,20 +17,20 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">k8s</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">terminal</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">k8s</span>
 </div>
 </div>
 </div>
@@ -34,52 +40,45 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">claim_done</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
-Help me deploy the `feature/pr-123` branch of the `Toolathlon-Archive/SimpleShopping` repository to Kubernetes, creating the ConfigMap according to `preview.yaml`, and ensure that the page can be accessed from the host at `http://localhost:30123` on a long-term basis.  
+{/* toolathlon-task-sha256: 7252dcae0def044d51fe62513bbae11c2f08590adf8ef1edfe54fa644d6af59d */}
+Help me deploy the `feature/pr-123` branch of the `Toolathlon-Archive/SimpleShopping` repository to Kubernetes, creating the ConfigMap according to `preview.yaml`, and ensure that the page can be accessed from the host at `http://localhost:30123` on a long-term basis.\
 
 After deployment, run the test script from that branch, update the test results in the corresponding test report file under the branch, and save the completed report as `filled-test-results-report.md` in the root directory of the workspace.
 
 ## Initial State
 
-### Github Repo
+### Runtime Setup
 
-<div className="file-tree">
-├── <a href="https://github.com/Toolathlon-Archive/SimpleShopping">Toolathlon-Archive/SimpleShopping</a>
-</div>
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-pr-preview-testing/preprocess).
 
 
- 
+## Legacy Trajectories
 
-## Model Trajectory
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-pr-preview-testing)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-pr-preview-testing)
-

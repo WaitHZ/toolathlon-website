@@ -1,7 +1,13 @@
 ---
-title: "Course TA HWS"
-description: "Organize and clean up student homework files by renaming, categorizing by programming language, and removing unrelated code to maintain a tidy workspace."
+title: "Organize OS Assignment 3 Submissions"
+description: "Rename Operating Systems Fundamentals Assignment 3 submissions using the college–student ID mapping, organize them by C, Rust, and Python under os_hw3, and delete all remaining original code files."
 ---
+
+> **Toolathlon-Verified** · Website task ID `161` · Canonical task `courses-ta-hws`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/courses-ta-hws)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,15 +17,15 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">excel</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">terminal</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/excel.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">excel</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 </div>
@@ -30,68 +36,54 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
+{/* toolathlon-task-sha256: fc623253ea11b3d31f5a90f611421acfcab0b5adc07037d9c4a168ed35b69ea7 */}
 Please find all files in the workspace that are related to the "Operating Systems Fundamentals" course and belong to Assignment 3. Based on the correspondence table between colleges and student IDs, rename these files uniformly as: Name-College-StudentID-OS-HW3. Please maintain the original capitalization and spacing of student names and colleges, and do not arbitrarily add or remove words. After completing the renaming, create a new directory called "os_hw3/" , and within this directory, place them into three new subdirectories: "C", "Rust", and "Python" respectively. Please delete all the original code files, including those outside of this course and those not related to the third assignment, after completing the organization process to keep the workspace clean.
 
 ## Initial State
 
 ### Local Workspace
 
-There are more than 500 files in the workspace.
-
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/courses-ta-hws/initial_workspace">workspace</a>/
-├── Alex Turner_ArtificialIntelligence_HW3.c
-├── Alex Turner_CompilerPrinciples_HW4.py
-├── ...
-├── Alexander Hall_OperatingSystems_Assignment3.rs
-├── ...
-├── CollegeNameID.xlsx
-├── ...
-└── Yvonne Wells-SoftwareDevelopment-Assignment5.rs
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/courses-ta-hws/initial_workspace">workspace</a>/
+└── files.tar.gz
 </div>
 
+### Runtime Setup
 
- 
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/courses-ta-hws/preprocess).
 
-## Model Trajectory
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_courses-ta-hws)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_courses-ta-hws)
-

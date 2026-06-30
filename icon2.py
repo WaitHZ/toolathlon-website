@@ -28,7 +28,7 @@ icon_map_new = {
     "google_calendar": '<img src="/icons/calendar.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',
     "emails": '<img src="/icons/mail.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',
     "notion": '<img src="/icons/notion.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',
-    "wandb": '<img src="/icons/wandb" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',
+    "wandb": '<img src="/icons/wandb.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',
     "overlong_tool_output": '<Icon icon="filter-list" size={20} color="#4286f6" />',
     "canvas": '<img src="/icons/canvas.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',
     "fetch": '<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: \'inline-block\'}} />',

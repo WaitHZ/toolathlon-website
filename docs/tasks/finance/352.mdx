@@ -1,7 +1,13 @@
 ---
 title: "GDP CR5 Analysis"
-description: "Calculate and rank regions by GDP CR5 index using WorldBank data, saving top 5 countries, GDP sums, and ratios."
+description: "Calculate and rank the seven World Bank regions by GDP CR5 using the GDP2022 Google Sheet, then save the required country, GDP-total, and ratio fields in a new GDP CR5 Analysis spreadsheet."
 ---
+
+> **Toolathlon-Verified** · Website task ID `352` · Canonical task `gdp-cr5-analysis`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/gdp-cr5-analysis)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,16 +17,16 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">fetch</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/google_sheet.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">google_sheet</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/playwright.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">playwright_with_chunk</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/fetch.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">fetch</span>
 </div>
 </div>
 </div>
@@ -30,57 +36,53 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<img alt="" aria-hidden="true" src="/icons/google_search.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">web_search</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">python_execute</span>
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
 ## Instruction
 
-Please read the table titled "GDP2022" in Google Sheets and calculate the CR5 index for each of the seven major regions listed by the World Bank. Create a new spreadsheet in Google Sheets, name it "GDP CR5 Analysis", and within it, create a new table titled "gdp_cr5_analysis". Save the following data with headers being `Region`, `Top5_Countries`, `Top5_GDP_Sum`, `Region_GDP_Total`, and `CR5_Ratio`, where they represent the region name, the top five countries (use exactly the full names in existing sheet and separated by "/", from highest to lowest), the sum of the top five countries' GDP, the total regional GDP, and the CR5 index (percentage, rounded to two decimal places). Sort the data in descending order by CR5 index. 
+{/* toolathlon-task-sha256: 1929b6dd7c9a726f8db51d18503e54eaf1d3a135dbe1719b69d6322637f68429 */}
+Please read the table titled "GDP2022" in Google Sheets and calculate the CR5 index for each of the seven major regions listed by the World Bank. Create a new spreadsheet in Google Sheets, name it "GDP CR5 Analysis", and within it, create a new table titled "gdp_cr5_analysis". Save the following data with headers being `Region`, `Top5_Countries`, `Top5_GDP_Sum`, `Region_GDP_Total`, and `CR5_Ratio`, where they represent the region name, the top five countries (use exactly the full names in existing sheet and separated by "/", from highest to lowest), the sum of the top five countries' GDP, the total regional GDP, and the CR5 index (percentage, rounded to two decimal places). Sort the data in descending order by CR5 index.
 
 Note: You should strictly following the country classification provided by the World Bank. If one region has less than 5 countries, you just consider the real number of countries in filling the table.
 
 ## Initial State
 
-### Google Sheets
+### Runtime Setup
 
-The Google Sheet is reinitialized on each test; you can view the original data [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/gdp-cr5-analysis/preprocess).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/gdp-cr5-analysis/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_gdp-cr5-analysis)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_gdp-cr5-analysis)
-

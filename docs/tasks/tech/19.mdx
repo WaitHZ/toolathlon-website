@@ -1,7 +1,13 @@
 ---
-title: "HuggingFace Upload"
-description: "Upload the highest-accuracy checkpoint from workspace to Hugging Face Hub."
+title: "Hugging Face Model Upload"
+description: "Upload the checkpoint with the highest eval_accuracy to MyAwesomeModel-TestRepo and update its README with three-decimal results for all 15 benchmarks without changing other content."
 ---
+
+> **Toolathlon-Verified** · Website task ID `19` · Canonical task `huggingface-upload`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/huggingface-upload)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,15 +17,15 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="mcp-server-name">terminal</span>
-</div>
-<div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/terminal.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="mcp-server-name">terminal</span>
+</div>
+<div className="mcp-server-item">
+<img alt="" aria-hidden="true" src="/icons/hf.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">huggingface</span>
 </div>
 </div>
@@ -30,65 +36,142 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-Please scan the workspace folder, pick the model checkpoint with the highest eval_accuracy, then push the best model's folder to Hugging Face Hub as a model repo named `MyAwesomeModel-TestRepo`. 
+{/* toolathlon-task-sha256: b230c8356ebbb7587cca2ae845c33f3ef66b19859db291c7cd595d61f996ac8d */}
+Please scan the workspace folder, pick the model checkpoint with the highest eval_accuracy, then push the best model's folder to Hugging Face Hub as a model repo named `MyAwesomeModel-TestRepo`.
 
 Finalize the repo's `README.md` with the detailed evaluation results for all 15 benchmarks (keep three decimal places), you must refer to the current `README.md` under workspace and ensure its completeness in the uploaded repo. Do not change any other content in the `README.md` besides the benchmark scores.
 
 You can use the `hf_token.txt` under the workspace if necessary.
-
 
 ## Initial State
 
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/excel-data-transformation/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/huggingface-upload/initial_workspace">workspace</a>/
 ├── checkpoints/
+│   ├── step_100/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_1000/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_200/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_300/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_400/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_500/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_600/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_700/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   ├── step_800/
+│   │   ├── config.json
+│   │   └── pytorch_model.bin
+│   └── step_900/
+│       ├── config.json
+│       └── pytorch_model.bin
 ├── evaluation/
+│   ├── benchmarks/
+│   │   ├── code_generation/
+│   │   │   └── eval.py
+│   │   ├── common_sense/
+│   │   │   └── eval.py
+│   │   ├── creative_writing/
+│   │   │   └── eval.py
+│   │   ├── dialogue_generation/
+│   │   │   └── eval.py
+│   │   ├── instruction_following/
+│   │   │   └── eval.py
+│   │   ├── knowledge_retrieval/
+│   │   │   └── eval.py
+│   │   ├── logical_reasoning/
+│   │   │   └── eval.py
+│   │   ├── math_reasoning/
+│   │   │   └── eval.py
+│   │   ├── question_answering/
+│   │   │   └── eval.py
+│   │   ├── reading_comprehension/
+│   │   │   └── eval.py
+│   │   ├── safety_evaluation/
+│   │   │   └── eval.py
+│   │   ├── sentiment_analysis/
+│   │   │   └── eval.py
+│   │   ├── summarization/
+│   │   │   └── eval.py
+│   │   ├── text_classification/
+│   │   │   └── eval.py
+│   │   └── translation/
+│   │       └── eval.py
+│   ├── build/
+│   │   ├── lib.linux-x86_64-cpython-313/
+│   │   │   └── utils/
+│   │   │       ├── __init__.cpython-313-x86_64-linux-gnu.so
+│   │   │       └── benchmark_utils.cpython-313-x86_64-linux-gnu.so
+│   │   └── temp.linux-x86_64-cpython-313/
+│   │       └── utils/
+│   │           ├── __init__.o
+│   │           └── benchmark_utils.o
+│   ├── utils/
+│   │   ├── __init__.c
+│   │   ├── __init__.cpython-313-x86_64-linux-gnu.so
+│   │   ├── benchmark_utils.c
+│   │   └── benchmark_utils.cpython-313-x86_64-linux-gnu.so
+│   ├── .setup.py.swp
+│   ├── eval.py
+│   └── setup.py
 ├── figures/
+│   ├── fig1.png
+│   ├── fig2.png
+│   └── fig3.png
 └── README.md
 </div>
 
- 
+### Runtime Setup
 
-## Model Trajectory
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/huggingface-upload/preprocess).
+
+
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ✅ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_huggingface-upload)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_huggingface-upload)
-

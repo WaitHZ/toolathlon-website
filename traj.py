@@ -73,6 +73,12 @@ def raw_json_str_to_python(obj: str) -> dict:
 
 
 def main(args):
+    raise SystemExit(
+        "traj.py's task-page writer is retired. Public task pages are generated "
+        "by scripts/sync_tasks.py from task-pages.json; legacy trajectory links "
+        "are maintained in that registry."
+    )
+
     # checked_tasks = {
     #     34, 37, 38, 39, 49, 125, 149, 161, 162, 165, 183, 188, 189, 190, 196, 197, 306, 404,
     #     16, 78, 133, 155, 156, 159, 169, 181, 182, 201, 209, 210, 313, 316, 319, 351, 371,

@@ -1,7 +1,13 @@
 ---
-title: "K8S MySQL"
-description: "Set up a persistent port-forward on port 30124 to the f1 database, and complete the debugging task."
+title: "Kubernetes MySQL Debugging"
+description: "Debug the f1 database in the data namespace, complete the workspace task.md, and keep its port forward running on local port 30124."
 ---
+
+> **Toolathlon-Verified** · Website task ID `242` · Canonical task `k8s-mysql`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-mysql)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,11 +17,11 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/k8s.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">k8s</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/filesystem.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">filesystem</span>
 </div>
 </div>
@@ -26,47 +32,38 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-I need to debug the **f1** database in the `data` namespace of my Kubernetes cluster.  
-A read-only account has already been created:  
+{/* toolathlon-task-sha256: 754addcb200974aafbfa16044a2ea4cc0ab757ed3f75283c9652ea844a33cf83 */}
+I need to debug the **f1** database in the `data` namespace of my Kubernetes cluster.\
+A read-only account has already been created:\
 
-- **Username:** `reader`  
-- **Password:** `mcpbench0606`  
+- **Username:** `reader`\
+- **Password:** `mcpbench0606`\
 
 Please set a port forward on port 30124 for this database and finish the task in `task.md`, please keep the port forword alive even after you finish the whole task.
 
@@ -75,20 +72,22 @@ Please set a port forward on port 30124 for this database and finish the task in
 ### Local Workspace
 
 <div className="file-tree">
-<a href="https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/k8s-mysql/initial_workspace">workspace</a>/
+<a href="https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-mysql/initial_workspace">workspace</a>/
 ├── results_template_first_question.csv
 ├── results_template_second_question.csv
 └── task.md
 </div>
 
-### SQL
+### Runtime Setup
 
-You can view the schema and data of **f1** [here](https://github.com/hkust-nlp/Toolathlon/tree/main/tasks/finalpool/k8s-mysql/data).
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/k8s-mysql/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_k8s-mysql)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_k8s-mysql)
-

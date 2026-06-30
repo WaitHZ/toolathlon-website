@@ -65,7 +65,7 @@ machine-operating	150	office
 live-transactions	147	office
 canvas-arrange-exam	197	campus
 canvas-list-test	190	campus
-NHL-B2B-Analysis	316	daily
+nhl-b2b-analysis	316	daily
 gdp-cr5-analysis	352	finance
 filter-low-selling-products	301	shopping
 inventory-sync	304	shopping

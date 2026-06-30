@@ -1,7 +1,13 @@
 ---
-title: "Sync ToDo to Readme"
-description: "Extract all TODO items from .py files in lexicographical file order, update them into README.md."
+title: "Sync TODOs to README"
+description: "Using the existing LUFFY README TODO list as the baseline, apply only main-to-dev TODO additions, removals, and line updates in the required order, then update the remote README."
 ---
+
+> **Toolathlon-Verified** · Website task ID `286` · Canonical task `sync-todo-to-readme`
+>
+> [View the task source at `d57361c0`](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/sync-todo-to-readme)
+
+## Required Tools
 
 <Card>
 <div className="tools-container">
@@ -11,11 +17,11 @@ MCP Servers
 </div>
 <div className="mcp-servers-grid">
 <div className="mcp-server-item">
-<img src="/icons/git.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/git.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">git</span>
 </div>
 <div className="mcp-server-item">
-<img src="/icons/github.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/github.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="mcp-server-name">github</span>
 </div>
 </div>
@@ -26,56 +32,47 @@ Local Tools
 </div>
 <div className="local-tools-grid">
 <div className="local-tool-item">
-<img src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
-<span className="local-tool-name">history</span>
-</div>
-<div className="local-tool-item">
-<img src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/claim_done.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">claim_done</span>
 </div>
 <div className="local-tool-item">
-<img src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<img alt="" aria-hidden="true" src="/icons/python.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
 <span className="local-tool-name">python_execute</span>
+</div>
+<div className="local-tool-item">
+<Icon icon="filter-list" size={20} color="#4286f6" />
+<span className="local-tool-name">handle_overlong_tool_outputs</span>
 </div>
 <div className="local-tool-item">
 <Icon icon="bars-progress" size={20} color="#4286f6" />
 <span className="local-tool-name">manage_context</span>
 </div>
 <div className="local-tool-item">
-<Icon icon="filter-list" size={20} color="#4286f6" />
-<span className="local-tool-name">handle_overlong_tool_outputs</span>
+<img alt="" aria-hidden="true" src="/icons/history.png" style={{height: "20px", width: "20px", margin: 0, padding: 0, display: 'inline-block'}} />
+<span className="local-tool-name">history</span>
 </div>
 </div>
 </div>
 </div>
 </Card>
 
-
-
-
-
-
-
-
-
-
-
 ## Instruction
 
-In branch dev of **my** LUFFY repo, I have written some new code that I have implemented based on TODO. Please search all .py files and extract the complete TODO project information, and update the TODO section, i.e. remove the done ones and add the new ones, accordingly following the existing format (file path lexicographical order takes precedence, and line numbers within the same file must increase). Please keep the original section title "### 📝 Complete TODO List" unchanged in the whole process. After you do this, please update the readme file on the remote repo. If necessary, you can use the github token under `.github_token`.
+{/* toolathlon-task-sha256: 7f966549ab5dc8411a61c5000070d84fd9c4e30002870779ab9373be7f560cf7 */}
+In branch dev of **my** LUFFY repo, I have written some new code that I have implemented based on TODO. Please search all .py files and extract the complete TODO project information, and update the TODO section, i.e. remove the done ones and add the new ones, accordingly following the existing format (file path lexicographical order takes precedence, and line numbers within the same file must increase). Use the existing README TODO list as the baseline, and only apply TODO additions, removals, and line updates introduced by the main-to-dev changes. Please keep the original section title "### 📝 Complete TODO List" unchanged in the whole process. After you do this, please update the readme file on the remote repo. If necessary, you can use the github token under `.github_token`.
 
 ## Initial State
 
-### Github Repo
+### Runtime Setup
 
-<div className="file-tree">
-├── <a href="https://github.com/Toolathlon-Archive/LUFFY">LUFFY Development Repository</a>
-</div>
+This task initializes application or service state during preprocessing. [Review the pinned setup source](https://github.com/hkust-nlp/Toolathlon/tree/d57361c0f1582cf9a0675c0753315bb6b004bd0e/tasks/finalpool/sync-todo-to-readme/preprocess).
 
- 
 
-## Model Trajectory
+## Legacy Trajectories
+
+<Warning>
+These replays were produced on the original Toolathlon release. They are retained for historical inspection and are not Toolathlon-Verified results.
+</Warning>
 
 - ❌ [Claude-4.5-Sonnet](https://toolathlon-traj.xyz/claude-4.5-sonnet_sync-todo-to-readme)
 - ❌ [Deepseek-v3.2-Exp](https://toolathlon-traj.xyz/deepseek-v3.2-exp_sync-todo-to-readme)
-
