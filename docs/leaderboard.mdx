@@ -121,14 +121,13 @@ mode: "custom"
   </p>
 </div>
 
-<details className="leaderboard-history">
-  <summary className="leaderboard-history-summary">
-    <span className="leaderboard-history-summary-copy">
-      <span className="leaderboard-history-title">Previous Toolathlon leaderboard</span>
-      <span className="leaderboard-history-subtitle">Snapshot before Toolathlon-Verified · 51 models</span>
-    </span>
-    <span className="leaderboard-history-state" aria-hidden="true"></span>
-  </summary>
+<div className="leaderboard-history-native">
+<Accordion
+  title="Previous Toolathlon leaderboard"
+  description="Snapshot before Toolathlon-Verified · 51 models"
+  id="previous-toolathlon-leaderboard"
+  defaultOpen={false}
+>
   <div className="leaderboard-history-content">
     <p className="leaderboard-history-note">This archived snapshot shows the leaderboard immediately before Toolathlon-Verified. It is retained for historical context; these scores use earlier task definitions and evaluation infrastructure and are not directly comparable with the Verified results above.</p>
     <div className="leaderboard-history-scroll">
@@ -673,6 +672,7 @@ mode: "custom"
   </p>
 </div>
   </div>
-</details>
+</Accordion>
+</div>
 
 </div>

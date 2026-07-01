@@ -1365,100 +1365,13 @@ html[data-theme="dark"] .org-icon {
   text-underline-offset: 3px;
 }
 
-/* 旧版榜单历史折叠区 */
-.leaderboard-history {
+/* 旧版榜单历史折叠区（使用 Mintlify 原生 Accordion） */
+.leaderboard-history-native {
   margin: 32px 0 8px 0;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #dbe3ee;
-  border-radius: 14px;
-  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
-}
-
-.leaderboard-history-summary {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 17px 20px;
-  cursor: pointer;
-  list-style: none;
-  user-select: none;
-  transition: background-color 0.2s ease;
-}
-
-.leaderboard-history-summary::-webkit-details-marker {
-  display: none;
-}
-
-.leaderboard-history-summary::marker {
-  content: "";
-}
-
-.leaderboard-history-summary:hover {
-  background: #f8fafc;
-}
-
-.leaderboard-history-summary:focus-visible {
-  outline: 3px solid rgba(59, 130, 246, 0.45);
-  outline-offset: -3px;
-}
-
-.leaderboard-history-summary-copy {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.leaderboard-history-title {
-  color: #1f2937;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.leaderboard-history-subtitle {
-  color: #6b7280;
-  font-size: 0.82rem;
-  line-height: 1.4;
-}
-
-.leaderboard-history-state {
-  display: inline-flex;
-  gap: 6px;
-  align-items: center;
-  flex-shrink: 0;
-  padding: 5px 10px;
-  color: #1d4ed8;
-  font-size: 0.78rem;
-  font-weight: 700;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: 999px;
-}
-
-.leaderboard-history-state::before {
-  content: "+";
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.leaderboard-history-state::after {
-  content: "Expand";
-}
-
-.leaderboard-history[open] .leaderboard-history-state::before {
-  content: "−";
-}
-
-.leaderboard-history[open] .leaderboard-history-state::after {
-  content: "Collapse";
 }
 
 .leaderboard-history-content {
-  padding: 18px 20px 20px;
-  background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
+  padding: 8px 0 4px;
 }
 
 .leaderboard-history-note {
@@ -1503,18 +1416,12 @@ html[data-theme="dark"] .org-icon {
     gap: 6px;
   }
 
-  .leaderboard-history {
+  .leaderboard-history-native {
     margin-top: 24px;
   }
 
-  .leaderboard-history-summary {
-    gap: 12px;
-    align-items: flex-start;
-    padding: 14px;
-  }
-
   .leaderboard-history-content {
-    padding: 14px 12px 16px;
+    padding: 4px 0 2px;
   }
 
   .leaderboard-history-table {
@@ -2555,47 +2462,6 @@ html[data-theme="dark"] .leaderboard-version-note-date {
 html[data-theme="dark"] .leaderboard-version-note a {
   color: #fdba74;
   text-decoration-color: #fb923c;
-}
-
-[data-theme="dark"] .leaderboard-history,
-.dark .leaderboard-history,
-html[data-theme="dark"] .leaderboard-history {
-  background: #0f172a;
-  border-color: #334155;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
-}
-
-[data-theme="dark"] .leaderboard-history-summary:hover,
-.dark .leaderboard-history-summary:hover,
-html[data-theme="dark"] .leaderboard-history-summary:hover {
-  background: #1e293b;
-}
-
-[data-theme="dark"] .leaderboard-history-title,
-.dark .leaderboard-history-title,
-html[data-theme="dark"] .leaderboard-history-title {
-  color: #f8fafc;
-}
-
-[data-theme="dark"] .leaderboard-history-subtitle,
-.dark .leaderboard-history-subtitle,
-html[data-theme="dark"] .leaderboard-history-subtitle {
-  color: #94a3b8;
-}
-
-[data-theme="dark"] .leaderboard-history-state,
-.dark .leaderboard-history-state,
-html[data-theme="dark"] .leaderboard-history-state {
-  color: #bfdbfe;
-  background: rgba(37, 99, 235, 0.18);
-  border-color: rgba(96, 165, 250, 0.55);
-}
-
-[data-theme="dark"] .leaderboard-history-content,
-.dark .leaderboard-history-content,
-html[data-theme="dark"] .leaderboard-history-content {
-  background: #0b1220;
-  border-top-color: #334155;
 }
 
 [data-theme="dark"] .leaderboard-history-note,
