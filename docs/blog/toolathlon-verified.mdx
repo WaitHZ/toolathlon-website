@@ -118,16 +118,16 @@ Toolathlon-Verified was not produced by applying a blanket tolerance rule. Candi
 
 Key failures were traced through real agent submissions, reproduced on the evaluation service, and rerun after repair. Targeted regression tests were added where appropriate across task evaluators, preprocessing, runners, tool adapters, and grading isolation.
 
-Finally, we evaluated each of the six reported models across three benchmark runs. The released trajectories expose model messages and tool calls for inspection, while the leaderboard reports final grading outcomes. Together they provide auditable evidence for the benchmark; we do not claim that every published trajectory was manually reviewed line by line.
+Finally, we evaluated each of the eight reported models across three benchmark runs. The released trajectories expose model messages and tool calls for inspection, while the leaderboard reports final grading outcomes. Together they provide auditable evidence for the benchmark; we do not claim that every published trajectory was manually reviewed line by line.
 
 ## A new Verified baseline
 
-The chart below reports mean Pass@1 across the three runs for each model. Error bars show the across-run standard deviation—not a confidence interval. All six rows use the Default agent configuration and are dated June 30, 2026.
+The chart below reports mean Pass@1 across the three runs for each model. Error bars show the across-run standard deviation—not a confidence interval. All eight rows use the Default agent configuration. The original six rows are dated June 30, 2026, while Claude Sonnet 5 (max) and Gemini 3.1 Pro (high) are dated July 1, 2026. The two additions rank third at 71.6% and fifth at 61.1% Pass@1, respectively.
 
 <Frame caption="Pass@1 mean over three runs; error bars show standard deviation. Results were independently evaluated by the Toolathlon team.">
   <img
     src="/figs/toolathlon-verified-leaderboard.png"
-    alt="Toolathlon-Verified Pass@1 ranking: Claude Opus 4.8 (max) 76.2 plus or minus 3.4, GPT-5.5 (xhigh) 73.5 plus or minus 1.2, Gemini 3.5 Flash (high) 67.3 plus or minus 1.2, GLM 5.2 (max) 59.9 plus or minus 1.9, kimi-k2.7-code 58.0 plus or minus 4.3, and Deepseek-v4-pro (max) 55.9 plus or minus 1.2. Error bars show standard deviation across three runs."
+    alt="Toolathlon-Verified Pass@1 ranking: Claude Opus 4.8 (max) 76.2 plus or minus 3.4, GPT-5.5 (xhigh) 73.5 plus or minus 1.2, Claude Sonnet 5 (max) 71.6 plus or minus 1.2, Gemini 3.5 Flash (high) 67.3 plus or minus 1.2, Gemini 3.1 Pro (high) 61.1 plus or minus 1.3, GLM 5.2 (max) 59.9 plus or minus 1.9, kimi-k2.7-code 58.0 plus or minus 4.3, and Deepseek-v4-pro (max) 55.9 plus or minus 1.2. Error bars show standard deviation across three runs."
     className="verified-results-chart"
   />
 </Frame>
@@ -273,16 +273,16 @@ Toolathlon-Verified 并不是通过统一增加容差得到的。候选修改会
 
 关键问题通过真实 Agent 提交结果进行追踪，在 evaluation service 上复现，并在修复后重新运行。我们也在适合的位置为任务评测器、预处理、runner、工具适配器和评分隔离加入了针对性回归测试。
 
-最后，公布的六个模型结果均来自三次 benchmark 运行。公开 trajectories 让读者可以检查模型操作、工具调用与返回，以及最终评分结果；它们提供了可复核证据，但我们不声称每一条公开 trajectory 都经过了逐条人工检查。
+最后，公布的八个模型结果均来自三次 benchmark 运行。公开 trajectories 让读者可以检查模型操作、工具调用与返回，以及最终评分结果；它们提供了可复核证据，但我们不声称每一条公开 trajectory 都经过了逐条人工检查。
 
 ## 新的 Verified 基线
 
-下图展示六个模型三次运行的平均 Pass@1，误差线表示运行间标准差，而不是置信区间。所有结果均使用 Default Agent 配置，日期为 2026 年 6 月 30 日。
+下图展示八个模型三次运行的平均 Pass@1，误差线表示运行间标准差，而不是置信区间。所有结果均使用 Default Agent 配置。原有六行日期为 2026 年 6 月 30 日，Claude Sonnet 5（max）和 Gemini 3.1 Pro（high）两行日期为 2026 年 7 月 1 日；两款新增模型分别以 71.6% 和 61.1% 的 Pass@1 位列第三和第五。
 
 <Frame caption="三次运行的平均 Pass@1；误差线表示标准差。所有结果均由 Toolathlon 团队独立评估。">
   <img
     src="/figs/toolathlon-verified-leaderboard.png"
-    alt="Toolathlon-Verified Pass@1 排名：Claude Opus 4.8（max）为 76.2 加减 3.4，GPT-5.5（xhigh）为 73.5 加减 1.2，Gemini 3.5 Flash（high）为 67.3 加减 1.2，GLM 5.2（max）为 59.9 加减 1.9，kimi-k2.7-code 为 58.0 加减 4.3，Deepseek-v4-pro（max）为 55.9 加减 1.2。误差线表示三次运行间的标准差。"
+    alt="Toolathlon-Verified Pass@1 排名：Claude Opus 4.8（max）为 76.2 加减 3.4，GPT-5.5（xhigh）为 73.5 加减 1.2，Claude Sonnet 5（max）为 71.6 加减 1.2，Gemini 3.5 Flash（high）为 67.3 加减 1.2，Gemini 3.1 Pro（high）为 61.1 加减 1.3，GLM 5.2（max）为 59.9 加减 1.9，kimi-k2.7-code 为 58.0 加减 4.3，Deepseek-v4-pro（max）为 55.9 加减 1.2。误差线表示三次运行间的标准差。"
     className="verified-results-chart"
   />
 </Frame>
