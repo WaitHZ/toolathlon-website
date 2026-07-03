@@ -1072,6 +1072,26 @@ html[data-theme="dark"] .icon-container svg {
   margin-bottom: 40px;
 }
 
+/* Current leaderboard has an additional tool-call metric column. */
+.leaderboard-current-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2px 2px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.leaderboard-current-table {
+  min-width: 920px;
+}
+
+.leaderboard-current-table th:nth-child(8),
+.leaderboard-current-table td:nth-child(8),
+.leaderboard-current-table th:nth-child(9),
+.leaderboard-current-table td:nth-child(9) {
+  min-width: 80px;
+  max-width: none;
+}
+
 .category-title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -1239,11 +1259,12 @@ html[data-theme="dark"] .icon-container svg {
   padding: 8px 4px;
 }
 
-/* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
+/* Pass@1, Pass@3, Pass^3, Avg. Turns, Avg. Tool Calls 列使用深色 */
 .performance-table td:nth-child(5),
 .performance-table td:nth-child(6),
 .performance-table td:nth-child(7),
-.performance-table td:nth-child(8) {
+.performance-table td:nth-child(8),
+.performance-table td:nth-child(9) {
   color: #1f2937;
 }
 
@@ -1919,7 +1940,9 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   }
   
   .performance-table th:nth-child(8),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(8),
+  .performance-table th:nth-child(9),
+  .performance-table td:nth-child(9) {
     width: 8%;
     min-width: 50px;
   }
@@ -2000,11 +2023,12 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     color: #1f2937;
   }
   
-  /* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
+  /* Pass@1, Pass@3, Pass^3, Avg. Turns, Avg. Tool Calls 列使用深色 */
   .performance-table td:nth-child(5),
   .performance-table td:nth-child(6),
   .performance-table td:nth-child(7),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(8),
+  .performance-table td:nth-child(9) {
     color: #1f2937;
   }
   
@@ -2276,19 +2300,22 @@ html[data-theme="dark"] .performance-table .score-cell {
   color: #d1d5db !important;
 }
 
-/* 深色模式下Pass@1, Pass@3, Pass^3, # Turns列使用与Model列一致的颜色 */
+/* 深色模式下指标列使用与 Model 列一致的颜色 */
 [data-theme="dark"] .performance-table td:nth-child(5),
 [data-theme="dark"] .performance-table td:nth-child(6),
 [data-theme="dark"] .performance-table td:nth-child(7),
 [data-theme="dark"] .performance-table td:nth-child(8),
+[data-theme="dark"] .performance-table td:nth-child(9),
 .dark .performance-table td:nth-child(5),
 .dark .performance-table td:nth-child(6),
 .dark .performance-table td:nth-child(7),
 .dark .performance-table td:nth-child(8),
+.dark .performance-table td:nth-child(9),
 html[data-theme="dark"] .performance-table td:nth-child(5),
 html[data-theme="dark"] .performance-table td:nth-child(6),
 html[data-theme="dark"] .performance-table td:nth-child(7),
-html[data-theme="dark"] .performance-table td:nth-child(8) {
+html[data-theme="dark"] .performance-table td:nth-child(8),
+html[data-theme="dark"] .performance-table td:nth-child(9) {
   color: #f8fafc !important;
 }
 
@@ -3789,14 +3816,17 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   [data-theme="dark"] .performance-table td:nth-child(6),
   [data-theme="dark"] .performance-table td:nth-child(7),
   [data-theme="dark"] .performance-table td:nth-child(8),
+  [data-theme="dark"] .performance-table td:nth-child(9),
   .dark .performance-table td:nth-child(5),
   .dark .performance-table td:nth-child(6),
   .dark .performance-table td:nth-child(7),
   .dark .performance-table td:nth-child(8),
+  .dark .performance-table td:nth-child(9),
   html[data-theme="dark"] .performance-table td:nth-child(5),
   html[data-theme="dark"] .performance-table td:nth-child(6),
   html[data-theme="dark"] .performance-table td:nth-child(7),
-  html[data-theme="dark"] .performance-table td:nth-child(8) {
+  html[data-theme="dark"] .performance-table td:nth-child(8),
+  html[data-theme="dark"] .performance-table td:nth-child(9) {
     color: #f8fafc !important;
   }
 
@@ -3901,7 +3931,9 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   }
   
   .performance-table th:nth-child(8),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(8),
+  .performance-table th:nth-child(9),
+  .performance-table td:nth-child(9) {
     width: 8%;
     min-width: 40px;
   }
