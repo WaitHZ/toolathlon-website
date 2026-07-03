@@ -151,7 +151,7 @@ mode: "custom"
     <span className="verified-badge" aria-hidden="true" title="Evaluated by us">✓</span> Results bearing this badge were independently evaluated by us.
   </p>
   <p className="legend-text">
-    Turns and Tool Calls are per-task averages over the same runs with valid trajectories. Calls issued in parallel are counted individually.
+    Turns count how many sequential rounds the agent takes. Tool Calls count individual actions performed through tools; one turn can include several calls executed in parallel. Both values are per-task averages over the same runs with valid trajectories.
   </p>
 </div>
 
