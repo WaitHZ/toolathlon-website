@@ -1072,6 +1072,18 @@ html[data-theme="dark"] .icon-container svg {
   margin-bottom: 40px;
 }
 
+/* Current leaderboard has an additional tool-call metric column. */
+.leaderboard-current-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2px 2px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.leaderboard-current-table {
+  min-width: 840px;
+}
+
 .category-title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -1239,11 +1251,12 @@ html[data-theme="dark"] .icon-container svg {
   padding: 8px 4px;
 }
 
-/* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
+/* Pass@1, Pass@3, Pass^3, Avg. Turns, Avg. Tool Calls 列使用深色 */
 .performance-table td:nth-child(5),
 .performance-table td:nth-child(6),
 .performance-table td:nth-child(7),
-.performance-table td:nth-child(8) {
+.performance-table td:nth-child(8),
+.performance-table td:nth-child(9) {
   color: #1f2937;
 }
 
@@ -1919,7 +1932,9 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
   }
   
   .performance-table th:nth-child(8),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(8),
+  .performance-table th:nth-child(9),
+  .performance-table td:nth-child(9) {
     width: 8%;
     min-width: 50px;
   }
@@ -2000,11 +2015,12 @@ html[data-theme="dark"] .performance-table th.sortable.active.desc::after {
     color: #1f2937;
   }
   
-  /* Pass@1, Pass@3, Pass^3, # Turns 列使用深色 */
+  /* Pass@1, Pass@3, Pass^3, Avg. Turns, Avg. Tool Calls 列使用深色 */
   .performance-table td:nth-child(5),
   .performance-table td:nth-child(6),
   .performance-table td:nth-child(7),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(8),
+  .performance-table td:nth-child(9) {
     color: #1f2937;
   }
   
@@ -2276,19 +2292,22 @@ html[data-theme="dark"] .performance-table .score-cell {
   color: #d1d5db !important;
 }
 
-/* 深色模式下Pass@1, Pass@3, Pass^3, # Turns列使用与Model列一致的颜色 */
+/* 深色模式下指标列使用与 Model 列一致的颜色 */
 [data-theme="dark"] .performance-table td:nth-child(5),
 [data-theme="dark"] .performance-table td:nth-child(6),
 [data-theme="dark"] .performance-table td:nth-child(7),
 [data-theme="dark"] .performance-table td:nth-child(8),
+[data-theme="dark"] .performance-table td:nth-child(9),
 .dark .performance-table td:nth-child(5),
 .dark .performance-table td:nth-child(6),
 .dark .performance-table td:nth-child(7),
 .dark .performance-table td:nth-child(8),
+.dark .performance-table td:nth-child(9),
 html[data-theme="dark"] .performance-table td:nth-child(5),
 html[data-theme="dark"] .performance-table td:nth-child(6),
 html[data-theme="dark"] .performance-table td:nth-child(7),
-html[data-theme="dark"] .performance-table td:nth-child(8) {
+html[data-theme="dark"] .performance-table td:nth-child(8),
+html[data-theme="dark"] .performance-table td:nth-child(9) {
   color: #f8fafc !important;
 }
 
@@ -3789,14 +3808,17 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   [data-theme="dark"] .performance-table td:nth-child(6),
   [data-theme="dark"] .performance-table td:nth-child(7),
   [data-theme="dark"] .performance-table td:nth-child(8),
+  [data-theme="dark"] .performance-table td:nth-child(9),
   .dark .performance-table td:nth-child(5),
   .dark .performance-table td:nth-child(6),
   .dark .performance-table td:nth-child(7),
   .dark .performance-table td:nth-child(8),
+  .dark .performance-table td:nth-child(9),
   html[data-theme="dark"] .performance-table td:nth-child(5),
   html[data-theme="dark"] .performance-table td:nth-child(6),
   html[data-theme="dark"] .performance-table td:nth-child(7),
-  html[data-theme="dark"] .performance-table td:nth-child(8) {
+  html[data-theme="dark"] .performance-table td:nth-child(8),
+  html[data-theme="dark"] .performance-table td:nth-child(9) {
     color: #f8fafc !important;
   }
 
@@ -3901,7 +3923,9 @@ html[data-theme="dark"] .view-leaderboard-link:hover {
   }
   
   .performance-table th:nth-child(8),
-  .performance-table td:nth-child(8) {
+  .performance-table td:nth-child(8),
+  .performance-table th:nth-child(9),
+  .performance-table td:nth-child(9) {
     width: 8%;
     min-width: 40px;
   }
@@ -4927,5 +4951,159 @@ html[data-theme="dark"] ol.verified-pipeline {
     width: auto;
     content: "\2193";
     transform: translateX(-50%);
+  }
+}
+
+/* Compact layout for the current leaderboard only. Archived tables keep their original columns. */
+.leaderboard-current-table {
+  table-layout: fixed;
+}
+
+.leaderboard-current-table th,
+.leaderboard-current-table td {
+  box-sizing: border-box;
+}
+
+.leaderboard-current-table th:nth-child(1),
+.leaderboard-current-table td:nth-child(1) {
+  width: 32%;
+  min-width: 220px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(2),
+.leaderboard-current-table td:nth-child(2) {
+  width: 13%;
+  min-width: 112px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(3),
+.leaderboard-current-table td:nth-child(3) {
+  width: 9%;
+  min-width: 76px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(4),
+.leaderboard-current-table td:nth-child(4) {
+  width: 11%;
+  min-width: 92px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(5),
+.leaderboard-current-table td:nth-child(5) {
+  width: 9%;
+  min-width: 72px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(6),
+.leaderboard-current-table td:nth-child(6),
+.leaderboard-current-table th:nth-child(7),
+.leaderboard-current-table td:nth-child(7) {
+  width: 6%;
+  min-width: 64px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(8),
+.leaderboard-current-table td:nth-child(8) {
+  width: 6%;
+  min-width: 56px;
+  max-width: none;
+}
+
+.leaderboard-current-table th:nth-child(9),
+.leaderboard-current-table td:nth-child(9) {
+  width: 8%;
+  min-width: 80px;
+  max-width: none;
+}
+
+.leaderboard-current-table .model-type-cell,
+.leaderboard-current-table .text-cell,
+.leaderboard-current-table .date-cell {
+  padding-inline: 8px;
+  max-width: none;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leaderboard-current-table .date-cell {
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .leaderboard-current-table {
+    width: 100%;
+    min-width: 420px;
+  }
+
+  /* On phones, prioritize scores and efficiency metrics over repeated metadata. */
+  .leaderboard-current-table th:nth-child(2),
+  .leaderboard-current-table td:nth-child(2),
+  .leaderboard-current-table th:nth-child(3),
+  .leaderboard-current-table td:nth-child(3),
+  .leaderboard-current-table th:nth-child(4),
+  .leaderboard-current-table td:nth-child(4) {
+    display: none !important;
+  }
+
+  .leaderboard-current-table th,
+  .leaderboard-current-table td {
+    padding: 6px 3px !important;
+    font-size: 10px !important;
+    line-height: 1.2;
+  }
+
+  .leaderboard-current-table th:nth-child(1),
+  .leaderboard-current-table td:nth-child(1) {
+    width: 155px;
+    min-width: 155px;
+    max-width: 155px;
+  }
+
+  .leaderboard-current-table th:nth-child(5),
+  .leaderboard-current-table td:nth-child(5) {
+    width: 62px;
+    min-width: 62px;
+    max-width: 62px;
+  }
+
+  .leaderboard-current-table th:nth-child(6),
+  .leaderboard-current-table td:nth-child(6),
+  .leaderboard-current-table th:nth-child(7),
+  .leaderboard-current-table td:nth-child(7) {
+    width: 48px;
+    min-width: 48px;
+    max-width: 48px;
+  }
+
+  .leaderboard-current-table th:nth-child(8),
+  .leaderboard-current-table td:nth-child(8) {
+    width: 46px;
+    min-width: 46px;
+    max-width: 46px;
+  }
+
+  .leaderboard-current-table th:nth-child(9),
+  .leaderboard-current-table td:nth-child(9) {
+    width: 61px;
+    min-width: 61px;
+    max-width: 61px;
+  }
+
+  .leaderboard-current-table .model-name-cell {
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
+
+  .leaderboard-current-table .score-cell {
+    white-space: nowrap !important;
   }
 }
